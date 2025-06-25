@@ -1,47 +1,34 @@
-# Astro Starter Kit: Minimal
+# Встановлені пакети для проєкту
 
-```sh
-npm create astro@latest -- --template minimal
-```
+- `husky` — для git хуків  
+- `lint-staged` — запуск лінтера і форматування тільки на staged файлах  
+- `eslint` — статичний аналіз коду (лінт)  
+- `prettier` — автоформатування коду  
+- `@typescript-eslint/parser` — парсер ESLint для TypeScript  
+- `@typescript-eslint/eslint-plugin` — плагін ESLint для TypeScript  
+- `eslint-plugin-astro` — ESLint плагін для Astro файлів  
+- `eslint-plugin-react` — ESLint плагін для React JSX/TSX  
+- `commitlint` та `@commitlint/config-conventional` — перевірка формату комітів  
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# Формат комітів (Conventional Commits)
 
-## 🚀 Project Structure
+### Типи комітів:
 
-Inside of your Astro project, you'll see the following folders and files:
+- `feat` — нова функціональність  
+- `fix` — виправлення багів  
+- `docs` — зміни в документації  
+- `style` — зміни форматування, пробілів, відступів (без змін коду)  
+- `refactor` — зміни коду, які не додають нової функціональності і не виправляють баги  
+- `test` — додавання або зміна тестів  
+- `chore` — допоміжні зміни, оновлення інструментів, налаштувань  
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Приклади:
+feat: додано нову секцію в лендинг
+fix: виправлено баг з кнопкою
+docs: оновлено README
+style: відформатовано код prettier
+refactor: оптимізовано логіку авторизації
+test: додано юніт тести для компонента Button
+chore: оновлено залежності
