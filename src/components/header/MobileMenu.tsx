@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import CloseIcon from "@/assets/icons/close.svg?react";
 import MenuIcon from "@/assets/icons/menu.svg?react";
+import { ContactButton } from "../shared/ContactButton";
+import { ContactModal } from "../shared/ContactModal";
 
 interface Props {
   lang: "ua" | "en";
@@ -11,6 +13,7 @@ interface Props {
 
 export default function MobileMenu({ lang }: Props) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isContactsOpen, setIsContactsOpen] = useState(false);
   const t = useText(lang);
 
   const menuRef = useRef<HTMLDivElement>(null);
@@ -74,7 +77,7 @@ export default function MobileMenu({ lang }: Props) {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-[11]"
+        className={`relative ${isContactsOpen ? "z-[6]" : "z-[11]"}`}
         aria-expanded={isOpen}
         aria-label="Toggle menu"
       >
@@ -83,14 +86,16 @@ export default function MobileMenu({ lang }: Props) {
 
       <div
         ref={menuRef}
-        className="bg-grey fixed top-0 left-0 z-10 w-full overflow-hidden px-4 text-white"
+        className={`bg-grey fixed top-0 left-0 w-full overflow-hidden px-4 text-white ${
+          isContactsOpen ? "z-[6]" : "z-[4]"
+        }`}
         style={{
           height: "100vh",
           clipPath: "inset(0 0 100% 0)",
           pointerEvents: "none",
         }}
       >
-        <ul className="mt-[117px] flex flex-col items-center gap-5">
+        <ul className="mt-[117px] mb-5 flex flex-col items-center gap-5">
           {nav.map((item) => (
             <li
               key={item.id}
@@ -105,11 +110,18 @@ export default function MobileMenu({ lang }: Props) {
               </a>
             </li>
           ))}
-          <li className="font-alumni flex w-[288px] items-center justify-center border bg-white/10 py-3 text-lg leading-[18px] font-bold uppercase backdrop-blur-[10px]">
-            {t("contacts")}
+          <li>
+            <ContactButton
+              text={t("contacts")}
+              onClick={() => {
+                setIsContactsOpen(true);
+                setIsOpen(false);
+              }}
+            />
           </li>
         </ul>
       </div>
+      <ContactModal isOpen={isContactsOpen} onClose={() => setIsContactsOpen(false)} />
     </div>
   );
 }
