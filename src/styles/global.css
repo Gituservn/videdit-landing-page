@@ -1,1 +1,17 @@
 @import "tailwindcss";
+@theme {
+  /* fonts */
+
+  --font-alumni: "Alumni Sans Variable", sans-serif;
+  --font-ruda: "Ruda Variable", sans-serif;
+
+  /* breakpoints */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1920px;
+
+  /* colors */
+  --color-txdark: #1a1a1a;
+  --color-txligth: #fefefe;
+  --color-txgrey: #d3d3d3;
+}
