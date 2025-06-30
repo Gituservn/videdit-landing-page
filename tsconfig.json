@@ -3,13 +3,8 @@
     "target": "ES2020",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": [
-      "DOM",
-      "ES2020"
-    ],
-    "types": [
-      "node"
-    ],
+    "lib": ["DOM", "ES2020"],
+    "types": ["node"],
     "jsx": "react-jsx",
     "allowJs": true,
     "checkJs": false,
@@ -19,14 +14,12 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": [
-    "src",
-    "astro.config.mjs",
-    "eslint.config.js"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "astro.config.mjs", "eslint.config.js"],
+  "exclude": ["node_modules"]
 }
