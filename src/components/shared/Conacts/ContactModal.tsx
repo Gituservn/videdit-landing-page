@@ -95,7 +95,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
       >
         <button
           onClick={onClose}
-          className="text-grey -mr-4 ml-auto flex h-11 w-11 items-center justify-center font-bold"
+          className="text-grey -mr-4 ml-auto flex h-11 w-11 cursor-pointer items-center justify-center font-bold"
         >
           <CloseIcon />
         </button>
