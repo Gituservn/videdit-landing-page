@@ -1,5 +1,6 @@
 ---
 import Logo from "@/assets/icons/logo.svg";
+import { ContactWrapper } from "@/components/shared/Conacts/ContactWrapper";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 import Menu from "../shared/Menu.astro";
@@ -22,11 +23,11 @@ const t = useTranslations(Astro.url);
   </div>
   <div class="relative z-[5] gap-6 md:mr-5 lg:mr-0 lg:flex">
     <LanguageSwitcher />
-    <div
-      class="font-alumni bg-grey hidden w-fit items-center justify-center px-4 py-[11px] text-lg leading-[18px] font-bold text-white uppercase lg:flex"
-    >
-      {t("contacts")}
-    </div>
+    <ContactWrapper
+      text={t("contacts")}
+      className="bg-grey hidden w-fit items-center justify-center border-0 px-4 py-[11px] text-lg leading-[18px] font-bold text-white uppercase lg:flex"
+      client:load
+    />
   </div>
   <div class="flex h-11 w-11 items-center justify-center lg:hidden">
     <MobileMenu lang={getLangFromUrl(Astro.url)} client:load />

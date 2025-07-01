@@ -4,8 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import CloseIcon from "@/assets/icons/close.svg?react";
 import MenuIcon from "@/assets/icons/menu.svg?react";
-import { ContactButton } from "../shared/ContactButton";
-import { ContactModal } from "../shared/ContactModal";
+import { ContactButton } from "../shared/Conacts/ContactButton";
+import { ContactModal } from "../shared/Conacts/ContactModal";
+import { AnimatedTextHover } from "../shared/AnimatedTextHover";
 
 interface Props {
   lang: "ua" | "en";
@@ -20,12 +21,10 @@ export default function MobileMenu({ lang }: Props) {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // Відкриття/закриття через GSAP
   useEffect(() => {
     if (isOpen) {
-      setVisible(true); // Спочатку показуємо елемент
+      setVisible(true);
     } else if (menuRef.current) {
-      // Анімація закриття
       gsap.to(menuRef.current, {
         clipPath: "inset(0 0 100% 0)",
         duration: 0.8,
@@ -49,7 +48,6 @@ export default function MobileMenu({ lang }: Props) {
     }
   }, [visible]);
 
-  // Escape та клік поза меню
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") {
@@ -85,7 +83,7 @@ export default function MobileMenu({ lang }: Props) {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className={`relative ${isContactsOpen ? "z-[6]" : "z-[11]"}`}
+        className={`relative ${isContactsOpen ? "z-[6]" : "z-[11]"} text-stroke`}
         aria-expanded={isOpen}
         aria-label="Toggle menu"
       >
@@ -115,7 +113,7 @@ export default function MobileMenu({ lang }: Props) {
                   className="flex h-full w-full justify-center py-3"
                   onClick={() => setIsOpen(false)}
                 >
-                  {t(item.titleKey)}
+                  <AnimatedTextHover text={t(item.titleKey)} />
                 </a>
               </li>
             ))}

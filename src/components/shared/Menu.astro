@@ -2,6 +2,8 @@
 import { nav } from "@/constants/navList";
 import { useTranslations } from "@/i18n/utils";
 
+import { AnimatedTextHover } from "./AnimatedTextHover";
+
 const t = useTranslations(Astro.url);
 ---
 
@@ -11,7 +13,7 @@ const t = useTranslations(Astro.url);
       nav.map((item) => (
         <li class="uppercase">
           <a href={`#${item.id}`} class="">
-            {t(item.titleKey)}
+            <AnimatedTextHover client:load text={t(item.titleKey)} />
           </a>
         </li>
       ))
