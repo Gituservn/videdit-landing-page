@@ -1,0 +1,22 @@
+---
+import { nav } from "@/constants/navList";
+import { useTranslations } from "@/i18n/utils";
+
+import { AnimatedTextHover } from "./AnimatedTextHover";
+
+const t = useTranslations(Astro.url);
+---
+
+<nav role="navigation">
+  <ul id="nav-menu-list" class="flex flex-col items-center gap-10 text-white lg:flex-row">
+    {
+      nav.map((item) => (
+        <li class="uppercase">
+          <a href={`#${item.id}`} class="">
+            <AnimatedTextHover client:load text={t(item.titleKey)} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
