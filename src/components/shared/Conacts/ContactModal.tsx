@@ -90,7 +90,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
       <div
         ref={modalRef}
-        className="bg-bgmodal fixed top-1/2 left-1/2 z-[12] max-h-[90vh] w-full max-w-[601px] -translate-x-1/2 translate-y-1/2 overflow-y-scroll px-4 pb-[56px] text-black md:pb-[72px] lg:max-w-[810px] lg:px-8 lg:pb-[56px]"
+        className="bg-bgmodal fixed top-1/2 left-1/2 z-[12] max-h-[90vh] w-full max-w-[601px] -translate-x-1/2 translate-y-1/2 overflow-y-auto px-4 pb-[56px] text-black md:pb-[72px] lg:max-w-[810px] lg:px-8 lg:pb-[56px]"
         style={{ opacity: 0 }}
       >
         <button
