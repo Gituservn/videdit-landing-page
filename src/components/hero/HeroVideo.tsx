@@ -103,7 +103,7 @@ const HeroVideo = () => {
       </video>
       <button
         onClick={togglePlay}
-        className="absolute top-[93px] right-3 z-[5] flex h-14 w-14 items-center justify-center rounded-full border border-white bg-white/10 p-4 font-bold text-black backdrop-blur-[3px] md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
+        className="absolute top-[93px] right-3 z-[3] flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-4 font-bold text-black backdrop-blur-[3px] md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
       >
         {isPlaying ? (
           <PauseIcon className="h-4 w-4 md:h-6 md:w-[29px] lg:h-10 lg:w-[34px] xl:h-[53px] xl:w-11" />

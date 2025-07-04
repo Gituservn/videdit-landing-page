@@ -83,7 +83,7 @@ export default function MobileMenu({ lang }: Props) {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className={`relative ${isContactsOpen ? "z-[6]" : "z-[11]"} text-stroke`}
+        className={`relative ${isContactsOpen ? "z-[6]" : "z-[11]"} text-stroke cursor-pointer`}
         aria-expanded={isOpen}
         aria-label="Toggle menu"
       >
