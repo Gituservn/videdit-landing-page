@@ -33,9 +33,14 @@ const HeroVideo = () => {
         top: isMobile ? "50%" : "60%",
         left: isMobile ? "16px" : isTab ? "24px" : isPC ? "40px" : "60px",
         xPercent: 0,
-        yPercent: -50, // Центрування по вертикалі
+        yPercent: -50,
         duration: 1.2,
         ease: "power3.inOut",
+      });
+
+      gsap.delayedCall(1.6, () => {
+        title.classList.remove("z-[8]");
+        title.classList.add("z-[1]");
       });
 
       tl.to(
