@@ -28,7 +28,7 @@ export const AnimatedTextHover = ({ text, className = "" }: AnimatedTextHoverPro
       clone.style.height = "14px";
 
       gsap.set(clone, {
-        y: 18, // початкове положення, підбери під висоту шрифту
+        y: 18,
         opacity: 0,
       });
 
@@ -73,20 +73,22 @@ export const AnimatedTextHover = ({ text, className = "" }: AnimatedTextHoverPro
   return (
     <div
       ref={wrapperRef}
-      className={`relative inline-flex overflow-hidden ${className}`}
+      className={`relative flex h-full w-full items-center justify-center overflow-hidden ${className}`}
       style={{ cursor: "pointer" }}
     >
-      {text.split("").map((char, i) => (
-        <span
-          key={i}
-          className="relative inline-block overflow-hidden"
-          style={{ width: char === " " ? "0.5em" : "auto" }}
-        >
-          <span className="letter relative inline-block p-0 will-change-transform">
-            {char === " " ? "\u00A0" : char}
+      <div className={`relative inline-flex overflow-hidden`}>
+        {text.split("").map((char, i) => (
+          <span
+            key={i}
+            className="relative inline-block overflow-hidden"
+            style={{ width: char === " " ? "0.5em" : "auto" }}
+          >
+            <span className="letter relative inline-block p-0 will-change-transform">
+              {char === " " ? "\u00A0" : char}
+            </span>
           </span>
-        </span>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

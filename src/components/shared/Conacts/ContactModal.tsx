@@ -84,13 +84,13 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
       <div
         ref={backdropRef}
         onClick={onClose}
-        className="fixed inset-0 z-[11] bg-black/60"
+        className="bg-blck/60 fixed inset-0 z-[11]"
         style={{ opacity: 0 }}
       />
 
       <div
         ref={modalRef}
-        className="bg-bgmodal fixed top-1/2 left-1/2 z-[12] max-h-[90vh] w-full max-w-[601px] -translate-x-1/2 translate-y-1/2 overflow-y-auto px-4 pb-[56px] text-black md:pb-[72px] lg:max-w-[810px] lg:px-8 lg:pb-[56px]"
+        className="bg-bgmodal fixed top-1/2 left-1/2 z-[12] max-h-[90vh] w-full max-w-[601px] -translate-x-1/2 translate-y-1/2 overflow-y-auto px-4 pb-14 md:pb-[72px] lg:max-w-[810px] lg:px-8 lg:pb-14"
         style={{ opacity: 0 }}
       >
         <button
@@ -101,7 +101,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         </button>
         <div className="mt-3 md:mt-7 lg:flex lg:items-center lg:gap-7">
           <img
-            src="/images/olga-contacts.jpeg"
+            src="/images/olga-contact.jpg"
             width={300}
             height={300}
             alt="Зв'яжіться зі мною в соціальних мережах"
@@ -114,7 +114,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-alumni bg-grey flex h-10 items-center justify-start gap-3 px-[32%] py-2 leading-none font-bold text-white uppercase group-hover:bg-black md:h-[56px] md:text-2xl lg:h-16 lg:text-[28px]"
+                  className="font-alumni bg-grey group-hover:bg-blck flex h-10 items-center justify-start gap-3 px-[32%] py-2 leading-none font-bold text-white uppercase md:h-14 md:text-2xl lg:h-16 lg:text-[28px]"
                   onClick={onClose}
                 >
                   <div className="flex h-10 w-10 items-center justify-center md:h-12 md:w-12">
