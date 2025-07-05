@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const ParallelogramRow = () => {
+export const ParallelogramRow = ({ amount }: { amount?: number }) => {
   const containerRef = useRef<HTMLUListElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
 
@@ -27,7 +27,7 @@ export const ParallelogramRow = () => {
   }, []);
 
   const itemWidth = 20.25;
-  const count = Math.floor(containerWidth / itemWidth);
+  const count = amount ? amount : Math.floor(containerWidth / itemWidth);
 
   return (
     <ul ref={containerRef} className="flex w-full max-w-full flex-wrap gap-x-0">
