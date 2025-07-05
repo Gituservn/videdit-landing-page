@@ -33,6 +33,8 @@ export const ui = {
     whyMeItem4Title: "Стильне відео — сильне позиціонування",
     whyMeItem4Text:
       "Показуйте себе як професіонала або бренд через естетику, зміст і монтаж, що захоплює.",
+    quote:
+      "Відеомонтаж — це не просто робота, а мистецтво розповідати історії кадрами. Я створюю відео, які захоплюють, надихають і працюють на результат.",
   },
   en: {
     logo: "Olga video",
@@ -58,5 +60,7 @@ export const ui = {
     whyMeItem4Title: "Stylish edits, powerful positioning",
     whyMeItem4Text:
       "Show up as a brand or expert through visuals that inspire, aesthetics that impress, and edits that speak for you.",
+    quote:
+      "Video editing is not just a job, it's the art of telling stories with footage. I create videos that captivate, inspire, and work for results.",
   },
 } as const;
