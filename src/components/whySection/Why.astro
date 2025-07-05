@@ -1,0 +1,35 @@
+---
+import { useTranslations } from "@/i18n/utils";
+
+import { ContactWrapper } from "../shared/Conacts/ContactWrapper";
+import { WhyList } from "./WhyList";
+const t = useTranslations(Astro.url);
+
+const whyList = [
+  { title: t("whyMeItem1Title"), text: t("whyMeItem1Text") },
+  { title: t("whyMeItem2Title"), text: t("whyMeItem2Text") },
+  { title: t("whyMeItem3Title"), text: t("whyMeItem3Text") },
+  { title: t("whyMeItem4Title"), text: t("whyMeItem4Text") },
+];
+---
+
+<section class="bg-txligth psection">
+  <div class="mb-6 md:mb-10 md:flex md:items-center md:justify-between">
+    <h2
+      class="font-alumni text-txdark mx-auto w-[288px] text-center text-[32px] leading-none font-bold md:mx-0 md:w-[51%] md:text-left md:text-5xl lg:w-[650px] lg:text-[64px]"
+    >
+      {t("whyMeTitle")}
+    </h2>
+    <ContactWrapper
+      client:load
+      text={t("orderButton")}
+      className="bg-grey text-txligth mx-0 hidden h-11 border-0 text-xl normal-case md:block md:h-14 md:text-2xl xl:h-16 xl:text-[28px]"
+    />
+  </div>
+  <WhyList client:load whyList={whyList} />
+  <ContactWrapper
+    client:load
+    text={t("orderButton")}
+    className="bg-grey text-txligth mt-10 h-11 border-0 text-xl normal-case md:hidden"
+  />
+</section>
