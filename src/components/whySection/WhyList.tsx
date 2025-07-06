@@ -5,7 +5,7 @@ type WhyListProp = { title: string; text: string };
 
 export const WhyList = ({ whyList }: { whyList: WhyListProp[] }) => {
   return (
-    <ul className="hide-scrollbar mx-auto flex max-w-[450px] flex-col gap-5 md:grid md:max-w-full md:grid-cols-2 md:gap-6 lg:flex lg:snap-mandatory lg:flex-row lg:flex-nowrap lg:gap-6 lg:overflow-x-auto lg:pl-[53%] xl:pl-[38%]">
+    <ul className="hide-scrollbar mx-auto flex max-w-[500px] flex-col gap-5 md:grid md:max-w-full md:grid-cols-2 md:gap-6 lg:flex lg:snap-mandatory lg:flex-row lg:flex-nowrap lg:gap-6 lg:overflow-x-auto lg:pl-[53%] xl:pl-[38%]">
       {whyList.map((item, ind) => (
         <li
           key={ind + 1}
