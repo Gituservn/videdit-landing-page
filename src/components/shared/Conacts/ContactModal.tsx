@@ -101,7 +101,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         </button>
         <div className="mt-3 md:mt-7 lg:flex lg:items-center lg:gap-7">
           <img
-            src="/images/olga-contact.jpg"
+            src="/src/assets/images/olga-contact.jpg"
             width={300}
             height={300}
             alt="Зв'яжіться зі мною в соціальних мережах"

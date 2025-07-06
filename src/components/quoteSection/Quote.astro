@@ -11,7 +11,7 @@ const t = useTranslations(Astro.url);
   <FadeInText
     client:load
     text={t("quote")}
-    className="font-alumni mx-auto my-11 text-center text-[32px] leading-none font-bold md:my-6 md:max-w-[929px] md:text-5xl lg:mt-[42px] lg:mb-[60px] lg:text-[64px]"
+    className="font-alumni mx-auto my-11 max-w-[500px] text-center text-[32px] leading-none font-bold md:my-6 md:max-w-[929px] md:text-5xl lg:mt-[42px] lg:mb-[60px] lg:text-[64px]"
   />
   <div class="mr-0 ml-auto w-fit"><ParallelogramRow client:load amount={3} /></div>
 </div>
