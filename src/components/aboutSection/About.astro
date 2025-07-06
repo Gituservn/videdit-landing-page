@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+
+import Parall from "@/assets/icons/parall.svg";
+import OlgaAbout from "@/assets/images/olga-about.jpg";
+import { useTranslations } from "@/i18n/utils";
+const t = useTranslations(Astro.url);
+const approachList = [t("approachItem1"), t("approachItem2"), t("approachItem3")];
+---
+
+<section
+  class="text-txdark px-4 pt-[60px] md:border-t md:px-6 md:pt-0 lg:flex lg:justify-center lg:gap-10 lg:px-10 xl:gap-[60px] xl:px-[60px]"
+>
+  <div
+    class="mx-auto max-w-[500px] md:max-w-[929px] lg:mx-0 lg:w-[46.7%] lg:max-w-[700px] xl:max-w-[829px]"
+  >
+    <Image
+      src={OlgaAbout}
+      alt="Olga's photo"
+      width={1152}
+      height={1728}
+      class="aspect-[288/222] w-full object-cover object-top md:aspect-[720/640] lg:aspect-[560/705] xl:aspect-[829/736]"
+    />
+  </div>
+  <div
+    class="mx-auto pt-6 md:max-w-[929px] md:border-x md:px-5 md:pt-10 md:pb-10 lg:mx-0 lg:w-[50%] lg:max-w-[700px] lg:border-0 lg:px-0 lg:pt-[26px] lg:pb-[29px] xl:max-w-[915px] xl:border-x xl:p-[60px]"
+  >
+    <h2 class="mb-6 leading-none uppercase md:text-lg lg:mb-4 xl:mb-6">{t("aboutSection")}</h2>
+    <h3
+      class="font-alumni mb-6 text-xl leading-none font-bold md:mb-4 md:text-[32px] lg:mb-2 lg:text-4xl xl:w-[725px]"
+    >
+      {t("aboutTitle")}
+    </h3>
+    <p class="mb-4 md:text-xl lg:text-2xl xl:w-[725px]">{t("aboutText1")}</p>
+    <p class="mb-6 md:mb-10 md:text-xl lg:mb-4 lg:text-2xl xl:mb-10 xl:w-[725px]">
+      {t("aboutText2")}
+    </p>
+    <div class="border border-b-0 px-3 py-6 md:border-0 md:p-0">
+      <h2
+        class="mt-[14px] mb-[30px] leading-none uppercase md:mt-0 md:mb-6 md:text-lg lg:mb-4 xl:mb-5"
+      >
+        {t("approach")}
+      </h2>
+      <ul class="flex flex-col gap-4 md:flex-row lg:flex-col xl:flex-row">
+        {
+          approachList.map((item) => (
+            <li class="flex items-center gap-2 md:w-[32%] md:items-start lg:w-full lg:items-center xl:w-[32%] xl:items-start">
+              <div class="h-4 w-[25px] shrink-0">
+                <Parall />
+              </div>
+              <p class="font-alumni text-xl leading-none font-bold md:text-2xl lg:text-[28px]">
+                {item}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
