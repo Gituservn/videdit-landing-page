@@ -35,6 +35,7 @@ export const ui = {
       "Показуйте себе як професіонала або бренд через естетику, зміст і монтаж, що захоплює.",
     quote:
       "Відеомонтаж — це не просто робота, а мистецтво розповідати історії кадрами. Я створюю відео, які захоплюють, надихають і працюють на результат.",
+
     aboutSection: "Про мене",
     aboutTitle:
       "Привіт! Я Оля — спеціалістка з відеомонтажу. Перетворюю ідеї на динамічні ролики, що захоплюють з перших секунд. У кожному кадрі — сенс, у кожному проєкті — результат.",
@@ -46,6 +47,7 @@ export const ui = {
     approachItem1: "Чіткість і повага до дедлайнів",
     approachItem2: "Завжди на зв’язку, відкрито обговорюю всі побажання",
     approachItem3: "Післямонтажне обслуговування: при потребі",
+    infinityRow: "Хочу замовити монтаж",
   },
   en: {
     logo: "Olga video",
@@ -73,6 +75,7 @@ export const ui = {
       "Show up as a brand or expert through visuals that inspire, aesthetics that impress, and edits that speak for you.",
     quote:
       "Video editing is not just a job, it's the art of telling stories with footage. I create videos that captivate, inspire, and work for results.",
+
     aboutSection: "about me",
     aboutTitle:
       "Hi! I'm Olya — a video editor who turns ideas into dynamic videos that captivate from the first seconds. Every frame has meaning, every project — a clear result.",
@@ -84,5 +87,6 @@ export const ui = {
     approachItem1: "Clarity and respect for deadlines",
     approachItem2: "Always in touch — I openly discuss all your ideas",
     approachItem3: "Post-editing support, if needed",
+    infinityRow: "Order video editing",
   },
 } as const;
