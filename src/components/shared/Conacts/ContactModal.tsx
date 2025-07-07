@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import gsap from "gsap";
 import { socialList } from "@/constants/socialList";
 import CloseIcon from "@/assets/icons/close.svg?react";
+import olgaPhoto from "@/assets/images/olga-contact.jpg?url";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -101,7 +102,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         </button>
         <div className="mt-3 md:mt-7 lg:flex lg:items-center lg:gap-7">
           <img
-            src="/src/assets/images/olga-contact.jpg"
+            src={olgaPhoto}
             width={300}
             height={300}
             alt="Зв'яжіться зі мною в соціальних мережах"
