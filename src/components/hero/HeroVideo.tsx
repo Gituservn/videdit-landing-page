@@ -8,6 +8,14 @@ const HeroVideo = () => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [scrolledOnce, setScrolledOnce] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    setIsVideoReady(true);
+  }, []);
 
   useEffect(() => {
     let lockedScrollY = 0;
@@ -91,6 +99,7 @@ const HeroVideo = () => {
 
   return (
     <div className="absolute top-0 left-0 h-[100vh] w-full">
+      {isVideoReady ? "" : <div className="bg-blck absolute inset-0 z-[13]" />}
       <video
         ref={videoRef}
         muted
