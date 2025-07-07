@@ -48,6 +48,7 @@ export const ui = {
     approachItem2: "Завжди на зв’язку, відкрито обговорюю всі побажання",
     approachItem3: "Післямонтажне обслуговування: при потребі",
     infinityRow: "Хочу замовити монтаж",
+    servicesSection: "Послуги",
   },
   en: {
     logo: "Olga video",
@@ -88,5 +89,6 @@ export const ui = {
     approachItem2: "Always in touch — I openly discuss all your ideas",
     approachItem3: "Post-editing support, if needed",
     infinityRow: "Order video editing",
+    servicesSection: "Services",
   },
 } as const;

@@ -1,58 +1,10 @@
 @import "tailwindcss";
+@import "./fonts.css";
+
 @theme {
   /* fonts */
-
-  --font-alumni: "Alumni Sans Variable", sans-serif;
-  --font-ruda: "Ruda Variable", sans-serif;
-
-  /* breakpoints */
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1280px;
-  --breakpoint-xl: 1920px;
-
-  /* colors */
-  --color-txdark: #1a1a1a;
-  --color-txligth: #fefefe;
-  --color-txgrey: #d3d3d3;
-  --color-stroke: #d8d8d8;
-  --color-grey: #323232;
-  --color-blck: #1a1a1a;
-  --color-bgmodal: #fcffd6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-body {
-  color: var(--color-txgrey);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.3;
-}
-@layer components {
-  .parallelogram {
-    @apply bg-blck relative h-4 w-[25px];
-    clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
-  }
-}
-
-@import "tailwindcss";
-@theme {
-  /* fonts */
-
-  --font-alumni: "Alumni Sans Variable", sans-serif;
-  --font-ruda: "Ruda Variable", sans-serif;
+  --font-alumni: "AlumniSans", sans-serif;
+  --font-ruda: "Ruda", sans-serif;
 
   /* breakpoints */
   --breakpoint-md: 768px;
