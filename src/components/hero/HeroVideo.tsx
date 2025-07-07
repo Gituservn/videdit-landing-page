@@ -5,80 +5,81 @@ import { PauseIcon } from "../shared/icons/PauseIcon";
 
 const HeroVideo = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [scrolledOnce, setScrolledOnce] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    const title = document.getElementById("hero-title");
-    const overlay = document.getElementById("hero-overlay");
+    let lockedScrollY = 0;
 
-    if (!video || !title || !overlay) return;
+    const lockScroll = () => {
+      lockedScrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${lockedScrollY}px`;
+      document.body.style.width = "100%";
+    };
+    const unlockScroll = () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, lockedScrollY);
+    };
 
-    // Початкове розташування: вгорі, по центру
-    gsap.set(title, {
-      top: 0,
-      left: "50%",
-      xPercent: -50,
-      yPercent: 0,
-    });
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.001 && !scrolledOnce) {
+        setScrolledOnce(true);
+        lockScroll();
+        document.body.classList.add("hero-scrolled");
 
-    const isMobile = window.innerWidth < 768;
-    const isTab = 768 <= window.innerWidth && window.innerWidth < 1280;
-    const isPC = 1280 <= window.innerWidth && window.innerWidth < 1920;
+        const title = document.getElementById("hero-title");
+        const video = videoRef.current;
+        const overlay = overlayRef.current;
+        if (!title || !video || !overlay) return;
 
-    const animateIn = () => {
-      const tl = gsap.timeline();
+        const isMobile = window.innerWidth < 768;
+        const isTab = window.innerWidth >= 768 && window.innerWidth < 1280;
+        const isPC = window.innerWidth >= 1280 && window.innerWidth < 1920;
 
-      tl.to(title, {
-        top: isMobile ? "50%" : "60%",
-        left: isMobile ? "16px" : isTab ? "24px" : isPC ? "40px" : "60px",
-        xPercent: 0,
-        yPercent: -50,
-        duration: 1.2,
-        ease: "power3.inOut",
-      });
-
-      gsap.delayedCall(1.6, () => {
-        title.classList.remove("z-[8]");
-        title.classList.add("z-[1]");
-      });
-
-      tl.to(
-        overlay,
-        {
-          duration: 1,
-          opacity: 0,
-          ease: "power2.out",
+        const tl = gsap.timeline({
           onComplete: () => {
-            overlay.classList.add("hidden");
+            unlockScroll();
+            window.removeEventListener("scroll", onScroll);
           },
-        },
-        "-=0.8",
-      );
+        });
+
+        tl.to(title, {
+          top: isMobile ? "50%" : "60%",
+          left: isMobile ? "16px" : isTab ? "24px" : isPC ? "40px" : "60px",
+          duration: 0.4,
+          ease: "power3.inOut",
+        })
+          .to(
+            title,
+            {
+              onStart() {
+                title.classList.remove("-translate-x-1/2");
+                title.classList.add("translate-x-0");
+              },
+            },
+            "0.4",
+          )
+          .set(video, { zIndex: -2 }, "<")
+          .set(overlay, { zIndex: -1 }, "<");
+      }
     };
 
-    const handleCanPlay = () => animateIn();
-
-    video.addEventListener("canplaythrough", handleCanPlay);
-
-    if (video.readyState >= 3) {
-      animateIn();
-    }
-
-    return () => {
-      video.removeEventListener("canplaythrough", handleCanPlay);
-    };
-  }, []);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrolledOnce]);
 
   useEffect(() => {
     if (videoRef.current && isPlaying) {
-      videoRef.current.play().catch((e) => console.warn("Autoplay error", e));
+      videoRef.current.play().catch(() => {});
     }
   }, [isPlaying]);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
-
     if (videoRef.current.paused) {
       videoRef.current.play();
       setIsPlaying(true);
@@ -90,20 +91,20 @@ const HeroVideo = () => {
 
   return (
     <div className="absolute top-0 left-0 h-[100vh] w-full">
-      <div className="bg-blck/35 absolute inset-0 z-[-1] h-[100vh] w-full"> </div>
       <video
         ref={videoRef}
         muted
         autoPlay
         playsInline
         loop
-        className="absolute inset-0 z-[-2] h-[100vh] w-auto object-cover"
+        className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
+      <div ref={overlayRef} className="bg-blck/35 absolute inset-0 z-[10]" />
       <button
         onClick={togglePlay}
-        className="absolute top-[93px] right-3 z-[3] flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-4 font-bold text-black backdrop-blur-[3px] md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
+        className="absolute top-[93px] right-3 flex h-14 w-14 items-center justify-center rounded-full border border-white bg-white/10 p-4 text-black backdrop-blur-[3px] md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
       >
         {isPlaying ? (
           <PauseIcon className="h-4 w-4 md:h-6 md:w-[29px] lg:h-10 lg:w-[34px] xl:h-[53px] xl:w-11" />
