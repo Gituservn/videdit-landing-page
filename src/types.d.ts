@@ -21,3 +21,18 @@ declare module "*.svg?react" {
   const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
   export default ReactComponent;
 }
+
+declare module "*.jpg?url" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.jpeg?url" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.png?url" {
+  const src: string;
+  export default src;
+}
