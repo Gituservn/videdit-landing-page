@@ -14,7 +14,18 @@ const HeroVideo = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    setIsVideoReady(true);
+    const onCanPlay = () => {
+      setIsVideoReady(true);
+      document.body.classList.remove("no-scroll");
+      video.removeEventListener("canplaythrough", onCanPlay);
+    };
+
+    video.addEventListener("canplaythrough", onCanPlay);
+    if (video.readyState >= 3) onCanPlay();
+
+    return () => {
+      video.removeEventListener("canplaythrough", onCanPlay);
+    };
   }, []);
 
   useEffect(() => {
