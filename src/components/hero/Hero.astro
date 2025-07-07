@@ -4,19 +4,14 @@ import { useTranslations } from "@/i18n/utils";
 
 import PortfolioButton from "../header/PortfolioButton.astro";
 import { ContactWrapper } from "../shared/Conacts/ContactWrapper";
+import { HeroTitle } from "./HeroTitle";
 const t = useTranslations(Astro.url);
 ---
 
 <section class="relative min-h-[100vh] overflow-hidden">
   <HeroVideo client:load />
   <div class="px-4 md:px-6 lg:px-10 xl:px-[60px]">
-    <h1
-      id="hero-title"
-      class="text-txligth font-alumni absolute top-5 left-1/2 z-[12] w-[288px] -translate-x-1/2 text-[32px] leading-none font-bold uppercase transition-all duration-700 md:top-[60px] md:w-[433px] md:text-5xl lg:top-11 lg:w-[577px] lg:text-[64px] xl:top-[70px] xl:w-[721px] xl:text-[80px]"
-    >
-      {t("heroTitle")}
-    </h1>
-
+    <HeroTitle client:load title={t("heroTitle")} />
     <p
       class="text-txligth mt-[calc(50vh+42px)] max-w-[288px] text-[20px] md:mt-[calc(60vh+80px)] md:max-w-[461px] lg:max-w-[600px] lg:text-2xl xl:max-w-[645px] xl:text-[28px]"
     >

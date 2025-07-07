@@ -69,18 +69,27 @@ const HeroVideo = () => {
         tl.to(title, {
           top: isMobile ? "50%" : "60%",
           left: isMobile ? "16px" : isTab ? "24px" : isPC ? "40px" : "60px",
-          duration: 0.4,
+          duration: 0.5,
           ease: "power3.inOut",
         })
           .to(
             title,
             {
               onStart() {
-                title.classList.remove("-translate-x-1/2");
-                title.classList.add("translate-x-0");
+                if (isMobile) {
+                  title.classList.remove("uppercase");
+                  title.classList.add("normal-case");
+                }
+                title.style.fontSize = isMobile
+                  ? "32px"
+                  : isTab
+                    ? "48px"
+                    : window.innerWidth >= 1920
+                      ? "80px"
+                      : "64px";
               },
             },
-            "0.4",
+            "0.5",
           )
           .set(video, { zIndex: -2 }, "<")
           .set(overlay, { zIndex: -1 }, "<");
@@ -90,12 +99,6 @@ const HeroVideo = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrolledOnce]);
-
-  useEffect(() => {
-    if (videoRef.current && isPlaying) {
-      videoRef.current.play().catch(() => {});
-    }
-  }, [isPlaying]);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
