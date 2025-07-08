@@ -5,12 +5,9 @@ type WhyListProp = { title: string; text: string };
 
 export const WhyList = ({ whyList }: { whyList: WhyListProp[] }) => {
   return (
-    <ul className="hide-scrollbar mx-auto flex max-w-[500px] flex-col gap-5 md:grid md:max-w-full md:grid-cols-2 md:gap-6 lg:flex lg:snap-mandatory lg:flex-row lg:flex-nowrap lg:gap-6 lg:overflow-x-auto lg:pl-[53%] xl:pl-[38%]">
+    <ul className="mx-auto flex max-w-[500px] flex-col gap-5 md:grid md:max-w-full md:grid-cols-2 md:gap-6 lg:gap-x-[160px] lg:gap-y-10 xl:mr-0 xl:w-[1200px]">
       {whyList.map((item, ind) => (
-        <li
-          key={ind + 1}
-          className="text-txdark md:flex md:flex-col md:justify-between lg:w-[520px] lg:shrink-0 lg:snap-start"
-        >
+        <li key={ind + 1} className="text-txdark md:flex md:flex-col md:justify-between">
           <WhyCard title={item.title} text={item.text} ind={ind} />
           <ParallelogramRow />
         </li>
