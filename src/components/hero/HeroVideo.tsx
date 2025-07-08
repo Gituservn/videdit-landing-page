@@ -4,14 +4,20 @@ import { PlayIcon } from "../shared/icons/PlayIcon";
 import { PauseIcon } from "../shared/icons/PauseIcon";
 
 const HeroVideo = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoDesktopRef = useRef<HTMLVideoElement | null>(null);
+  const videoMobileRef = useRef<HTMLVideoElement | null>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [scrolledOnce, setScrolledOnce] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
 
+  const getCurrentVideo = () => {
+    if (typeof window === "undefined") return null;
+    return window.innerWidth >= 1280 ? videoDesktopRef.current : videoMobileRef.current;
+  };
+
   useEffect(() => {
-    const video = videoRef.current;
+    const video = getCurrentVideo();
     if (!video) return;
 
     const onCanPlay = () => {
@@ -51,7 +57,7 @@ const HeroVideo = () => {
         document.body.classList.add("hero-scrolled");
 
         const title = document.getElementById("hero-title");
-        const video = videoRef.current;
+        const video = getCurrentVideo();
         const overlay = overlayRef.current;
         if (!title || !video || !overlay) return;
 
@@ -101,12 +107,13 @@ const HeroVideo = () => {
   }, [scrolledOnce]);
 
   const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
+    const video = getCurrentVideo();
+    if (!video) return;
+    if (video.paused) {
+      video.play();
       setIsPlaying(true);
     } else {
-      videoRef.current.pause();
+      video.pause();
       setIsPlaying(false);
     }
   };
@@ -115,14 +122,24 @@ const HeroVideo = () => {
     <div className="absolute top-0 left-0 h-[100vh] w-full">
       {isVideoReady ? "" : <div className="bg-blck absolute inset-0 z-[13]" />}
       <video
-        ref={videoRef}
+        ref={videoDesktopRef}
         muted
         autoPlay
         playsInline
         loop
-        className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500"
+        className="absolute inset-0 z-[11] hidden h-full w-full object-cover transition-all duration-500 lg:block"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
+      <video
+        ref={videoMobileRef}
+        muted
+        autoPlay
+        playsInline
+        loop
+        className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500 lg:hidden"
+      >
+        <source src="/videos/hero-mob.mp4" type="video/mp4" />
       </video>
       <div ref={overlayRef} className="bg-blck/35 absolute inset-0 z-[10]" />
       <button
