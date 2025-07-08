@@ -1,9 +1,5 @@
 ---
 import "../styles/global.css";
-// Supports weights 400-900
-import "@fontsource-variable/ruda";
-// Supports weights 100-900
-import "@fontsource-variable/alumni-sans";
 
 import Header from "@/components/header/Header.astro";
 import { getLangFromUrl } from "@/i18n/utils";
@@ -17,6 +13,7 @@ const lang = getLangFromUrl(Astro.url);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/AlumniSans-Bold.ttf" as="font" crossorigin />
     <meta name="generator" content={Astro.generator} />
     <title>Willow Moution</title>
   </head>

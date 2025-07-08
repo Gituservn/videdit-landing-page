@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "AlumniSans";
+  src: url("/fonts/AlumniSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ruda";
+  src: url("/fonts/Ruda-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AlumniSans";
+  src: url("/fonts/AlumniSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ruda";
+  src: url("/fonts/Ruda-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
