@@ -49,6 +49,12 @@ body {
   .psection {
     @apply px-4 pt-[60px] pb-14 md:px-6 md:py-[80px] lg:px-10 lg:pt-[100px] lg:pb-[120px] xl:px-[60px] xl:py-[120px];
   }
+  .slider-dot {
+    @apply bg-txligth/50 h-0.5 w-10 rounded-[10px] md:h-1 md:w-[30%] lg:w-[32%];
+  }
+  .slider-dot--selected {
+    @apply bg-txligth;
+  }
 }
 
 @layer utilities {

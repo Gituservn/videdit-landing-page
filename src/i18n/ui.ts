@@ -48,7 +48,24 @@ export const ui = {
     approachItem2: "Завжди на зв’язку, відкрито обговорюю всі побажання",
     approachItem3: "Післямонтажне обслуговування: при потребі",
     infinityRow: "Хочу замовити монтаж",
+
     servicesSection: "Послуги",
+    servicePersonal: "монтаж відео для \nособистих подій",
+    svPersonalItem1: "Весілля, дні народження, хрестини",
+    svPersonalItem2: "Святкові відео для родини",
+    svPersonalItem3: "Подарункові ролики",
+
+    serviceBussines: "монтаж відео для \nреклами вашого бізнесу",
+    svBussinesItem1: "Рекламні відео",
+    svBussinesItem2: "Презентації продуктів",
+    svBussinesItem3: "Кейсові відео та відгуки",
+    svBussinesItem4: "Контент для сайту та лендингу",
+
+    serviceMedia: "монтаж відео для \nсоцмереж ",
+    svMediaItem1: "Reels, TikTok, Shorts",
+    svMediaItem2: "Анонси подій",
+    svMediaItem3: "Навчальні відео для експертів",
+    svMediaItem4: "Контент для особистого бренду",
   },
   en: {
     logo: "Olga video",
@@ -61,6 +78,7 @@ export const ui = {
       "Professional video editing for businesses, events, and social media - so every frame works toward your goals",
     orderButton: " Let’s Create",
     portfolioButton: "See My Work",
+
     whyMeTitle: "Why Choose Professional Video Editing?",
     whyMeItem1Title: "Videos That Sell",
     whyMeItem1Text:
@@ -89,6 +107,23 @@ export const ui = {
     approachItem2: "Always in touch — I openly discuss all your ideas",
     approachItem3: "Post-editing support, if needed",
     infinityRow: "Order video editing",
+
     servicesSection: "Services",
+    servicePersonal: "Cinematic edits for \nyour most cherished moments",
+    svPersonalItem1: "Weddings, birthdays, christenings",
+    svPersonalItem2: "Heartwarming family celebration videos",
+    svPersonalItem3: "Personalized video gifts",
+
+    serviceBussines: "Professional video \nediting to elevate your brand",
+    svBussinesItem1: "Engaging promo videos",
+    svBussinesItem2: "Product highlight reels",
+    svBussinesItem3: "Client stories & testimonial videos",
+    svBussinesItem4: "Content tailored for your website or landing page",
+
+    serviceMedia: "video editing for \nsocial media",
+    svMediaItem1: "Reels, TikToks & Shorts that grab attention",
+    svMediaItem2: "Event teasers & countdowns",
+    svMediaItem3: "Educational content for coaches & creators",
+    svMediaItem4: "Personal brand storytelling",
   },
 } as const;
