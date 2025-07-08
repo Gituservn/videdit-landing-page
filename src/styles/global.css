@@ -70,6 +70,40 @@ body {
   .animate-marquee {
     animation: marquee 15s linear infinite;
   }
+
+  .arrow-wrapper {
+    display: inline-block;
+    transition: transform 0.8s ease;
+    will-change: transform;
+  }
+
+  .group:hover .arrow-wrapper {
+    animation: arrow-fly 1.6s ease infinite;
+  }
+
+  @keyframes arrow-fly {
+    0% {
+      transform: scaleX(1) translateX(0);
+    }
+    20% {
+      transform: scaleX(0.6) translateX(0);
+    }
+    35% {
+      transform: scaleX(1) translateX(0);
+    }
+    50% {
+      transform: scaleX(1) translateX(100%);
+    }
+    51% {
+      transform: scaleX(1) translateX(-100%);
+    }
+    70% {
+      transform: scaleX(1) translateX(-20%);
+    }
+    100% {
+      transform: scaleX(1) translateX(0);
+    }
+  }
 }
 
 .hide-scrollbar {

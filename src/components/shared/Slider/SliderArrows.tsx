@@ -61,11 +61,12 @@ export const PrevButton: React.FC<ButtonType> = (props) => {
     <button
       disabled={disabled}
       aria-label="show previous slide button"
-      className="rotate-180"
-      type="button"
+      className="group relative h-11 w-11 rotate-180 overflow-hidden md:h-[50px] md:w-[50px]"
       {...restProps}
     >
-      <ArrowIcon className="h-11 w-11 md:h-[50px] md:w-[50px]" />
+      <div className="arrow-wrapper inline-block">
+        <ArrowIcon className="arrow-icon h-11 w-11 transition-transform duration-300 ease-in-out md:h-[50px] md:w-[50px]" />
+      </div>
     </button>
   );
 };
@@ -77,11 +78,13 @@ export const NextButton: React.FC<ButtonType> = (props) => {
     <button
       disabled={disabled}
       aria-label="show next slide button"
-      className=""
+      className="group relative h-11 w-11 overflow-hidden md:h-[50px] md:w-[50px]"
       type="button"
       {...restProps}
     >
-      <ArrowIcon className="h-11 w-11 md:h-[50px] md:w-[50px]" />
+      <div className="arrow-wrapper">
+        <ArrowIcon className="arrow-icon h-11 w-11 transition-transform duration-300 ease-in-out md:h-[50px] md:w-[50px]" />
+      </div>
     </button>
   );
 };
