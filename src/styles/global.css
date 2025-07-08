@@ -73,12 +73,12 @@ body {
 
   .arrow-wrapper {
     display: inline-block;
-    transition: transform 0.6s ease;
+    transition: transform 0.8s ease;
     will-change: transform;
   }
 
   .group:hover .arrow-wrapper {
-    animation: arrow-fly 1.2s ease infinite;
+    animation: arrow-fly 1.6s ease infinite;
   }
 
   @keyframes arrow-fly {
