@@ -127,7 +127,7 @@ const HeroVideo = () => {
       <div ref={overlayRef} className="bg-blck/35 absolute inset-0 z-[10]" />
       <button
         onClick={togglePlay}
-        className="group absolute top-[93px] right-3 flex h-14 w-14 items-center justify-center rounded-full border border-white bg-white/10 p-4 text-black backdrop-blur-[3px] transition-all duration-300 ease-in-out hover:scale-[0.85] hover:border-[10px] hover:border-white/20 md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
+        className="group absolute top-[93px] right-3 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-4 text-black backdrop-blur-[3px] transition-all duration-300 ease-in-out hover:scale-[0.85] hover:border-[10px] hover:border-white/20 md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
       >
         {isPlaying ? (
           <PauseIcon className="h-4 w-4 group-hover:scale-[1.28] md:h-6 md:w-[29px] lg:h-10 lg:w-[34px] xl:h-[53px] xl:w-11" />
