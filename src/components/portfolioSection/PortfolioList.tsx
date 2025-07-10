@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { ParallelogramRow } from "../shared/ParallelogramRow";
 import { PauseIcon } from "../shared/icons/PauseIcon";
 import { PlayIcon } from "../shared/icons/PlayIcon";
+import { SoundIcon } from "../shared/icons/SoundIcon";
+import { MuteIcon } from "../shared/icons/MuteIcon";
 
 export type PortfolioProp = { title: string; videoURL: string };
 
@@ -18,9 +20,12 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
     portfolioList.map((_, i) => i === activeIndex),
   );
   const [isMutedList, setIsMutedList] = useState<boolean[]>(() => portfolioList.map(() => true));
+  const [isPlayingList, setIsPlayingList] = useState<boolean[]>(
+    portfolioList.map((_, i) => i === activeIndex),
+  );
 
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-
+  console.log("hoveredIndex", hoveredIndex);
   useEffect(() => {
     const checkWidth = () => {
       const isTablet = window.innerWidth >= 768;
@@ -87,21 +92,29 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
   const leftPersent = [0, 16, 34, 56.4];
   const topPersent = [18.5, 11.6, 4.7, 0];
 
-  const togglePlay = (index: number) => {
+  const handleVideoClick = (index: number) => {
     const video = videoRefs.current[index];
     if (!video) return;
 
-    videoRefs.current.forEach((v, i) => {
-      if (!v) return;
-      if (i !== index) v.pause();
-    });
-
     if (video.paused) {
+      videoRefs.current.forEach((v, i) => {
+        if (!v) return;
+        if (i !== index) v.pause();
+      });
+
       video.play();
-      setIsMobilePlaying((prev) => prev.map((_, i) => i === index));
+      if (isTabletUp) {
+        setIsPlayingList((prev) => prev.map((_, i) => i === index));
+      } else {
+        setIsMobilePlaying((prev) => prev.map((_, i) => i === index));
+      }
     } else {
       video.pause();
-      setIsMobilePlaying((prev) => prev.map(() => false));
+      if (isTabletUp) {
+        setIsPlayingList((prev) => prev.map(() => false));
+      } else {
+        setIsMobilePlaying((prev) => prev.map(() => false));
+      }
     }
   };
 
@@ -161,29 +174,29 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                 muted
                 playsInline
                 loop
+                onClick={() => handleVideoClick(index)}
                 className="absolute inset-0 h-full w-full object-cover"
               >
                 <source src={item.videoURL} type="video/mp4" />
               </video>
-              <button
-                onClick={() => togglePlay(index)}
-                className="group absolute right-3 bottom-3 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-4 text-black backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.85] hover:border-[10px] hover:border-white/20 md:top-auto md:right-6 md:bottom-7 md:hidden md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
-              >
-                {isMobilePlaying[index] ? (
-                  <PauseIcon className="h-4 w-4 group-hover:scale-[1.28] md:h-6 md:w-[29px] lg:h-10 lg:w-[34px] xl:h-[53px] xl:w-11" />
-                ) : (
-                  <PlayIcon className="h-4 w-4 group-hover:scale-[1.28] md:h-[29px] md:w-[29px] lg:h-10 lg:w-10 xl:h-[53px] xl:w-[53px]" />
-                )}
-              </button>
-              {(isMobilePlaying[index] || index === activeIndex) && (
+              {((!isPlayingList[index] && isTabletUp && hoveredIndex === index) ||
+                (!isTabletUp && !isMobilePlaying[index])) && (
+                <button
+                  onClick={() => handleVideoClick(index)}
+                  className="group absolute top-1/2 left-1/2 flex h-14 w-14 -translate-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-2 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-[140px] lg:w-[140px] hover:lg:scale-[0.85] hover:lg:border-[10px]"
+                >
+                  <PlayIcon className="h-4 w-4 group-hover:scale-[1.28] lg:h-10 lg:w-10" />
+                </button>
+              )}
+              {(isMobilePlaying[index] || (index === activeIndex && isPlayingList[index])) && (
                 <button
                   onClick={() => toggleMute(index)}
-                  className="group absolute top-3 right-3 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-4 text-black backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.85] hover:border-[10px] hover:border-white/20"
+                  className="group absolute top-3 right-3 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-14 lg:w-14 lg:p-2 hover:lg:scale-[0.85] hover:lg:border-[10px]"
                 >
                   {isMutedList[index] ? (
-                    <PauseIcon className="h-4 w-4 group-hover:scale-[1.28] md:h-6 md:w-[29px] lg:h-10 lg:w-[34px] xl:h-[53px] xl:w-11" />
+                    <SoundIcon className="h-4 w-4 group-hover:scale-150 lg:h-6 lg:w-6" />
                   ) : (
-                    <PlayIcon className="h-4 w-4 group-hover:scale-[1.28] md:h-[29px] md:w-[29px] lg:h-10 lg:w-10 xl:h-[53px] xl:w-[53px]" />
+                    <MuteIcon className="h-4 w-4 group-hover:scale-150 lg:h-6 lg:w-6" />
                   )}
                 </button>
               )}
