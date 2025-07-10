@@ -69,6 +69,7 @@ const HeroVideo = () => {
           onComplete: () => {
             unlockScroll();
             window.removeEventListener("scroll", onScroll);
+            title.classList.replace("z-[12]", "z-[2]");
           },
         });
 
