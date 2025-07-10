@@ -188,6 +188,11 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                   <PlayIcon className="h-4 w-4 group-hover:scale-[1.28] lg:h-10 lg:w-10" />
                 </button>
               )}
+              {isPlayingList[index] && isTabletUp && hoveredIndex === index && (
+                <button className="group pointer-events-none absolute top-1/2 left-1/2 flex h-14 w-14 -translate-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-2 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-[140px] lg:w-[140px] hover:lg:scale-[0.85] hover:lg:border-[10px]">
+                  <PauseIcon className="h-4 w-4 group-hover:scale-[1.28] lg:h-10 lg:w-10" />
+                </button>
+              )}
               {(isMobilePlaying[index] || (index === activeIndex && isPlayingList[index])) && (
                 <button
                   onClick={() => toggleMute(index)}
