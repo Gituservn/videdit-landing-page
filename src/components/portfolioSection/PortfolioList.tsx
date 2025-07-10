@@ -25,7 +25,6 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
   );
 
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  console.log("hoveredIndex", hoveredIndex);
   useEffect(() => {
     const checkWidth = () => {
       const isTablet = window.innerWidth >= 768;
@@ -59,7 +58,6 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
 
     const handleResize = () => {
       const result = (window.innerWidth - paddingX) * 0.433 * 1.07 + 31;
-      console.log("result", result);
       setHeightListTab(result);
     };
 
