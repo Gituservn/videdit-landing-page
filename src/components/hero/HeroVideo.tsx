@@ -74,7 +74,8 @@ const HeroVideo = () => {
         });
 
         tl.to(title, {
-          top: isMobile ? "50%" : "60%",
+          top: "auto",
+          bottom: isMobile ? "262px" : isTab ? "342px" : isPC ? "329px" : "356px",
           left: isMobile ? "16px" : isTab ? "24px" : isPC ? "40px" : "60px",
           duration: 0.5,
           ease: "power3.inOut",
@@ -120,7 +121,7 @@ const HeroVideo = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 h-[100vh] w-full">
+    <div className="absolute top-0 left-0 min-h-[100vh] w-full">
       {isVideoReady ? "" : <div className="bg-blck absolute inset-0 z-[13]" />}
       <video
         ref={videoDesktopRef}

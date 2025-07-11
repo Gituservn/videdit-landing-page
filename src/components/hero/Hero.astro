@@ -10,10 +10,13 @@ const t = useTranslations(Astro.url);
 
 <section class="relative min-h-[100vh] overflow-hidden">
   <HeroVideo client:load />
-  <div class="px-4 md:px-6 lg:px-10 xl:px-[60px]">
-    <HeroTitle client:load title={t("heroTitle")} />
+  <HeroTitle title={t("heroTitle")} />
+
+  <div
+    class="absolute bottom-[52px] left-4 md:bottom-10 md:left-6 lg:bottom-[92px] lg:left-10 xl:left-[60px]"
+  >
     <p
-      class="text-txligth mt-[calc(50vh+42px)] max-w-[288px] text-[20px] md:mt-[calc(60vh+80px)] md:max-w-[461px] lg:max-w-[600px] lg:text-2xl xl:max-w-[645px] xl:text-[28px]"
+      class="text-txligth max-w-[288px] md:max-w-[461px] md:text-[20px] lg:max-w-[600px] lg:text-2xl xl:max-w-[645px] xl:text-[28px]"
     >
       {t("heroText")}
     </p>
