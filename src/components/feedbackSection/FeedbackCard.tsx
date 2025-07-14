@@ -30,19 +30,19 @@ export const FeedbackCard = ({ item, ind }: { item: FeedbackCardProps; ind: numb
         {item.text}
       </p>
 
-      <div className={`${frameDivStyle} top-0.5 left-1/4`}>
+      <div className={`${frameDivStyle} top-0 left-1/4`}>
         <p className={`${frameNumberStyle} rotate-180`}>{ind + 1}A</p>
         <ArrowFrameIcon className={`${arrowStyle}`} />
       </div>
-      <div className={`${frameDivStyle} top-0.5 left-2/3`}>
+      <div className={`${frameDivStyle} top-0 left-2/3`}>
         <p className={`${frameNumberStyle} rotate-180`}>{ind + 1}</p>
         <ArrowFrameIcon className={`${arrowStyle}`} />
       </div>
-      <div className={`${frameDivStyle} bottom-0.5 left-1/3`}>
+      <div className={`${frameDivStyle} bottom-0 left-1/3`}>
         <p className={`${frameNumberStyle}`}>{ind + 1}</p>
         <ArrowFrameIcon className={`${arrowStyle}`} />
       </div>
-      <div className={`${frameDivStyle} bottom-0.5 left-4/5`}>
+      <div className={`${frameDivStyle} bottom-0 left-4/5`}>
         <p className={`${frameNumberStyle}`}>{ind + 1}A</p>
         <ArrowFrameIcon className={`${arrowStyle}`} />
       </div>

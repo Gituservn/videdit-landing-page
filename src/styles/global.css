@@ -34,7 +34,7 @@
   --text-roleFBmd: clamp(12px, 1.5vw, 18px);
   --text-roleFBlg: clamp(14px, 1.5vw, 18px);
   --text-roleFBxl: clamp(18px, 0.8vw, 20px);
-  --text-frameMob: min(3.8vw, 16.7px);
+  --text-frameMob: min(3vw, 12px);
 }
 
 a {
