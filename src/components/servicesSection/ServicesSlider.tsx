@@ -29,11 +29,12 @@ export const ServicesSlider = ({ list }: { list: ServiceItemProp[] }) => {
       </div>
 
       <div className="absolute bottom-4 left-1/2 z-[1] -translate-x-1/2 md:bottom-[57px] md:flex md:w-full md:flex-col-reverse md:px-6 lg:px-10 xl:px-[60px]">
-        <div className="py-2 pt-7">
+        <div className="pt-7">
           <SliderDotsBox
             scrollSnaps={scrollSnaps}
             selectedIndex={selectedIndex}
-            sliders={list}
+            selectedColor="bg-txligth"
+            color="bg-txligth/50"
             onDotButtonClick={onDotButtonClick}
           />
         </div>

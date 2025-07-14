@@ -1,0 +1,25 @@
+---
+import { useTranslations } from "@/i18n/utils";
+
+import { FeedbackSlider } from "./FeedbackSlider";
+
+const t = useTranslations(Astro.url);
+const feedbacks = [
+  { name: t("feedback1.name"), role: t("feedback1.role"), text: t("feedback1.text") },
+  { name: t("feedback2.name"), role: t("feedback2.role"), text: t("feedback2.text") },
+  { name: t("feedback3.name"), role: t("feedback3.role"), text: t("feedback3.text") },
+  { name: t("feedback4.name"), role: t("feedback4.role"), text: t("feedback4.text") },
+];
+---
+
+<section class="text-txdark py-[60px] md:py-[80px] lg:py-[100px] xl:py-[120px]">
+  <h2 class="mb-4 text-center leading-none uppercase md:text-lg">
+    {t("feedbackSection")}
+  </h2>
+  <h3
+    class="font-alumni mx-auto mb-6 max-w-[350px] text-center text-[32px] leading-none font-bold md:mb-10 md:max-w-[496px] md:text-5xl lg:max-w-full lg:text-[64px]"
+  >
+    {t("feedbackTitle")}
+  </h3>
+  <FeedbackSlider client:load list={feedbacks} />
+</section>

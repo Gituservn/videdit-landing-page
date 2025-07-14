@@ -72,6 +72,25 @@ export const ui = {
     portfolioCard2: "Промо для фотографа",
     portfolioCard3: "Промо для фотографа",
     portfolioCard4: "Промо для фотографа",
+
+    feedbackSection: "відгуки",
+    feedbackTitle: "Вони вже довірились — ось, що говорять клієнти",
+    "feedback1.name": "Віктор",
+    "feedback1.role": "тренер",
+    "feedback1.text":
+      "Я звернувся до Ольги для монтажу відео-тренувань для моїх клієнтів. Результат просто чудовий, відео стали виглядати набагато професійніше. Вдячний за швидкість і якість роботи!",
+    "feedback2.name": "Людмила",
+    "feedback2.role": "клієнт",
+    "feedback2.text":
+      "Щиро дякую за чудовий монтаж! Відео з дня народження мого сина вийшло дуже зворушливим — вся сім’я переглядала зі сльозами на очах. Ви зберегли ці незабутні моменти назавжди.",
+    "feedback3.name": "Вероніка",
+    "feedback3.role": "власниця кавярні",
+    "feedback3.text":
+      "Дуже задоволена результатом! Монтаж вийшов динамічним і стильним — саме те, що треба для просування моєї кав’ярні в Instagram. Клієнти вже питають, хто робив відео :)",
+    "feedback4.name": "Анет",
+    "feedback4.role": "розробниця",
+    "feedback4.text":
+      "Співпрацюємо з Олею над відео-презентаціями. Вона створила стильну заставку, додає динаміку та структуру — ролики виходять професійними, зрозумілими й приємними до перегляду.",
   },
   en: {
     logo: "Olga video",
@@ -137,5 +156,25 @@ export const ui = {
     portfolioCard2: "Promo for photographer",
     portfolioCard3: "Promo for photographer",
     portfolioCard4: "Promo for photographer",
+
+    feedbackSection: "rewievs",
+    feedbackTitle: "They already trusted us — here’s what our clients say",
+
+    "feedback1.name": "Victor",
+    "feedback1.role": "fitness coach",
+    "feedback1.text":
+      "I turned to Olga for editing my training videos for clients. The result is simply amazing — the videos now look much more professional. Grateful for the speed and quality of the work!",
+    "feedback2.name": "Liudmyla",
+    "feedback2.role": "client",
+    "feedback2.text":
+      "Thank you so much for the wonderful editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve preserved these unforgettable moments forever.",
+    "feedback3.name": "Veronika",
+    "feedback3.role": "café owner",
+    "feedback3.text":
+      "I’m really happy with the result! The edit turned out dynamic and stylish — exactly what I needed to promote my café on Instagram. Clients are already asking who made the video :)",
+    "feedback4.name": "",
+    "feedback4.role": "café owner",
+    "feedback4.text":
+      "We work with Olya on video presentations. She created a stylish intro and adds dynamic flow and structure — the videos turn out professional, clear, and enjoyable to watch.",
   },
 } as const;
