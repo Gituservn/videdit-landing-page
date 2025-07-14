@@ -84,10 +84,6 @@ const HeroVideo = () => {
             title,
             {
               onStart() {
-                if (isMobile) {
-                  title.classList.remove("uppercase");
-                  title.classList.add("normal-case");
-                }
                 title.style.fontSize = isMobile
                   ? "32px"
                   : isTab

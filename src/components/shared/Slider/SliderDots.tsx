@@ -1,5 +1,5 @@
 import { EmblaCarouselType } from "embla-carousel";
-import React, { PropsWithChildren, useCallback, useEffect, useState } from "react";
+import React, { ComponentPropsWithRef, useCallback, useEffect, useState } from "react";
 
 type UseDotButtonType = {
   selectedIndex: number;
@@ -47,9 +47,7 @@ export const useDotButton = (
   };
 };
 
-type PropType = PropsWithChildren<
-  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
->;
+type PropType = ComponentPropsWithRef<"button">;
 
 export const SliderDots: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;

@@ -1,4 +1,10 @@
-export const ArrowIcon = ({ className }: { className?: string }) => {
+export const ArrowIcon = ({
+  className,
+  style,
+}: {
+  className?: string;
+  style?: React.CSSProperties;
+}) => {
   return (
     <svg
       width="50"
@@ -8,6 +14,7 @@ export const ArrowIcon = ({ className }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       aria-label="icon arrow"
       className={`${className}`}
+      style={style}
     >
       <path
         fillRule="evenodd"

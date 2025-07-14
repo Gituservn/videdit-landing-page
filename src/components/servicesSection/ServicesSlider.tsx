@@ -29,11 +29,12 @@ export const ServicesSlider = ({ list }: { list: ServiceItemProp[] }) => {
       </div>
 
       <div className="absolute bottom-4 left-1/2 z-[1] -translate-x-1/2 md:bottom-[57px] md:flex md:w-full md:flex-col-reverse md:px-6 lg:px-10 xl:px-[60px]">
-        <div className="py-2 pt-7">
+        <div className="pt-7">
           <SliderDotsBox
             scrollSnaps={scrollSnaps}
             selectedIndex={selectedIndex}
-            sliders={list}
+            selectedColor="bg-txligth"
+            color="bg-txligth/50"
             onDotButtonClick={onDotButtonClick}
           />
         </div>
@@ -42,7 +43,7 @@ export const ServicesSlider = ({ list }: { list: ServiceItemProp[] }) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
-      <div className="absolute top-4 right-4 md:top-auto md:right-auto md:bottom-[382px] md:left-[401px] lg:bottom-[400px] lg:left-[550px] xl:bottom-[405px] xl:left-[567px]">
+      <div className="absolute top-6 right-4 md:top-auto md:right-auto md:bottom-[382px] md:left-[401px] lg:bottom-[400px] lg:left-[550px] xl:bottom-[405px] xl:left-[567px]">
         <SelectedSnapDisplay selectedSnap={selectedSnap} snapCount={snapCount} />
       </div>
     </div>

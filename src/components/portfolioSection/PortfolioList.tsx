@@ -197,9 +197,9 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                   className="group absolute top-3 right-3 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-14 lg:w-14 lg:p-2 hover:lg:scale-[0.85] hover:lg:border-[10px]"
                 >
                   {isMutedList[index] ? (
-                    <SoundIcon className="h-4 w-4 group-hover:scale-150 lg:h-6 lg:w-6" />
-                  ) : (
                     <MuteIcon className="h-4 w-4 group-hover:scale-150 lg:h-6 lg:w-6" />
+                  ) : (
+                    <SoundIcon className="h-4 w-4 group-hover:scale-150 lg:h-6 lg:w-6" />
                   )}
                 </button>
               )}
