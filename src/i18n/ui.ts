@@ -91,6 +91,10 @@ export const ui = {
     "feedback4.role": "розробниця",
     "feedback4.text":
       "Співпрацюємо з Олею над відео-презентаціями. Вона створила стильну заставку, додає динаміку та структуру — ролики виходять професійними, зрозумілими й приємними до перегляду.",
+    "feedback5.name": "Людмила",
+    "feedback5.role": "клієнт",
+    "feedback5.text":
+      "Щиро дякую за чудовий монтаж! Відео з дня народження мого сина вийшло дуже зворушливим — вся сім’я переглядала зі сльозами на очах. Ви зберегли ці незабутні моменти назавжди.",
   },
   en: {
     logo: "Olga video",
@@ -172,9 +176,13 @@ export const ui = {
     "feedback3.role": "café owner",
     "feedback3.text":
       "I’m really happy with the result! The edit turned out dynamic and stylish — exactly what I needed to promote my café on Instagram. Clients are already asking who made the video :)",
-    "feedback4.name": "",
-    "feedback4.role": "café owner",
+    "feedback4.name": "Anet",
+    "feedback4.role": "developer",
     "feedback4.text":
       "We work with Olya on video presentations. She created a stylish intro and adds dynamic flow and structure — the videos turn out professional, clear, and enjoyable to watch.",
+    "feedback5.name": "Liudmyla",
+    "feedback5.role": "client",
+    "feedback5.text":
+      "Thank you so much for the wonderful editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve preserved these unforgettable moments forever.",
   },
 } as const;

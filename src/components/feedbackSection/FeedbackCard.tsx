@@ -13,13 +13,13 @@ export const FeedbackCard = ({ item, ind }: { item: FeedbackCardProps; ind: numb
 
   return (
     <div
-      className="text-txdark relative aspect-[320/279] w-[calc(100%+2px)] bg-contain bg-center bg-no-repeat px-[18px] py-[18%] md:bg-contain md:px-5 md:py-[17%] lg:px-8 xl:px-14"
+      className="text-txdark relative aspect-[274/240] w-[calc(100%+2px)] bg-contain bg-center bg-no-repeat px-[18px] py-[15%] md:bg-contain md:px-4 md:py-[15%] lg:px-7 xl:px-10"
       style={{
         backgroundImage: 'url("/bg/frame.svg")',
       }}
     >
-      <div className="mb-[18px] flex items-baseline justify-between lg:mb-5 lg:flex-col">
-        <h4 className="font-alumni text-titleFBmob md:text-titleFBmd lg:text-titleFBlg xl:text-titleFBmob leading-none font-medium">
+      <div className="mb-[18px] flex items-baseline justify-between md:mb-[14px] lg:mb-4 lg:flex-col">
+        <h4 className="font-alumni text-titleFBmob md:text-titleFBmd lg:text-titleFBlg xl:text-titleFBxl leading-none font-medium">
           {item.name}
         </h4>
         <p className="text-roleFBmob md:text-roleFBmd lg:text-roleFBlg xl:text-roleFBxl uppercase">

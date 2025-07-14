@@ -22,17 +22,17 @@
   --color-selected: #4d4d4d;
   --color-frametext: #fcb03c;
 
-  --text-titleFBmob: clamp(24px, 8.6vw, 40px);
+  --text-titleFBmob: clamp(24px, 7.5vw, 28px);
   --text-titleFBmd: clamp(24px, 3.3vw, 40px);
   --text-titleFBlg: clamp(40px, 3.2vw, 64px);
-  --text-titleFBxl: clamp(64px, 3vw, 72px);
-  --text-textFBmob: clamp(12px, 5vw, 20px);
-  --text-textFBmd: clamp(12px, 1.6vw, 16px);
-  --text-textFBlg: clamp(18px, 1.5vw, 28px);
+  --text-titleFBxl: clamp(64px, 3.3vw, 72px);
+  --text-textFBmob: clamp(14px, 3.4vw, 17px);
+  --text-textFBmd: clamp(12px, 1.6vw, 18px);
+  --text-textFBlg: clamp(18px, 1.4vw, 28px);
   --text-textFBxl: clamp(24px, 1.3vw, 32px);
-  --text-roleFBmob: clamp(12px, 3.8vw, 18px);
+  --text-roleFBmob: clamp(12px, 3.7vw, 14px);
   --text-roleFBmd: clamp(12px, 1.5vw, 18px);
-  --text-roleFBlg: clamp(12px, 1.5vw, 18px);
+  --text-roleFBlg: clamp(14px, 1.5vw, 18px);
   --text-roleFBxl: clamp(18px, 0.8vw, 20px);
   --text-frameMob: min(3.8vw, 16.7px);
 }
@@ -76,7 +76,14 @@ body {
       transform: translateX(-50%);
     }
   }
-
+  .flex-dynamic {
+    flex: 0 0 calc(272px + (111 * ((100vw - 320px) / 447)));
+  }
+  @media (min-width: 768px) {
+    .flex-dynamic {
+      flex: 0 0 30%;
+    }
+  }
   .animate-marquee {
     animation: marquee 15s linear infinite;
   }
