@@ -43,7 +43,7 @@ export const ServicesSlider = ({ list }: { list: ServiceItemProp[] }) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
-      <div className="absolute top-4 right-4 md:top-auto md:right-auto md:bottom-[382px] md:left-[401px] lg:bottom-[400px] lg:left-[550px] xl:bottom-[405px] xl:left-[567px]">
+      <div className="absolute top-6 right-4 md:top-auto md:right-auto md:bottom-[382px] md:left-[401px] lg:bottom-[400px] lg:left-[550px] xl:bottom-[405px] xl:left-[567px]">
         <SelectedSnapDisplay selectedSnap={selectedSnap} snapCount={snapCount} />
       </div>
     </div>
