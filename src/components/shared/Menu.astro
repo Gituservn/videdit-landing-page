@@ -8,7 +8,10 @@ const t = useTranslations(Astro.url);
 ---
 
 <nav role="navigation">
-  <ul id="nav-menu-list" class="flex flex-col items-center gap-10 text-white lg:flex-row">
+  <ul
+    id="nav-menu-list"
+    class="flex flex-col items-center gap-10 text-white lg:flex-row lg:text-[18px]"
+  >
     {
       nav.map((item) => (
         <li class="uppercase">

@@ -22,7 +22,7 @@ export const FadeInText = ({ text, className = "" }: FadeInTextProps) => {
 
     gsap.to(letters, {
       opacity: 1,
-      duration: 0.5,
+      duration: 0.9,
       stagger: 0.05,
       ease: "power2.out",
       scrollTrigger: {
