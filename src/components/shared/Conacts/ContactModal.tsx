@@ -115,13 +115,13 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-alumni bg-grey group-hover:bg-blck flex h-10 items-center justify-start gap-3 px-[32%] py-2 leading-none font-bold text-white uppercase md:h-14 md:text-2xl lg:h-16 lg:text-[28px]"
+                  className="font-alumni bg-grey group-hover:bg-blck flex h-10 items-center justify-start gap-3 px-[32%] py-2 leading-none font-bold uppercase md:h-14 md:text-2xl lg:h-16 lg:text-[28px]"
                   onClick={onClose}
                 >
                   <div className="flex h-10 w-10 items-center justify-center md:h-12 md:w-12">
                     {item.icon}
                   </div>
-                  {item.name}
+                  <p className="text-white">{item.name}</p>
                 </a>
               </li>
             ))}
