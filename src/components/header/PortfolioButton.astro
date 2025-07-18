@@ -7,7 +7,7 @@ const t = useTranslations(Astro.url);
 
 <a
   href="#portfolio"
-  class="font-alumni flex w-[288px] items-center justify-center border bg-white/10 py-3 text-xl leading-none font-bold text-white backdrop-blur-[10px] md:h-14 md:text-2xl xl:h-16 xl:text-[28px]"
+  class="font-alumni flex w-[288px] items-center justify-center border bg-white/10 py-3 text-xl leading-none font-bold backdrop-blur-[10px] md:h-14 md:text-2xl xl:h-16 xl:text-[28px]"
 >
-  <AnimatedTextHover client:load text={t("portfolioButton")} />
+  <AnimatedTextHover className="text-white" client:load text={t("portfolioButton")} />
 </a>
