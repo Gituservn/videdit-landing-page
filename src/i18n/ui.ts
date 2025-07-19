@@ -95,6 +95,39 @@ export const ui = {
     "feedback5.role": "клієнт",
     "feedback5.text":
       "Щиро дякую за чудовий монтаж! Відео з дня народження мого сина вийшло дуже зворушливим — вся сім’я переглядала зі сльозами на очах. Ви зберегли ці незабутні моменти назавжди.",
+    faqSection: "FAQ",
+    faqTitle: "Поширені питання",
+    faqQuestion1: "Які терміни виконання монтажу відео?",
+    faqAnswer1:
+      "Залежить від тривалості і складності проєкту. У середньому — від 2 до 5 робочих днів. Якщо терміни “горять” — обговоримо експрес-монтаж.",
+    faqQuestion2: "Як визначити вартість монтажу?",
+    "faqAnswer2.1":
+      "<b>Базовий монтаж (2-4 години):</b> обрізка, склейка кадрів, легка кольорокорекція, додавання простих титрів та музики. <br><b>Вартість: 200-400 грн/хв</b> готового відео",
+    "faqAnswer2.2":
+      "<b>Середній рівень (1-2 дні):</b> глибша кольорокорекція, динамічні переходи, ефекти, синхронізація звуку, робота з текстом та графікою. <br><b>Вартість: 400-800 грн/хв</b> готового відео",
+    "faqAnswer2.3":
+      "<b>Висока складність (від 3 днів):</b> комплексна графіка та анімація, балансування звуку, мультикамерний монтаж. <br><b>Вартість: 800-2 000 грн/хв</b> готового відео",
+    faqQuestion3: "Які матеріали потрібно надати для початку?",
+    "faqAnswer3.1": "Надсилайте оригінальні файли без змін, прямо з камери або телефону.",
+    "faqAnswer3.2":
+      "Не використовуйте месенджери (Viber, WhatsApp, Facebook) для передачі файлів, оскільки вони знижують якість відео.",
+    "faqAnswer3.3": "Для відео, знятого на телефон, рекомендується завантаження через Google Диск.",
+    faqQuestion4: "Чи робите ви адаптацію під Instagram / TikTok / YouTube?",
+    "faqAnswer4.1":
+      "Так. Я монтую відео під формат відповідної платформи. Пости та сторіз, довгі відео та шорти, бізнес-відео, презентації, реклама.",
+    "faqAnswer4.2":
+      "Платформи: <br>TikTok, Facebook, Instagram, YouTube, LinkedIn, Twitter (X), Pinterest.",
+    "faqAnswer4.3":
+      "Послуги включають: <br>Динамічний темп монтажу <br>Використання актуальних ефектів, переходів та анімації <br>Оптимізацію контенту відповідно до трендів платформи <br>Налаштування звуку та додавання субтитрів",
+    faqQuestion5: "Як передати матеріали для монтажу?",
+    "faqAnswer5.1":
+      "Рекомендовані сервіси: Google Диск, Telegram, WhatsApp (лише для коротких відео, можливі обмеження якості)",
+    "faqAnswer5.2":
+      "Важливі моменти при передачі: <br>Передавайте файли без стиснення. <br>Описуйте матеріали – додавайте текстові файли або тайм-коди, якщо є специфічні побажання. <br>Передавайте додаткові файли – логотипи, музику, графіку, шрифти (за необхідності).",
+    "faqAnswer5.3":
+      "Передача файлів через хмарні сервіси є найбільш ефективним способом, що забезпечує збереження якості та швидкий доступ до матеріалів.",
+    showAnswer: "Показати відповідь",
+    hideAnswer: "Сховати відповідь",
   },
   en: {
     logo: "Olga video",
@@ -171,7 +204,7 @@ export const ui = {
     "feedback2.name": "Liudmyla",
     "feedback2.role": "client",
     "feedback2.text":
-      "Thank you so much for the wonderful editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve preserved these unforgettable moments forever.",
+      "Thank you so much for the adorable editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve preserved these vivid moments forever.",
     "feedback3.name": "Veronika",
     "feedback3.role": "café owner",
     "feedback3.text":
@@ -183,6 +216,39 @@ export const ui = {
     "feedback5.name": "Liudmyla",
     "feedback5.role": "client",
     "feedback5.text":
-      "Thank you so much for the wonderful editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve preserved these unforgettable moments forever.",
+      "Thank you so much for the adorable editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve saved these vivid moments forever.",
+    faqSection: "FAQ",
+    faqTitle: "Frequently asked questions",
+    faqQuestion1: "What’s the typical turnaround time for a video edit?",
+    faqAnswer1:
+      "It depends on the length and complexity of the project. On average — from 2 to 5 business days. If it's urgent — we can discuss express editing.",
+    faqQuestion2: "How is the editing price calculated?",
+    "faqAnswer2.1":
+      "<b>Basic editing (2–4 hours):</b> trimming, cutting, light color correction, adding simple titles and music. <br><b>Cost: 200–400 UAH/min</b> of final video.",
+    "faqAnswer2.2":
+      "<b>Intermediate level (1–2 days):</b> advanced color correction, dynamic transitions, effects, sound sync, working with text and graphics. <br><b>Cost: 400–800 UAH/min</b> of final video.",
+    "faqAnswer2.3":
+      "<b>High complexity (from 3 days):</b> complex graphics and animation, sound balancing, multi-camera editing. <br><b>Cost: 800–2,000 UAH/min</b> of final video.",
+    faqQuestion3: "What materials do I need to provide to start the project?",
+    "faqAnswer3.1": "Send original unedited files directly from your camera or phone.",
+    "faqAnswer3.2":
+      "Avoid using messengers (Viber, WhatsApp, Facebook) to send files, as they reduce video quality.",
+    "faqAnswer3.3": "For phone-shot videos, uploading via Google Drive is recommended.",
+    faqQuestion4: "Do you offer edits tailored for Instagram, TikTok, or YouTube?",
+    "faqAnswer4.1":
+      "Yes. I edit videos to fit the format of the chosen platform — posts and stories, long videos and shorts, business videos, presentations, ads.",
+    "faqAnswer4.2":
+      "Platforms: <br>TikTok, Facebook, Instagram, YouTube, LinkedIn, Twitter (X), Pinterest.",
+    "faqAnswer4.3":
+      "Services include: <br>Dynamic editing pace <br>Use of trending effects, transitions, and animations <br>Platform-specific content optimization <br>Sound tuning and subtitle addition.",
+    faqQuestion5: "How do I send you my footage and files?",
+    "faqAnswer5.1":
+      "Recommended services: Google Drive, Telegram, WhatsApp (only for short videos, quality limitations possible).",
+    "faqAnswer5.2":
+      "Important tips when sending files: <br>Send uncompressed files. <br>Describe the materials — add text notes or timestamps if you have specific preferences. <br>Send additional files — logos, music, graphics, fonts (if needed).",
+    "faqAnswer5.3":
+      "Transferring files via cloud services is the most efficient way to maintain quality and provide fast access to materials.",
+    showAnswer: "Show answer",
+    hideAnswer: "Hide answer",
   },
 } as const;

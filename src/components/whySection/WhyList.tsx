@@ -1,7 +1,6 @@
+import { WhyListProp } from "@/types";
 import { ParallelogramRow } from "../shared/ParallelogramRow";
 import { WhyCard } from "./WhyCard";
-
-type WhyListProp = { title: string; text: string };
 
 export const WhyList = ({ whyList }: { whyList: WhyListProp[] }) => {
   return (

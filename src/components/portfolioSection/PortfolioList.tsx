@@ -4,8 +4,7 @@ import { PauseIcon } from "../shared/icons/PauseIcon";
 import { PlayIcon } from "../shared/icons/PlayIcon";
 import { SoundIcon } from "../shared/icons/SoundIcon";
 import { MuteIcon } from "../shared/icons/MuteIcon";
-
-export type PortfolioProp = { title: string; videoURL: string };
+import { PortfolioProp } from "@/types";
 
 export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[] }) => {
   const [heightListTab, setHeightListTab] = useState(0);
@@ -128,7 +127,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
   return (
     <ul
       style={isTabletUp ? { height: `${heightListTab}px` } : undefined}
-      className="relative mx-auto flex max-w-[500px] flex-col gap-4 md:max-w-full"
+      className="relative mx-auto flex max-w-[500px] flex-col gap-4 md:max-w-full lg:max-w-[1379px]"
     >
       {portfolioList.map((item, index) => {
         const isHovered = hoveredIndex === index;

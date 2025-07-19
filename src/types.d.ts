@@ -36,3 +36,37 @@ declare module "*.png?url" {
   const src: string;
   export default src;
 }
+
+export type SinglePosition = Partial<{
+  top: number | string;
+  right: number | string;
+  bottom: number | string;
+  left: number | string;
+}>;
+
+export type ResponsivePosition = {
+  tablet?: SinglePosition;
+  desktop?: SinglePosition;
+};
+
+export type FaqCardProps = {
+  question: string;
+  answer: string[];
+  position?: ResponsivePosition;
+  isOpen: boolean;
+  showAnswer: string;
+  hideAnswer: string;
+  onToggle: () => void;
+};
+
+export type FeedbackCardProps = {
+  name: string;
+  role: string;
+  text: string;
+};
+
+export type PortfolioProp = { title: string; videoURL: string };
+
+export type ServiceItemProp = { videoURL: string; title: string; list: string[] };
+
+export type WhyListProp = { title: string; text: string };

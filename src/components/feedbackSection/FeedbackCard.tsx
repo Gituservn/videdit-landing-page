@@ -1,10 +1,5 @@
+import { FeedbackCardProps } from "@/types";
 import { ArrowFrameIcon } from "../shared/icons/ArrowFrameIcon";
-
-export type FeedbackCardProps = {
-  name: string;
-  role: string;
-  text: string;
-};
 
 export const FeedbackCard = ({ item, ind }: { item: FeedbackCardProps; ind: number }) => {
   const arrowStyle = "md:max-h-auto h-[1.9vw] max-h-[8.4px] w-auto md:h-[calc(1.9vw/3)] md:max-h-3";
@@ -13,7 +8,7 @@ export const FeedbackCard = ({ item, ind }: { item: FeedbackCardProps; ind: numb
 
   return (
     <div
-      className="text-txdark relative aspect-[274/240] w-[calc(100%+2px)] bg-contain bg-center bg-no-repeat px-[18px] py-[15%] md:bg-contain md:px-4 md:py-[15%] lg:px-7 xl:px-10"
+      className="text-txdark relative aspect-[274/240] w-[calc(100%+2px)] bg-contain bg-center bg-no-repeat px-[18px] py-[15%] md:bg-contain md:px-[14px] md:py-[15%] lg:px-7 xl:px-10"
       style={{
         backgroundImage: 'url("/bg/frame.svg")',
       }}

@@ -1,4 +1,4 @@
-export type ServiceItemProp = { videoURL: string; title: string; list: string[] };
+import { ServiceItemProp } from "@/types";
 
 export const ServiceCard = ({ item }: { item: ServiceItemProp }) => {
   return (
