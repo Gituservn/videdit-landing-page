@@ -2,7 +2,8 @@ import { useRef, type FC, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ArrowIcon } from "../shared/icons/ArrowIcon";
 import { FaqCardProps } from "@/types";
-import { getCurrentPosition } from "@/utils/getCurrentPosition";
+import { animateMobile } from "@/utils/animateMobile";
+import { animateDesktop } from "@/utils/animateDesktop";
 
 export const FaqCard: FC<FaqCardProps> = ({
   question,
@@ -25,17 +26,13 @@ export const FaqCard: FC<FaqCardProps> = ({
     const content = contentRef.current;
     const arrow = arrowRef.current;
     const rect = card.getBoundingClientRect();
+
     if (!originalSizeRef.current) {
       originalSizeRef.current = { width: rect.width, height: rect.height };
     }
     const isMobile = window.innerWidth < 768;
 
-    const gap =
-      1280 <= window.innerWidth && window.innerWidth < 1920
-        ? 29
-        : window.innerWidth >= 1920
-          ? 30
-          : 17;
+    const gap = window.innerWidth >= 1920 ? 30 : window.innerWidth >= 1280 ? 29 : 17;
 
     const scrollHeight = content.scrollHeight;
     const newWidth = rect.width * 2 + gap;
@@ -45,111 +42,20 @@ export const FaqCard: FC<FaqCardProps> = ({
     gsap.killTweensOf([card, content, arrow]);
 
     if (isMobile) {
-      if (isOpen) {
-        gsap.fromTo(
-          content,
-          { maxHeight: 0, height: 0, marginTop: 0 },
-          {
-            maxHeight: scrollHeight,
-            height: scrollHeight,
-            marginTop: "12px",
-            duration: 0.6,
-            ease: "power2.out",
-          },
-        );
-      } else {
-        const tl = gsap.timeline();
-        tl.to(content, {
-          maxHeight: 0,
-          height: 0,
-          marginTop: 0,
-          duration: 0.6,
-          ease: "power2.inOut",
-        });
-      }
+      animateMobile(content, scrollHeight, isOpen);
     } else {
-      if (isOpen) {
-        const pos = getCurrentPosition(position);
-        const tl = gsap.timeline();
-        tl.set(card, {
-          position: "absolute",
-          zIndex: 3,
-          ...pos,
-        })
-          .to(
-            card,
-            {
-              width: newWidth,
-              height: newHeight,
-              ease: "power3.out",
-              duration: 0.6,
-            },
-            0,
-          )
-          .to(
-            arrow,
-            {
-              top: 16,
-              right: 16,
-              duration: 0.6,
-            },
-            0,
-          )
-          .fromTo(
-            content,
-            {
-              opacity: 0,
-              maxHeight: 0,
-              height: 0,
-              marginTop: 0,
-            },
-            {
-              opacity: 1,
-              maxHeight: newContentHeight,
-              height: newContentHeight,
-              marginTop: "16px",
-              duration: 0.3,
-              ease: "power2.out",
-            },
-            0.3,
-          );
-      } else {
-        const tl = gsap.timeline();
-
-        tl.to(
-          content,
-          {
-            opacity: 0,
-            maxHeight: 0,
-            height: 0,
-            marginTop: 0,
-            duration: 0.3,
-            ease: "power2.inOut",
-          },
-          0,
-        )
-          .to(
-            card,
-            {
-              width: originalSizeRef.current.width,
-              height: originalSizeRef.current.height,
-              ease: "power3.inOut",
-              duration: 0.8,
-            },
-            0.6,
-          )
-          .set(card, { clearProps: "zIndex,position" })
-          .to(
-            arrow,
-            {
-              top: "76%",
-              clearProps: "top,right",
-              ease: "power2.inOut",
-              duration: 0.6,
-            },
-            0.6,
-          );
-      }
+      animateDesktop({
+        card,
+        content,
+        arrow,
+        rect,
+        newWidth,
+        newHeight,
+        newContentHeight,
+        isOpen,
+        originalSize: originalSizeRef.current,
+        position,
+      });
     }
   }, [isOpen]);
 
@@ -171,10 +77,7 @@ export const FaqCard: FC<FaqCardProps> = ({
         </button>
       </div>
 
-      <div
-        ref={contentRef}
-        className={`flex h-0 flex-col gap-2 overflow-hidden transition-all duration-500 ease-in-out`}
-      >
+      <div ref={contentRef} className={`flex h-0 flex-col gap-2 overflow-hidden`}>
         {answer.map((text, idx) => (
           <p
             key={idx}
