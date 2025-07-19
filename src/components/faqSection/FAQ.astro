@@ -1,0 +1,70 @@
+---
+import { useTranslations } from "@/i18n/utils";
+
+import { ParallelogramRow } from "../shared/ParallelogramRow";
+import { FaqList } from "./FaqList";
+
+const t = useTranslations(Astro.url);
+
+const faqList = [
+  {
+    question: t("faqQuestion1"),
+    answer: [t("faqAnswer1")],
+    position: {
+      tablet: { top: 0, left: 0 },
+      desktop: { top: 0, left: 0 },
+    },
+  },
+  {
+    question: t("faqQuestion2"),
+    answer: [t("faqAnswer2.1"), t("faqAnswer2.2"), t("faqAnswer2.3")],
+    position: {
+      tablet: { top: 0, right: 0 },
+      desktop: { top: 0, left: 0 },
+    },
+  },
+  {
+    question: t("faqQuestion3"),
+    answer: [t("faqAnswer3.1"), t("faqAnswer3.2"), t("faqAnswer3.3")],
+    position: {
+      tablet: { bottom: 0, left: 0 },
+      desktop: { top: 0, right: 0 },
+    },
+  },
+  {
+    question: t("faqQuestion4"),
+    answer: [t("faqAnswer4.1"), t("faqAnswer4.2"), t("faqAnswer4.3")],
+    position: {
+      tablet: { bottom: 0, left: 0 },
+      desktop: { bottom: 0, right: 0 },
+    },
+  },
+  {
+    question: t("faqQuestion5"),
+    answer: [t("faqAnswer5.1"), t("faqAnswer5.2"), t("faqAnswer5.3")],
+    position: {
+      tablet: { bottom: 0, right: 0 },
+      desktop: { bottom: 0, right: 0 },
+    },
+  },
+];
+---
+
+<section class="text-txdark psection">
+  <div class="mb-4 flex items-center justify-between">
+    <div><ParallelogramRow client:load amount={3} /></div>
+    <h2 class="leading-none uppercase md:text-lg">{t("faqSection")}</h2>
+    <div><ParallelogramRow client:load amount={3} /></div>
+  </div>
+  <h3
+    class="font-alumni mx-auto mb-6 max-w-[350px] text-center text-[32px] leading-none font-bold md:mb-10 md:max-w-[496px] md:text-5xl lg:max-w-[900px] lg:text-[64px]"
+  >
+    {t("faqTitle")}
+  </h3>
+  <FaqList
+    client:load
+    faqList={faqList}
+    showAnswer={t("showAnswer")}
+    hideAnswer={t("hideAnswer")}
+  />
+</section>
