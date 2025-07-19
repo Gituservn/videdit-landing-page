@@ -29,6 +29,7 @@ export const FaqCard: FC<FaqCardProps> = ({
       originalSizeRef.current = { width: rect.width, height: rect.height };
     }
     const isMobile = window.innerWidth < 768;
+
     const gap =
       1280 <= window.innerWidth && window.innerWidth < 1920
         ? 29
@@ -39,6 +40,7 @@ export const FaqCard: FC<FaqCardProps> = ({
     const scrollHeight = content.scrollHeight;
     const newWidth = rect.width * 2 + gap;
     const newHeight = rect.height * 2 + gap;
+    const newContentHeight = newHeight - 90;
 
     gsap.killTweensOf([card, content, arrow]);
 
@@ -50,7 +52,7 @@ export const FaqCard: FC<FaqCardProps> = ({
           {
             maxHeight: scrollHeight,
             height: scrollHeight,
-            marginTop: 12,
+            marginTop: "12px",
             duration: 0.6,
             ease: "power2.out",
           },
@@ -103,9 +105,9 @@ export const FaqCard: FC<FaqCardProps> = ({
             },
             {
               opacity: 1,
-              maxHeight: scrollHeight,
-              height: scrollHeight,
-              marginTop: 12,
+              maxHeight: newContentHeight,
+              height: newContentHeight,
+              marginTop: "16px",
               duration: 0.3,
               ease: "power2.out",
             },
