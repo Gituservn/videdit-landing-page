@@ -221,33 +221,34 @@ export const ui = {
     faqTitle: "Frequently asked questions",
     faqQuestion1: "What’s the typical turnaround time for a video edit?",
     faqAnswer1:
-      "It depends on the length and complexity of the project. On average — from 2 to 5 business days. If it's urgent — we can discuss express editing.",
+      "It depends on the length and complexity of the project. On average — from 2 to 5 business days. In a rush? Let’s talk express editing.",
     faqQuestion2: "How is the editing price calculated?",
     "faqAnswer2.1":
-      "<b>Basic editing (2–4 hours):</b> trimming, cutting, light color correction, adding simple titles and music. <br><b>Cost: 200–400 UAH/min</b> of final video.",
+      "<b>Basic edit (2–4 hours):</b> trimming, stitching footage, light color correction, adding basic titles and music. <br><b>Rate: 200–400 UAH/min</b> of final video.",
     "faqAnswer2.2":
-      "<b>Intermediate level (1–2 days):</b> advanced color correction, dynamic transitions, effects, sound sync, working with text and graphics. <br><b>Cost: 400–800 UAH/min</b> of final video.",
+      "<b>Standard level (1–2 days):</b> deeper color grading, dynamic transitions, effects, audio sync, text and graphics. <br><b>Rate: 400–800 UAH/min</b> of final video.",
     "faqAnswer2.3":
-      "<b>High complexity (from 3 days):</b> complex graphics and animation, sound balancing, multi-camera editing. <br><b>Cost: 800–2,000 UAH/min</b> of final video.",
+      "<b>Advanced edit (from 3 days):</b> complex graphics & animation, audio balancing, multicam editing. <br><b>Rate: 800–2,000 UAH/min</b> of final video.",
     faqQuestion3: "What materials do I need to provide to start the project?",
-    "faqAnswer3.1": "Send original unedited files directly from your camera or phone.",
+    "faqAnswer3.1":
+      "Send original unedited files directly from your camera or phonePlease send original, uncompressed files directly from your camera or phone.",
     "faqAnswer3.2":
-      "Avoid using messengers (Viber, WhatsApp, Facebook) to send files, as they reduce video quality.",
-    "faqAnswer3.3": "For phone-shot videos, uploading via Google Drive is recommended.",
-    faqQuestion4: "Do you offer edits tailored for Instagram, TikTok, or YouTube?",
+      "Avoid sending footage via messengers (like Viber, WhatsApp, Facebook) — they reduce video quality.",
+    "faqAnswer3.3": "If filming on a phone, uploading via Google Drive is recommended.",
+    faqQuestion4: "Do you offer platform-specific editing for Instagram, TikTok, or YouTube?",
     "faqAnswer4.1":
-      "Yes. I edit videos to fit the format of the chosen platform — posts and stories, long videos and shorts, business videos, presentations, ads.",
+      "Yes. I tailor each video to fit the style and format of its platform — whether it's Stories, long-form content, Shorts, business videos, promos, or presentations.",
     "faqAnswer4.2":
       "Platforms: <br>TikTok, Facebook, Instagram, YouTube, LinkedIn, Twitter (X), Pinterest.",
     "faqAnswer4.3":
-      "Services include: <br>Dynamic editing pace <br>Use of trending effects, transitions, and animations <br>Platform-specific content optimization <br>Sound tuning and subtitle addition.",
-    faqQuestion5: "How do I send you my footage and files?",
+      "Includes: <br>Fast-paced, dynamic editing <br>Trendy effects, transitions & animations <br>Content optimization based on platform trends <br>Audio adjustment and subtitle integration",
+    faqQuestion5: "How do I send files for editing?",
     "faqAnswer5.1":
-      "Recommended services: Google Drive, Telegram, WhatsApp (only for short videos, quality limitations possible).",
+      "Recommended platforms: Google Drive, Telegram, WhatsApp (only for short clips – may affect quality).",
     "faqAnswer5.2":
-      "Important tips when sending files: <br>Send uncompressed files. <br>Describe the materials — add text notes or timestamps if you have specific preferences. <br>Send additional files — logos, music, graphics, fonts (if needed).",
+      "Key tips for delivery: <br>Send files uncompressed to preserve quality. <br>Add context — include text notes or timestamps if you have specific requests. <br>Don’t forget extra files like logos, music, graphics, or fonts (if needed).",
     "faqAnswer5.3":
-      "Transferring files via cloud services is the most efficient way to maintain quality and provide fast access to materials.",
+      "Cloud services are the most reliable way to ensure full quality and quick access to your files.",
     showAnswer: "Show answer",
     hideAnswer: "Hide answer",
   },
