@@ -21,6 +21,7 @@
   --color-bgmodal: #fcffd6;
   --color-selected: #4d4d4d;
   --color-frametext: #fcb03c;
+  --color-ctablack: #191919;
 
   --text-titleFBmob: clamp(24px, 7.5vw, 28px);
   --text-titleFBmd: clamp(24px, 3.3vw, 40px);
