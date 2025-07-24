@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+import OlgaCTA from "@/assets/images/cta.jpg";
+import { useTranslations } from "@/i18n/utils";
+
+import { ContactWrapper } from "../shared/Conacts/ContactWrapper";
+import { BatteryAnimation } from "./BatteryAnimation";
+const t = useTranslations(Astro.url);
+---
+
+<section
+  class="bg-ctablack text-txligth flex h-screen min-h-[720px] items-center justify-center md:hidden"
+>
+  <div class="psection">
+    <BatteryAnimation client:load />
+
+    <h2
+      class="font-alumni mx-auto mt-6 mb-6 max-w-[350px] text-center text-[32px] leading-none font-bold md:mb-9 md:max-w-[585px] md:text-5xl lg:max-w-[912px] lg:text-[80px] xl:max-w-[1020px] xl:text-[96px]"
+    >
+      {t("ctaTitle")}
+    </h2>
+    <div class="mx-auto mb-6 w-[288px] md:mb-9 md:w-[240px] lg:w-[340px]">
+      <Image
+        src={OlgaCTA}
+        alt="Olga's photo"
+        width={1434}
+        height={1509}
+        class="aspect-[288/304] w-full object-cover object-center md:aspect-[240/254] lg:aspect-[340/358]"
+      />
+    </div>
+    <p
+      class="mx-auto mb-10 max-w-[350px] text-center md:max-w-[525px] md:text-xl lg:mb-14 lg:max-w-[900px] lg:text-2xl xl:mb-12 xl:text-[28px]"
+    >
+      {t("ctaText")}
+    </p>
+    <ContactWrapper
+      text={t("ctaButton")}
+      className="mx-auto text-xl leading-none text-white normal-case md:text-2xl xl:text-[28px]"
+    />
+  </div>
+</section>

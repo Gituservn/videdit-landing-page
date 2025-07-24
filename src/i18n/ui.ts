@@ -128,6 +128,10 @@ export const ui = {
       "Передача файлів через хмарні сервіси є найбільш ефективним способом, що забезпечує збереження якості та швидкий доступ до матеріалів.",
     showAnswer: "Показати відповідь",
     hideAnswer: "Сховати відповідь",
+    ctaTitle: "Почнемо створювати ваше відео вже сьогодні?",
+    ctaText:
+      "Напишіть мені, і я підкажу найкращий формат під ваш запит — без зобов’язань і складнощів.",
+    ctaButton: "Зв’язатись зі мною",
   },
   en: {
     logo: "Olga video",
@@ -251,5 +255,9 @@ export const ui = {
       "Cloud services are the most reliable way to ensure full quality and quick access to your files.",
     showAnswer: "Show answer",
     hideAnswer: "Hide answer",
+    ctaTitle: "Let’s start your video today!",
+    ctaText:
+      "Message me and I’ll suggest the best format for your request — no pressure, no commitments.",
+    ctaButton: "Get in Touch",
   },
 } as const;
