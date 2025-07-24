@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Footer from "@/components/footer/Footer.astro";
 import Header from "@/components/header/Header.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 
@@ -20,5 +21,6 @@ const lang = getLangFromUrl(Astro.url);
   <body class="font-ruda bg-txligth no-scroll relative overflow-x-clip">
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
