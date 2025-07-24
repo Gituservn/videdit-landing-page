@@ -132,6 +132,9 @@ export const ui = {
     ctaText:
       "Напишіть мені, і я підкажу найкращий формат під ваш запит — без зобов’язань і складнощів.",
     ctaButton: "Зв’язатись зі мною",
+    footerNav: "Навігація",
+    footerAllRights: "Всі права захищені",
+    footerDeveloped: "розробка сайту",
   },
   en: {
     logo: "Olga video",
@@ -259,5 +262,8 @@ export const ui = {
     ctaText:
       "Message me and I’ll suggest the best format for your request — no pressure, no commitments.",
     ctaButton: "Get in Touch",
+    footerNav: "Navigation",
+    footerAllRights: "All rights reserved",
+    footerDeveloped: "website development by",
   },
 } as const;

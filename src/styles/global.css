@@ -91,6 +91,7 @@ body {
 
   .arrow-wrapper {
     display: inline-block;
+    cursor: pointer;
     transition: transform 0.8s ease;
     will-change: transform;
   }

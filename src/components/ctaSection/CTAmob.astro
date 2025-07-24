@@ -35,6 +35,7 @@ const t = useTranslations(Astro.url);
       {t("ctaText")}
     </p>
     <ContactWrapper
+      client:load
       text={t("ctaButton")}
       className="mx-auto text-xl leading-none text-white normal-case md:text-2xl xl:text-[28px]"
     />

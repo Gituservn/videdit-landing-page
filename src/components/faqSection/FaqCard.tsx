@@ -62,7 +62,7 @@ export const FaqCard: FC<FaqCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className="border-blck relative h-full w-full cursor-pointer border-b bg-white px-3 py-6 transition-[margin] duration-300 ease-in-out will-change-transform md:aspect-square md:border md:p-[11px] xl:p-3"
+      className="border-blck group relative h-full w-full cursor-pointer border-b bg-white px-3 py-6 transition-[margin] duration-300 ease-in-out will-change-transform md:aspect-square md:border md:p-[11px] xl:p-3"
       onClick={onToggle}
     >
       <div className="flex w-full items-center justify-between">
@@ -70,10 +70,12 @@ export const FaqCard: FC<FaqCardProps> = ({
         <button
           ref={arrowRef}
           type="button"
-          className={`right-[11px] bottom-[11px] flex h-11 w-11 items-center justify-center transition-transform md:absolute xl:h-[50px] xl:w-[50px] ${isOpen ? "rotate-[135deg]" : "-rotate-45"} duration-500 ease-in-out`}
+          className={`right-[11px] bottom-[11px] flex h-11 w-11 items-center justify-center overflow-hidden transition-transform md:absolute xl:h-[50px] xl:w-[50px] ${isOpen ? "rotate-[135deg]" : "-rotate-45"} duration-500 ease-in-out`}
           aria-label={isOpen ? hideAnswer : showAnswer}
         >
-          <ArrowIcon />
+          <div className="arrow-wrapper">
+            <ArrowIcon className="arrow-icon h-11 w-11 transition-transform duration-300 ease-in-out xl:h-[50px] xl:w-[50px]" />
+          </div>
         </button>
       </div>
 
