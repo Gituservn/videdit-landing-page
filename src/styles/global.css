@@ -96,8 +96,16 @@ body {
     will-change: transform;
   }
 
-  .group:hover .arrow-wrapper {
-    animation: arrow-fly 1.6s ease infinite;
+  @media (min-width: 1024px) {
+    .group:hover .arrow-wrapper {
+      animation: arrow-fly 1.6s ease infinite;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .group:active .arrow-wrapper {
+      animation: arrow-fly 0.6s ease 1;
+    }
   }
 
   @keyframes arrow-fly {
