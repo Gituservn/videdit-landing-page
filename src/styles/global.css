@@ -98,7 +98,7 @@ body {
 
   @media (min-width: 1024px) {
     .group:hover .arrow-wrapper {
-      animation: arrow-fly 1.6s ease infinite;
+      animation: arrow-fly 1.6s ease 2;
     }
   }
 
