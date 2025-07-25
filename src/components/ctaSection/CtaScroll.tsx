@@ -29,7 +29,7 @@ export const CtaScroll = ({ children }: { children?: React.ReactNode }) => {
 
           ctxRef.current = gsap.context(() => {
             gsap.set(circleRef.current, {
-              scale: 3,
+              scale: 4,
               transformOrigin: "center center",
             });
 
