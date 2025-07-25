@@ -171,7 +171,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                   videoRefs.current[index] = el;
                 }}
                 autoPlay={isTabletUp ? index === activeIndex : isMobilePlaying[index]}
-                muted
+                muted={true}
                 playsInline
                 loop
                 onClick={() => handleVideoClick(index)}
