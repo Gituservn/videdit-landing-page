@@ -127,7 +127,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
   return (
     <ul
       style={isTabletUp ? { height: `${heightListTab}px` } : undefined}
-      className="relative mx-auto flex max-h-[740px] max-w-[500px] flex-col gap-4 md:max-w-full lg:max-w-[1479px]"
+      className="relative mx-auto flex max-w-[500px] flex-col gap-4 md:max-h-[740px] md:max-w-full lg:max-w-[1479px]"
     >
       {portfolioList.map((item, index) => {
         const isHovered = hoveredIndex === index;
