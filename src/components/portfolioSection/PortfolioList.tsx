@@ -71,7 +71,6 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
       if (!video) return;
 
       video.muted = true;
-      video.load();
       if (isTabletUp) {
         if (i === activeIndex) {
           video.play().catch((err) => {
