@@ -18,6 +18,14 @@ export const FaqCard: FC<FaqCardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLButtonElement>(null);
   const originalSizeRef = useRef<{ width: number; height: number } | null>(null);
+  const lastClickTimeRef = useRef<number>(0);
+
+  const handleClick = () => {
+    const now = Date.now();
+    if (now - lastClickTimeRef.current < 1000) return;
+    lastClickTimeRef.current = now;
+    onToggle();
+  };
 
   useLayoutEffect(() => {
     if (!cardRef.current || !contentRef.current || !arrowRef.current) return;
@@ -63,7 +71,7 @@ export const FaqCard: FC<FaqCardProps> = ({
     <div
       ref={cardRef}
       className="border-blck group relative h-full w-full cursor-pointer border-b bg-white px-3 py-6 transition-[margin] duration-300 ease-in-out will-change-transform md:aspect-square md:border md:p-[11px] xl:p-3"
-      onClick={onToggle}
+      onClick={handleClick}
     >
       <div className="flex w-full items-center justify-between">
         <p className="w-[90%] font-bold md:text-xl xl:text-2xl">{question}</p>
