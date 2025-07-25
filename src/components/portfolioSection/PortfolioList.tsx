@@ -71,16 +71,20 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
       if (!video) return;
 
       video.muted = true;
+      video.load();
       if (isTabletUp) {
         if (i === activeIndex) {
-          video.play().catch(() => {});
+          video.play().catch((err) => {
+            console.warn("Tablet autoplay error:", err);
+          });
         } else {
           video.pause();
         }
       } else {
         if (isMobilePlaying[i]) {
-          video.load();
-          video.play().catch(() => {});
+          video.play().catch((err) => {
+            console.warn("Mobile autoplay error:", err);
+          });
         } else {
           video.pause();
         }
@@ -174,6 +178,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                 muted={true}
                 playsInline
                 loop
+                onLoadedData={() => console.log(`Video ${index} loaded`)}
                 onClick={() => handleVideoClick(index)}
                 className="absolute inset-0 h-full w-full object-cover"
               >
