@@ -1,16 +1,29 @@
 ---
+import About from "@/components/aboutSection/About.astro";
+import CTA from "@/components/ctaSection/CTA.astro";
+import CTAmob from "@/components/ctaSection/CTAmob.astro";
+import InfinityRow from "@/components/ctaSection/InfinityRow.astro";
+import FAQ from "@/components/faqSection/FAQ.astro";
+import Feedback from "@/components/feedbackSection/Feedback.astro";
+import Hero from "@/components/hero/Hero.astro";
+import Portfolio from "@/components/portfolioSection/Portfolio.astro";
+import Quote from "@/components/quoteSection/Quote.astro";
+import Services from "@/components/servicesSection/Services.astro";
+import Why from "@/components/whySection/Why.astro";
 
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<Layout>
+  <Hero />
+  <Why />
+  <Services />
+  <FAQ />
+  <Portfolio />
+  <Quote />
+  <About />
+  <InfinityRow />
+  <Feedback />
+  <CTAmob />
+  <CTA />
+</Layout>

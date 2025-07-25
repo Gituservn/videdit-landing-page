@@ -1,0 +1,32 @@
+---
+import HeroVideo from "@/components/hero/HeroVideo";
+import { useTranslations } from "@/i18n/utils";
+
+import PortfolioButton from "../header/PortfolioButton.astro";
+import { ContactWrapper } from "../shared/Conacts/ContactWrapper";
+import { HeroTitle } from "./HeroTitle";
+const t = useTranslations(Astro.url);
+---
+
+<section class="relative min-h-[100vh] overflow-hidden">
+  <HeroVideo client:load />
+  <HeroTitle title={t("heroTitle")} />
+
+  <div
+    class="absolute bottom-[52px] left-4 md:bottom-10 md:left-6 lg:bottom-[92px] lg:left-10 xl:left-[60px]"
+  >
+    <p
+      class="text-txligth max-w-[298px] md:max-w-[461px] md:text-[20px] lg:max-w-[560px] lg:text-2xl xl:max-w-[645px] xl:text-[28px]"
+    >
+      {t("heroText")}
+    </p>
+    <div class="mt-8 flex flex-col gap-4 md:mt-14 md:gap-6 lg:flex-row xl:mt-[60px]">
+      <ContactWrapper
+        client:load
+        text={t("orderButton")}
+        className="bg-grey mx-0 h-11 border-0 text-xl text-white normal-case md:h-14 md:text-2xl xl:h-16 xl:text-[28px]"
+      />
+      <PortfolioButton />
+    </div>
+  </div>
+</section>

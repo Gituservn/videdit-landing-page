@@ -1,0 +1,74 @@
+---
+import IloveMyTeam from "@/assets/icons/ilovemyteam.svg";
+import Logo from "@/assets/icons/logo.svg";
+import { nav } from "@/constants/navList";
+import { useTranslations } from "@/i18n/utils";
+
+import { AnimatedTextHover } from "../shared/AnimatedTextHover";
+import { SocialList } from "./SocialList";
+import { UpButton } from "./UpButton";
+
+const t = useTranslations(Astro.url);
+const IloveMyTeamLink = "https://www.ilovemyteam.online/";
+---
+
+<footer
+  class="bg-blck border-txgrey border-t pt-[45px] pb-[30px] md:pt-10 md:pb-[50px] lg:pt-[60px] lg:pb-10"
+>
+  <div
+    class="relative px-4 pb-8 md:px-6 md:pb-7 lg:flex lg:justify-between lg:px-10 lg:pb-[60px] xl:px-15"
+  >
+    <div class="lg: flex-row-reverse lg:flex lg:w-[calc(50%+46px)] lg:justify-between">
+      <div
+        class="mx-auto mb-6 flex h-16 w-16 items-center justify-center md:mb-5 md:h-[92px] md:w-[92px] lg:mx-0 lg:mb-0"
+      >
+        <Logo />
+      </div>
+      <div class="mb-8 md:mb-9 lg:mb-0">
+        <h3
+          class="font-alumni text-txligth mx-auto mb-[23px] w-fit text-[18px] leading-none font-bold uppercase md:mb-4 lg:mx-0 lg:mb-[35px]"
+        >
+          {t("footerNav")}
+        </h3>
+        <nav role="navigation">
+          <ul
+            id="nav-menu-list"
+            class="text-txligth flex flex-col items-center justify-center gap-5 text-[18px] md:flex-row md:gap-10"
+          >
+            {
+              nav.map((item) => (
+                <li class="uppercase">
+                  <a href={`#${item.id}`} class="">
+                    <AnimatedTextHover client:load text={t(item.titleKey)} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <SocialList client:load />
+  </div>
+  <div
+    class="border-txgrey relative border-t px-4 pt-8 md:px-6 md:pt-12 lg:px-10 lg:pt-10 xl:px-15"
+  >
+    <div
+      class="relative mx-auto flex max-w-[500px] flex-col gap-4 md:ml-0 md:max-w-[calc(50%+87px)] md:flex-row md:justify-between md:gap-24"
+    >
+      <p class="text-txligth text-xs leading-none uppercase">&copy; 2025 {t("footerAllRights")}</p>
+      <div class="flex gap-[11px]">
+        <p class="text-xs leading-none uppercase">{t("footerDeveloped")}</p>
+        <a href={IloveMyTeamLink} target="_blank" rel="noreferrer">
+          <IloveMyTeam />
+        </a>
+      </div>
+      <div class="absolute right-0 bottom-0 md:hidden"><UpButton client:load /></div>
+    </div>
+    <div
+      class="absolute bottom-[-25px] hidden md:right-6 md:inline-block lg:right-10 xl:right-[60px]"
+    >
+      <UpButton client:load />
+    </div>
+  </div>
+</footer>

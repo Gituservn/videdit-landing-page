@@ -1,0 +1,33 @@
+---
+import { NavListEnum } from "@/constants/navList";
+import { useTranslations } from "@/i18n/utils";
+
+import { ServicesSlider } from "./ServicesSlider";
+const t = useTranslations(Astro.url);
+const list = [
+  {
+    title: t("servicePersonal"),
+    list: [t("svPersonalItem1"), t("svPersonalItem2"), t("svPersonalItem3")],
+    videoURL: "/videos/love-story.mp4",
+  },
+  {
+    title: t("serviceBussines"),
+    list: [t("svBussinesItem1"), t("svBussinesItem2"), t("svBussinesItem3"), t("svBussinesItem4")],
+    videoURL: "/videos/coffee-video.mp4",
+  },
+  {
+    title: t("serviceMedia"),
+    list: [t("svMediaItem1"), t("svMediaItem2"), t("svMediaItem3"), t("svMediaItem4")],
+    videoURL: "/videos/parfume-video.mp4",
+  },
+];
+---
+
+<section id={NavListEnum.SERVICES} class="text-txligth relative h-[100vh] w-full bg-black/35">
+  <h2
+    class="absolute top-6 left-4 z-[1] mb-6 leading-none uppercase md:top-auto md:bottom-[357px] md:left-6 md:text-lg lg:bottom-[385px] lg:left-10 lg:mb-4 xl:left-[60px] xl:mb-6"
+  >
+    {t("servicesSection")}
+  </h2>
+  <ServicesSlider client:load list={list} />
+</section>

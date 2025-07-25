@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+
+import Footer from "@/components/footer/Footer.astro";
+import Header from "@/components/header/Header.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/AlumniSans-Bold.ttf" as="font" crossorigin />
+    <meta name="generator" content={Astro.generator} />
+    <title>Willow Moution</title>
+  </head>
+  <body class="font-ruda bg-txligth no-scroll relative overflow-x-clip">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

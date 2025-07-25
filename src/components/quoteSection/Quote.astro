@@ -1,0 +1,17 @@
+---
+import { useTranslations } from "@/i18n/utils";
+
+import { ParallelogramRow } from "../shared/ParallelogramRow";
+import { FadeInText } from "./FadeInText";
+const t = useTranslations(Astro.url);
+---
+
+<div class="px-4 md:px-6 md:py-10 lg:px-10 lg:pt-[60px] lg:pb-[42px]">
+  <ParallelogramRow client:load amount={3} />
+  <FadeInText
+    client:load
+    text={t("quote")}
+    className="font-alumni mx-auto my-11 max-w-[500px] text-center text-[32px] leading-none font-bold md:my-6 md:max-w-[929px] md:text-5xl lg:mt-[42px] lg:mb-[60px] lg:text-[64px]"
+  />
+  <div class="mr-0 ml-auto w-fit"><ParallelogramRow client:load amount={3} /></div>
+</div>

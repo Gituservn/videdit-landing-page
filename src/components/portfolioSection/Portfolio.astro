@@ -1,0 +1,28 @@
+---
+import { NavListEnum } from "@/constants/navList";
+import { useTranslations } from "@/i18n/utils";
+
+import { ParallelogramRow } from "../shared/ParallelogramRow";
+import { PortfolioList } from "./PortfolioList";
+const t = useTranslations(Astro.url);
+const list = [
+  { title: t("portfolioCard1"), videoURL: "/videos/coffee-video.mp4" },
+  { title: t("portfolioCard2"), videoURL: "/videos/love-story.mp4" },
+  { title: t("portfolioCard3"), videoURL: "/videos/parfume-video.mp4" },
+  { title: t("portfolioCard4"), videoURL: "/videos/hero.mp4" },
+];
+---
+
+<section id={NavListEnum.PORTFOLIO} class="text-txdark psection">
+  <div class="mb-4 flex items-center justify-between">
+    <div><ParallelogramRow client:load amount={3} /></div>
+    <h2 class="leading-none uppercase md:text-lg">{t("portfolioSection")}</h2>
+    <div><ParallelogramRow client:load amount={3} /></div>
+  </div>
+  <h3
+    class="font-alumni mx-auto mb-6 max-w-[350px] text-center text-[32px] leading-none font-bold md:mb-10 md:max-w-[496px] md:text-5xl lg:max-w-[900px] lg:text-[64px]"
+  >
+    {t("portfolioTitle")}
+  </h3>
+  <PortfolioList client:load portfolioList={list} />
+</section>

@@ -1,73 +1,36 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import astro from 'eslint-plugin-astro';
-import astroParser from 'astro-eslint-parser';
-import tsParser from '@typescript-eslint/parser';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import prettier from 'eslint-config-prettier';
+import tseslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
+import astro from "eslint-plugin-astro";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
   {
-    ignores: [
-      '**/node_modules/**',
-      '**/dist/**',
-      '**/.next/**',
-      '**/*.config.js',
-      '**/*.config.cjs',
-      '**/*.config.mjs',
-    ],
+    ignores: ["dist", "node_modules", ".astro"],
   },
-
-  js.configs.recommended,
+  ...astro.configs.recommended,
 
   {
-    files: ['**/*.astro'],
-    languageOptions: {
-      parser: astroParser,
-      parserOptions: {
-        parser: tsParser,
-        extraFileExtensions: ['.astro'],
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
-      globals: globals.browser,
-    },
-    plugins: { astro },
-    rules: {
-      'astro/no-unused-css-selector': 'warn',
-    },
-  },
-
-  {
-    files: ['**/*.{js,ts,jsx,tsx}'],
+    files: ["**/*.{js,ts}"],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: './tsconfig.json',
-      },
-      globals: {
-        ...globals.node,
-        ...globals.browser,
+        ecmaVersion: "latest",
+        sourceType: "module",
       },
     },
-    plugins: {
-      '@typescript-eslint': tseslint,
-    },
+    plugins: { "@typescript-eslint": tseslint },
     rules: {
-      '@typescript-eslint/no-unused-vars': 'warn',
-      'no-console': 'warn',
-      semi: ['error', 'always'],
-      quotes: ['error', 'single'],
+      ...tseslint.configs.recommended.rules,
     },
   },
 
   {
-    files: ['**/*.{js,ts,jsx,tsx,astro,json,md}'],
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+    },
     rules: {
-      ...prettier.rules,
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
     },
   },
 ];

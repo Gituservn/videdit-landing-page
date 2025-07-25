@@ -1,0 +1,25 @@
+---
+import { languages } from "@/i18n/ui";
+import { getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const activeStyle =
+  "text-txligth font-bold pointer-events-none transition-opacity duration-300 ease-in-out opacity-100 ";
+const defaultStyle = "text-txligth opacity-50 hover:opacity-100 active:opacity-100";
+---
+
+<div class="flex items-center gap-[7px] text-lg leading-[18px] uppercase">
+  <a
+    href="/"
+    class={`${lang === languages.ua ? activeStyle : defaultStyle} `}
+    tabindex={lang === languages.ua ? "-1" : "0"}>{languages.ua}</a
+  >
+
+  <div class="bg-txligth block h-[18px] w-[1.5px]"></div>
+  <a
+    href="/en"
+    class={`${lang === languages.en ? activeStyle : defaultStyle} `}
+    tabindex={lang === languages.en ? "-1" : "0"}>{languages.en}</a
+  >
+</div>

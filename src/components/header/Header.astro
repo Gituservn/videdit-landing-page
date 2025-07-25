@@ -1,0 +1,33 @@
+---
+import Logo from "@/assets/icons/logo.svg";
+import { ContactWrapper } from "@/components/shared/Conacts/ContactWrapper";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+import Menu from "../shared/Menu.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import MobileMenu from "./MobileMenu";
+
+const t = useTranslations(Astro.url);
+---
+
+<header
+  class="absolute top-0 left-0 z-[5] flex h-[80px] w-full items-center justify-between bg-black/45 p-4 md:p-6 lg:px-10 lg:py-[30px] xl:px-[60px]"
+>
+  <div class="relative z-[5] flex h-11 w-11 items-center justify-center md:h-16 md:w-16">
+    <Logo />
+  </div>
+  <div class="ml-[115px] hidden lg:flex">
+    <Menu />
+  </div>
+  <div class="relative z-[5] gap-6 md:mr-5 lg:mr-0 lg:flex">
+    <LanguageSwitcher />
+    <ContactWrapper
+      text={t("contacts")}
+      className="bg-grey hidden w-fit items-center justify-center border-0 px-4 py-[11px] text-lg leading-[18px] font-bold text-white uppercase lg:flex"
+      client:load
+    />
+  </div>
+  <div class="flex h-11 w-11 items-center justify-center lg:hidden">
+    <MobileMenu lang={getLangFromUrl(Astro.url)} client:load />
+  </div>
+</header>
