@@ -69,6 +69,8 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
       if (!video) return;
+
+      video.muted = true;
       if (isTabletUp) {
         if (i === activeIndex) {
           video.play().catch(() => {});
@@ -77,6 +79,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
         }
       } else {
         if (isMobilePlaying[i]) {
+          video.load();
           video.play().catch(() => {});
         } else {
           video.pause();
