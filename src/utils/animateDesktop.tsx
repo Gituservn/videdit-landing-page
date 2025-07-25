@@ -80,7 +80,7 @@ export const animateDesktop = ({
         maxHeight: 0,
         height: 0,
         marginTop: 0,
-        duration: 0.3,
+        duration: 0.1,
         ease: "power2.inOut",
       },
       0,
@@ -91,9 +91,9 @@ export const animateDesktop = ({
           width: originalSize.width,
           height: originalSize.height,
           ease: "power3.inOut",
-          duration: 0.8,
+          duration: 0.1,
         },
-        0.6,
+        0.1,
       )
       .set(card, { clearProps: "zIndex,position" })
       .to(
@@ -102,9 +102,9 @@ export const animateDesktop = ({
           top: "76%",
           clearProps: "top,right",
           ease: "power2.inOut",
-          duration: 0.6,
+          duration: 0.1,
         },
-        0.6,
+        0.1,
       );
   }
 };
