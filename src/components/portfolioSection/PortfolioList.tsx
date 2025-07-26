@@ -147,7 +147,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                   }
                 : undefined
             }
-            className="bg-white transition-all duration-500 md:absolute"
+            className="transition-all duration-500 md:absolute"
             onMouseEnter={() => isTabletUp && setHoveredIndex(index)}
             onMouseLeave={() => isTabletUp && setHoveredIndex(null)}
             onClick={() => isTabletUp && setActiveIndex(index)}
