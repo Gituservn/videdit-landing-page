@@ -13,7 +13,11 @@ const list = [
 ];
 ---
 
-<section id={NavListEnum.PORTFOLIO} class="text-txdark psection">
+<section
+  id={NavListEnum.PORTFOLIO}
+  class="text-txdark psection"
+  data-bg="linear-gradient(to bottom, #879aa3 0%, #e679f2 70%)"
+>
   <div class="mb-4 flex items-center justify-between">
     <div><ParallelogramRow client:load amount={3} /></div>
     <h2 class="leading-none uppercase md:text-lg">{t("portfolioSection")}</h2>
