@@ -24,8 +24,8 @@ export const CtaScroll = ({ children }: { children?: React.ReactNode }) => {
 
           if (!title || !text || !circleRef.current || !sectionRef.current) return;
 
-          const titleTop = window.innerWidth >= 1280 ? "-240px" : "-210px";
-          const textBottom = window.innerWidth >= 1280 ? "-120px" : "-140px";
+          const titleTop = window.innerWidth >= 1280 ? "-270px" : "-220px";
+          const textBottom = window.innerWidth >= 1280 ? "-170px" : "-140px";
 
           ctxRef.current = gsap.context(() => {
             gsap.set(circleRef.current, {
@@ -69,11 +69,11 @@ export const CtaScroll = ({ children }: { children?: React.ReactNode }) => {
   return (
     <section
       ref={sectionRef}
-      className="relative hidden h-screen overflow-hidden bg-white text-white md:block md:min-h-[923px] lg:min-h-[1309px]"
+      className="relative hidden h-screen overflow-hidden bg-white text-white md:block md:min-h-[763px] lg:min-h-[1109px]"
     >
       <div
         ref={circleRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black md:[--height:763px] md:[--width:763px] lg:[--height:1109px] lg:[--width:1109px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black md:[--height:721px] md:[--width:721px] lg:[--height:917px] lg:[--width:917px]"
         style={{
           width: "var(--width)",
           height: "var(--height)",
