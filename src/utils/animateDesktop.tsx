@@ -42,6 +42,7 @@ export const animateDesktop = ({
           height: newHeight,
           ease: "power3.out",
           duration: 0.6,
+          background: "#ffffff",
         },
         0,
       )
@@ -92,6 +93,7 @@ export const animateDesktop = ({
           height: originalSize.height,
           ease: "power3.inOut",
           duration: 0.1,
+          background: "transparent",
         },
         0.1,
       )
