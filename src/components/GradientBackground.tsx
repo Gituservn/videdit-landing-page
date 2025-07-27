@@ -7,6 +7,9 @@ const GradientBackground = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const sections = document.querySelectorAll<HTMLElement>("[data-bg]");
+    const bgElement = document.getElementById("background-gradient");
+
+    if (!bgElement) return;
 
     sections.forEach((section) => {
       const bg = section.dataset.bg;
@@ -15,18 +18,20 @@ const GradientBackground = () => {
       ScrollTrigger.create({
         trigger: section,
         start: "top bottom",
-        end: "bottom bottom",
+        end: "bottom top",
         onEnter: () => {
-          gsap.to("body", {
-            background: bg,
-            duration: 1.2,
+          bgElement.style.background = bg;
+          gsap.to(bgElement, {
+            opacity: 1,
+            duration: 1,
             ease: "power2.out",
           });
         },
         onEnterBack: () => {
-          gsap.to("body", {
-            background: bg,
-            duration: 1.2,
+          bgElement.style.background = bg;
+          gsap.to(bgElement, {
+            opacity: 1,
+            duration: 1,
             ease: "power2.out",
           });
         },

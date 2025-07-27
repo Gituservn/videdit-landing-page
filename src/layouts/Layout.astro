@@ -20,6 +20,8 @@ const lang = getLangFromUrl(Astro.url);
     <title>Willow Moution</title>
   </head>
   <body class="font-ruda bg-txligth no-scroll relative overflow-x-clip">
+    <div id="background-gradient" class="fixed inset-0 -z-10 transition-opacity duration-1000">
+    </div>
     <GradientBackground client:load />
     <Header />
     <slot />
