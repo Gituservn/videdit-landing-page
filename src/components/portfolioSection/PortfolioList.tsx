@@ -181,6 +181,8 @@ export const PortfolioList = ({
                 muted
                 playsInline
                 loop
+                preload="auto"
+                poster="/images/faq5.jpg"
                 aria-label={`${item.title} — ${aria}`}
                 onClick={() => handleVideoClick(index)}
                 className="absolute inset-0 h-full w-full object-cover"
