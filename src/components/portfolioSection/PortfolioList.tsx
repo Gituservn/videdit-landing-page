@@ -144,7 +144,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                     top: `${topPersent[index]}%`,
                     zIndex: index + 2 + (isActive ? 5 : 0) + (isHovered ? 10 : 0),
                     filter: isActive || isHovered ? "none" : "blur(2px)",
-                    background: isActive || isHovered ? "#efebf0" : "transparent",
+                    background: isActive || isHovered ? "#ffcce7" : "transparent",
                   }
                 : undefined
             }
