@@ -3,8 +3,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton } from "../shared/Slider/SliderDots";
 import { NextButton, PrevButton, usePrevNextButtons } from "../shared/Slider/SliderArrows";
 import { SliderDotsBox } from "../shared/Slider/SliderDotsBox";
-import { ServiceCard, ServiceItemProp } from "./ServiceCard";
+import { ServiceCard } from "./ServiceCard";
 import { SelectedSnapDisplay, useSelectedSnapDisplay } from "../shared/Slider/SelectedSnapDisplay";
+import { ServiceItemProp } from "@/types";
 
 export const ServicesSlider = ({ list }: { list: ServiceItemProp[] }) => {
   const options: EmblaOptionsType = {
