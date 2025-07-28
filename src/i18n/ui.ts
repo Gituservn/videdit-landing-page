@@ -72,6 +72,8 @@ export const ui = {
     portfolioCard2: "Промо для фотографа",
     portfolioCard3: "Промо для фотографа",
     portfolioCard4: "Промо для фотографа",
+    portfolioVideo: "відео портфоліо",
+    portfolioNoplay: "Ваш браузер не підтримує відео",
 
     feedbackSection: "відгуки",
     feedbackTitle: "Вони вже довірились — ось, що говорять клієнти",
@@ -200,6 +202,8 @@ export const ui = {
     portfolioCard2: "Promo for photographer",
     portfolioCard3: "Promo for photographer",
     portfolioCard4: "Promo for photographer",
+    portfolioVideo: "video portfolio",
+    portfolioNoplay: "Your browser does not support video",
 
     feedbackSection: "rewievs",
     feedbackTitle: "They already trusted us — here’s what our clients say",

@@ -6,10 +6,10 @@ import { ParallelogramRow } from "../shared/ParallelogramRow";
 import { PortfolioList } from "./PortfolioList";
 const t = useTranslations(Astro.url);
 const list = [
-  { title: t("portfolioCard1"), videoURL: "/videos/coffee-video.mp4" },
-  { title: t("portfolioCard2"), videoURL: "/videos/love-story.mp4" },
-  { title: t("portfolioCard3"), videoURL: "/videos/parfume-video.mp4" },
-  { title: t("portfolioCard4"), videoURL: "/videos/hero.mp4" },
+  { title: t("portfolioCard1"), videoURL: "/videos/portfolio1.mp4" },
+  { title: t("portfolioCard2"), videoURL: "/videos/portfolio2.mp4" },
+  { title: t("portfolioCard3"), videoURL: "/videos/portfolio1.mp4" },
+  { title: t("portfolioCard4"), videoURL: "/videos/portfolio2.mp4" },
 ];
 ---
 
@@ -24,5 +24,10 @@ const list = [
   >
     {t("portfolioTitle")}
   </h3>
-  <PortfolioList client:load portfolioList={list} />
+  <PortfolioList
+    client:idle
+    portfolioList={list}
+    error={t("portfolioNoplay")}
+    aria={t("portfolioVideo")}
+  />
 </section>
