@@ -69,7 +69,7 @@ export const CtaScroll = ({ children }: { children?: React.ReactNode }) => {
   return (
     <section
       ref={sectionRef}
-      data-bg="linear-gradient(to bottom, #d5ccff 0%, #d5ccff 30%,  #b991ed 60%)"
+      data-bg="linear-gradient(to bottom, #d5ccff 0%, #b991ed 30%)"
       className="relative hidden h-screen overflow-hidden text-white md:block md:min-h-[763px] lg:min-h-[1109px]"
     >
       <div
