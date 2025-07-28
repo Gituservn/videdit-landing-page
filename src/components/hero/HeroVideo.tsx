@@ -115,29 +115,32 @@ const HeroVideo = () => {
       setIsPlaying(false);
     }
   };
+  const isSmall = typeof window !== "undefined" && window.innerWidth < 1280;
 
   return (
     <div className="absolute top-0 left-0 min-h-[100vh] w-full">
       {isVideoReady ? "" : <div className="bg-blck absolute inset-0 z-[13]" />}
       <video
-        ref={videoDesktopRef}
-        muted
-        autoPlay
-        playsInline
-        loop
-        className="absolute inset-0 z-[11] hidden h-full w-full object-cover transition-all duration-500 lg:block"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
-      <video
         ref={videoMobileRef}
         muted
         autoPlay
         playsInline
+        preload="auto"
         loop
         className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500 lg:hidden"
       >
         <source src="/videos/hero-mob.mp4" type="video/mp4" />
+      </video>
+      <video
+        ref={videoDesktopRef}
+        muted
+        autoPlay
+        playsInline
+        preload="none"
+        loop
+        className="absolute inset-0 z-[11] hidden h-full w-full object-cover transition-all duration-500 lg:block"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
       <div ref={overlayRef} className="bg-blck/35 absolute inset-0 z-[10]" />
       <button
