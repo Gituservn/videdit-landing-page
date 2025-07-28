@@ -173,7 +173,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                 playsInline
                 loop
                 onClick={() => handleVideoClick(index)}
-                className="absolute inset-0 h-full w-full [mask-image:linear-gradient(to_top,transparent,black_16px)] object-cover"
+                className="absolute inset-0 h-full w-full object-cover md:[mask-image:linear-gradient(to_top,transparent,black_16px)]"
               >
                 <source src={item.videoURL} type="video/mp4" />
               </video>
