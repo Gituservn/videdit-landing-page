@@ -144,10 +144,11 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                     top: `${topPersent[index]}%`,
                     zIndex: index + 2 + (isActive ? 5 : 0) + (isHovered ? 10 : 0),
                     filter: isActive || isHovered ? "none" : "blur(2px)",
+                    background: isActive || isHovered ? "#efebf0" : "transparent",
                   }
                 : undefined
             }
-            className="transition-all duration-500 md:absolute md:bg-[#f4ebfc]"
+            className="transition-all duration-500 md:absolute"
             onMouseEnter={() => isTabletUp && setHoveredIndex(index)}
             onMouseLeave={() => isTabletUp && setHoveredIndex(null)}
             onClick={() => isTabletUp && setActiveIndex(index)}
@@ -172,7 +173,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                 playsInline
                 loop
                 onClick={() => handleVideoClick(index)}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full [mask-image:linear-gradient(to_top,transparent,black_16px)] object-cover"
               >
                 <source src={item.videoURL} type="video/mp4" />
               </video>
@@ -205,7 +206,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
             </div>
             <div className="border-blck/50 flex items-center justify-between border-b">
               <h4
-                className="font-alumni text-xl leading-none font-bold"
+                className="font-alumni text-xl leading-none font-bold md:ml-2"
                 style={
                   isTabletUp
                     ? {

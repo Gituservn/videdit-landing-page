@@ -42,7 +42,7 @@ export const animateDesktop = ({
           height: newHeight,
           ease: "power3.out",
           duration: 0.6,
-          background: "#ffffff",
+          background: "#efebf0",
         },
         0,
       )
