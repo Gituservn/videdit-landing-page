@@ -137,7 +137,10 @@ const HeroVideo = () => {
         loop
         className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500 lg:hidden"
       >
-        <source src="/videos/hero-mob-trim.mp4" type="video/mp4" />
+        <source
+          src="https://res.cloudinary.com/dxvtacrde/video/upload/v1753713461/videoOlga/hero-mob2_wufbaw.mp4"
+          type="video/mp4"
+        />
       </video>
       <video
         ref={videoDesktopRef}
