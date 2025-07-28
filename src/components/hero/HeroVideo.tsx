@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { PlayIcon } from "../shared/icons/PlayIcon";
 import { PauseIcon } from "../shared/icons/PauseIcon";
+import { BatteryAnimation } from "../ctaSection/BatteryAnimation";
 
 const HeroVideo = () => {
   const videoDesktopRef = useRef<HTMLVideoElement | null>(null);
@@ -115,11 +116,18 @@ const HeroVideo = () => {
       setIsPlaying(false);
     }
   };
-  const isSmall = typeof window !== "undefined" && window.innerWidth < 1280;
 
   return (
     <div className="absolute top-0 left-0 min-h-[100vh] w-full">
-      {isVideoReady ? "" : <div className="bg-blck absolute inset-0 z-[13]" />}
+      {isVideoReady ? (
+        ""
+      ) : (
+        <div className="bg-blck absolute inset-0 z-[13]">
+          <div className="absolute top-1/2 left-1/2 w-16 -translate-1/2">
+            <BatteryAnimation />
+          </div>
+        </div>
+      )}
       <video
         ref={videoMobileRef}
         muted
