@@ -8,17 +8,20 @@ const list = [
   {
     title: t("servicePersonal"),
     list: [t("svPersonalItem1"), t("svPersonalItem2"), t("svPersonalItem3")],
-    videoURL: "/videos/love-story.mp4",
+    videoURL:
+      "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815940/love-story_fyhvy2.mp4",
   },
   {
     title: t("serviceBussines"),
     list: [t("svBussinesItem1"), t("svBussinesItem2"), t("svBussinesItem3"), t("svBussinesItem4")],
-    videoURL: "/videos/coffee-video.mp4",
+    videoURL:
+      "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815931/coffee-video_vob0ac.mp4",
   },
   {
     title: t("serviceMedia"),
     list: [t("svMediaItem1"), t("svMediaItem2"), t("svMediaItem3"), t("svMediaItem4")],
-    videoURL: "/videos/parfume-video.mp4",
+    videoURL:
+      "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815951/parfume-video_mnjwq1.mp4",
   },
 ];
 ---
@@ -29,5 +32,5 @@ const list = [
   >
     {t("servicesSection")}
   </h2>
-  <ServicesSlider client:load list={list} />
+  <ServicesSlider client:idle list={list} />
 </section>

@@ -6,7 +6,15 @@ import { SoundIcon } from "../shared/icons/SoundIcon";
 import { MuteIcon } from "../shared/icons/MuteIcon";
 import { PortfolioProp } from "@/types";
 
-export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[] }) => {
+export const PortfolioList = ({
+  portfolioList,
+  error,
+  aria,
+}: {
+  portfolioList: PortfolioProp[];
+  error: string;
+  aria: string;
+}) => {
   const [heightListTab, setHeightListTab] = useState(0);
   const [isTabletUp, setIsTabletUp] = useState(false);
   const [activeIndex, setActiveIndex] = useState(3);
@@ -29,8 +37,8 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
       const isTablet = window.innerWidth >= 768;
       setIsTabletUp(isTablet);
       if (!isTablet) {
-        setActiveIndex(0);
-        setIsMobilePlaying(portfolioList.map((_, i) => i === 0));
+        setActiveIndex(3);
+        setIsMobilePlaying(portfolioList.map((_, i) => i === 3));
       } else {
         setIsMobilePlaying(portfolioList.map(() => false));
       }
@@ -126,8 +134,10 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
 
   return (
     <ul
+      role="list"
+      aria-label={aria}
       style={isTabletUp ? { height: `${heightListTab}px` } : undefined}
-      className="relative mx-auto flex max-w-[500px] flex-col gap-4 md:max-h-[740px] md:max-w-full lg:max-w-[1479px]"
+      className="relative mx-auto flex max-w-[500px] flex-col-reverse gap-4 md:max-h-[740px] md:max-w-full lg:max-w-[1479px]"
     >
       {portfolioList.map((item, index) => {
         const isHovered = hoveredIndex === index;
@@ -172,22 +182,30 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                 muted
                 playsInline
                 loop
+                preload="auto"
+                poster={item.imgURL}
+                aria-label={`${item.title} — ${aria}`}
                 onClick={() => handleVideoClick(index)}
                 className="absolute inset-0 h-full w-full object-cover md:[mask-image:linear-gradient(to_top,transparent,black_16px)]"
               >
                 <source src={item.videoURL} type="video/mp4" />
+                {error}
               </video>
               {((!isPlayingList[index] && isTabletUp && hoveredIndex === index) ||
                 (!isTabletUp && !isMobilePlaying[index])) && (
                 <button
                   onClick={() => handleVideoClick(index)}
+                  aria-label="Play button"
                   className="group absolute top-1/2 left-1/2 flex h-14 w-14 -translate-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-2 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-[140px] lg:w-[140px] hover:lg:scale-[0.85] hover:lg:border-[10px]"
                 >
                   <PlayIcon className="h-4 w-4 group-hover:scale-[1.28] lg:h-10 lg:w-10" />
                 </button>
               )}
               {isPlayingList[index] && isTabletUp && hoveredIndex === index && (
-                <button className="group pointer-events-none absolute top-1/2 left-1/2 flex h-14 w-14 -translate-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-2 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-[140px] lg:w-[140px] hover:lg:scale-[0.85] hover:lg:border-[10px]">
+                <button
+                  className="group pointer-events-none absolute top-1/2 left-1/2 flex h-14 w-14 -translate-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-2 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-[140px] lg:w-[140px] hover:lg:scale-[0.85] hover:lg:border-[10px]"
+                  aria-label="Pause button"
+                >
                   <PauseIcon className="h-4 w-4 group-hover:scale-[1.28] lg:h-10 lg:w-10" />
                 </button>
               )}
@@ -195,6 +213,7 @@ export const PortfolioList = ({ portfolioList }: { portfolioList: PortfolioProp[
                 <button
                   onClick={() => toggleMute(index)}
                   className="group absolute top-3 right-3 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.95] hover:border-[6px] hover:border-white/20 lg:h-14 lg:w-14 lg:p-2 hover:lg:scale-[0.85] hover:lg:border-[10px]"
+                  aria-label={isMutedList[index] ? "Sound button" : "Mute button"}
                 >
                   {isMutedList[index] ? (
                     <MuteIcon className="h-4 w-4 group-hover:scale-150 lg:h-6 lg:w-6" />

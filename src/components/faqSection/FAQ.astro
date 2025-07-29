@@ -52,9 +52,9 @@ const faqList = [
 
 <section class="text-txdark psection" data-bg="linear-gradient(to bottom, #ffccce 0%, #ddccff 50%)">
   <div class="mb-4 flex items-center justify-between">
-    <div><ParallelogramRow client:load amount={3} /></div>
+    <div><ParallelogramRow client:idle amount={3} /></div>
     <h2 class="leading-none uppercase md:text-lg">{t("faqSection")}</h2>
-    <div><ParallelogramRow client:load amount={3} /></div>
+    <div><ParallelogramRow client:idle amount={3} /></div>
   </div>
   <h3
     class="font-alumni mx-auto mb-6 max-w-[350px] text-center text-[32px] leading-none font-bold md:mb-10 md:max-w-[496px] md:text-5xl lg:max-w-[900px] lg:text-[64px]"
@@ -62,7 +62,7 @@ const faqList = [
     {t("faqTitle")}
   </h3>
   <FaqList
-    client:load
+    client:idle
     faqList={faqList}
     showAnswer={t("showAnswer")}
     hideAnswer={t("hideAnswer")}

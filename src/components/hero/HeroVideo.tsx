@@ -2,23 +2,39 @@ import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { PlayIcon } from "../shared/icons/PlayIcon";
 import { PauseIcon } from "../shared/icons/PauseIcon";
+import { BatteryAnimation } from "../ctaSection/BatteryAnimation";
 
 const HeroVideo = () => {
-  const videoDesktopRef = useRef<HTMLVideoElement | null>(null);
-  const videoMobileRef = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [scrolledOnce, setScrolledOnce] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
-
-  const getCurrentVideo = () => {
-    if (typeof window === "undefined") return null;
-    return window.innerWidth >= 1280 ? videoDesktopRef.current : videoMobileRef.current;
-  };
+  const [videoSrc, setVideoSrc] = useState("");
 
   useEffect(() => {
-    const video = getCurrentVideo();
-    if (!video) return;
+    const updateSrc = () => {
+      const width = window.innerWidth;
+      if (width < 1024) {
+        setVideoSrc(
+          "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815917/hero-mob_eikfnh",
+        );
+      } else {
+        setVideoSrc(
+          "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815897/hero_ahart0",
+        );
+      }
+    };
+
+    updateSrc();
+    window.addEventListener("resize", updateSrc);
+
+    return () => window.removeEventListener("resize", updateSrc);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoSrc) return;
 
     const onCanPlay = () => {
       setIsVideoReady(true);
@@ -32,7 +48,7 @@ const HeroVideo = () => {
     return () => {
       video.removeEventListener("canplaythrough", onCanPlay);
     };
-  }, []);
+  }, [videoSrc]);
 
   useEffect(() => {
     let lockedScrollY = 0;
@@ -57,9 +73,8 @@ const HeroVideo = () => {
         document.body.classList.add("hero-scrolled");
 
         const title = document.getElementById("hero-title");
-        const video = getCurrentVideo();
         const overlay = overlayRef.current;
-        if (!title || !video || !overlay) return;
+        if (!title || !videoRef.current || !overlay) return;
 
         const isMobile = window.innerWidth < 768;
         const isTab = window.innerWidth >= 768 && window.innerWidth < 1280;
@@ -95,7 +110,7 @@ const HeroVideo = () => {
             },
             "0.5",
           )
-          .set(video, { zIndex: -2 }, "<")
+          .set(videoRef.current, { zIndex: -2 }, "<")
           .set(overlay, { zIndex: -1 }, "<");
       }
     };
@@ -105,8 +120,8 @@ const HeroVideo = () => {
   }, [scrolledOnce]);
 
   const togglePlay = () => {
-    const video = getCurrentVideo();
-    if (!video) return;
+    const video = videoRef.current;
+    if (!video || !videoSrc) return;
     if (video.paused) {
       video.play();
       setIsPlaying(true);
@@ -118,30 +133,33 @@ const HeroVideo = () => {
 
   return (
     <div className="absolute top-0 left-0 min-h-[100vh] w-full">
-      {isVideoReady ? "" : <div className="bg-blck absolute inset-0 z-[13]" />}
-      <video
-        ref={videoDesktopRef}
-        muted
-        autoPlay
-        playsInline
-        loop
-        className="absolute inset-0 z-[11] hidden h-full w-full object-cover transition-all duration-500 lg:block"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
-      <video
-        ref={videoMobileRef}
-        muted
-        autoPlay
-        playsInline
-        loop
-        className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500 lg:hidden"
-      >
-        <source src="/videos/hero-mob.mp4" type="video/mp4" />
-      </video>
+      {isVideoReady ? (
+        ""
+      ) : (
+        <div className="bg-blck absolute inset-0 z-[13]">
+          <div className="absolute top-1/2 left-1/2 w-16 -translate-1/2">
+            <BatteryAnimation />
+          </div>
+        </div>
+      )}
+      {videoSrc && (
+        <video
+          ref={videoRef}
+          muted
+          autoPlay
+          playsInline
+          preload="auto"
+          loop
+          className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      )}
+
       <div ref={overlayRef} className="bg-blck/35 absolute inset-0 z-[10]" />
       <button
         onClick={togglePlay}
+        aria-label={isPlaying ? "Pause button" : "Play button"}
         className="group absolute top-[93px] right-3 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-4 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.85] hover:border-[10px] hover:border-white/20 md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
       >
         {isPlaying ? (
