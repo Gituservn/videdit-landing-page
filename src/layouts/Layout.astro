@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Footer from "@/components/footer/Footer.astro";
+import GradientBackground from "@/components/GradientBackground";
 import Header from "@/components/header/Header.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 
@@ -18,7 +19,10 @@ const lang = getLangFromUrl(Astro.url);
     <meta name="generator" content={Astro.generator} />
     <title>Willow Moution</title>
   </head>
-  <body class="font-ruda bg-txligth no-scroll relative overflow-x-clip">
+  <body class="font-ruda no-scroll relative overflow-x-clip">
+    <div id="background-gradient" class="fixed inset-0 -z-10 transition-opacity duration-1000">
+    </div>
+    <GradientBackground client:load />
     <Header />
     <slot />
     <Footer />
