@@ -8,12 +8,12 @@ export const FeedbackCard = ({ item, ind }: { item: FeedbackCardProps; ind: numb
 
   return (
     <div
-      className="text-txdark relative aspect-[274/240] w-[calc(100%+2px)] bg-contain bg-center bg-no-repeat px-[18px] py-[15%] md:bg-contain md:px-[14px] md:py-[15%] lg:px-7 xl:px-10"
+      className="text-txdark relative aspect-[274/240] w-[calc(100%+2px)] bg-contain bg-center bg-no-repeat px-[18px] py-[16%] md:bg-contain md:px-[14px] md:py-[15%] lg:px-7 xl:px-10"
       style={{
         backgroundImage: 'url("/bg/frame.svg")',
       }}
     >
-      <div className="mb-[18px] flex items-baseline justify-between md:mb-[14px] lg:mb-4 lg:flex-col">
+      <div className="mb-3 flex items-baseline justify-between md:mb-[14px] lg:mb-4 lg:flex-col">
         <h4 className="font-alumni text-titleFBmob md:text-titleFBmd lg:text-titleFBlg xl:text-titleFBxl leading-none font-medium">
           {item.name}
         </h4>
