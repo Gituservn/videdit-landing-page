@@ -17,11 +17,11 @@ const HeroVideo = () => {
       const width = window.innerWidth;
       if (width < 1024) {
         setVideoSrc(
-          "https://res.cloudinary.com/dbrn2qntv/video/upload/v1753815917/hero-mob_eikfnh.mp4",
+          "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815917/hero-mob_eikfnh",
         );
       } else {
         setVideoSrc(
-          "https://res.cloudinary.com/dbrn2qntv/video/upload/v1753815897/hero_ahart0.mp4",
+          "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815897/hero_ahart0",
         );
       }
     };
@@ -159,6 +159,7 @@ const HeroVideo = () => {
       <div ref={overlayRef} className="bg-blck/35 absolute inset-0 z-[10]" />
       <button
         onClick={togglePlay}
+        aria-label={isPlaying ? "Pause button" : "Play button"}
         className="group absolute top-[93px] right-3 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-white/10 p-4 backdrop-blur-[3px] transition-all duration-800 ease-in-out hover:scale-[0.85] hover:border-[10px] hover:border-white/20 md:top-auto md:right-6 md:bottom-7 md:h-[100px] md:w-[100px] lg:right-11 lg:bottom-[92px] lg:h-[140px] lg:w-[140px] xl:right-14 xl:h-[182px] xl:w-[182px]"
       >
         {isPlaying ? (
