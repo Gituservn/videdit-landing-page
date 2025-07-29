@@ -154,10 +154,11 @@ export const PortfolioList = ({
                     top: `${topPersent[index]}%`,
                     zIndex: index + 2 + (isActive ? 5 : 0) + (isHovered ? 10 : 0),
                     filter: isActive || isHovered ? "none" : "blur(2px)",
+                    background: isActive || isHovered ? "#ffcce7" : "transparent",
                   }
                 : undefined
             }
-            className="bg-white transition-all duration-500 md:absolute"
+            className="transition-all duration-500 md:absolute"
             onMouseEnter={() => isTabletUp && setHoveredIndex(index)}
             onMouseLeave={() => isTabletUp && setHoveredIndex(null)}
             onClick={() => isTabletUp && setActiveIndex(index)}
@@ -185,7 +186,7 @@ export const PortfolioList = ({
                 poster="/images/faq5.jpg"
                 aria-label={`${item.title} — ${aria}`}
                 onClick={() => handleVideoClick(index)}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover md:[mask-image:linear-gradient(to_top,transparent,black_16px)]"
               >
                 <source src={item.videoURL} type="video/mp4" />
                 {error}
@@ -224,7 +225,7 @@ export const PortfolioList = ({
             </div>
             <div className="border-blck/50 flex items-center justify-between border-b">
               <h4
-                className="font-alumni text-xl leading-none font-bold"
+                className="font-alumni text-xl leading-none font-bold md:ml-2"
                 style={
                   isTabletUp
                     ? {

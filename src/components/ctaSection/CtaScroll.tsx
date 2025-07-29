@@ -69,7 +69,8 @@ export const CtaScroll = ({ children }: { children?: React.ReactNode }) => {
   return (
     <section
       ref={sectionRef}
-      className="relative hidden h-screen overflow-hidden bg-white text-white md:block md:min-h-[763px] lg:min-h-[1109px]"
+      data-bg="linear-gradient(to bottom, #d5ccff 0%, #b991ed 30%)"
+      className="relative hidden h-screen overflow-hidden text-white md:block md:min-h-[763px] lg:min-h-[1109px]"
     >
       <div
         ref={circleRef}

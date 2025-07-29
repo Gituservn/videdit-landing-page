@@ -70,7 +70,7 @@ export const FaqCard: FC<FaqCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className="border-blck group relative h-full w-full cursor-pointer border-b bg-white px-3 py-6 transition-[margin] duration-300 ease-in-out will-change-transform md:aspect-square md:border md:p-[11px] xl:p-3"
+      className="border-blck group relative h-full w-full cursor-pointer border-b px-3 py-6 transition-[margin] duration-300 ease-in-out will-change-transform md:aspect-square md:border md:p-[11px] xl:p-3"
       onClick={handleClick}
     >
       <div className="flex w-full items-center justify-between">
