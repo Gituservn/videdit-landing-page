@@ -17,10 +17,12 @@ const HeroVideo = () => {
       const width = window.innerWidth;
       if (width < 1024) {
         setVideoSrc(
-          "https://res.cloudinary.com/dxvtacrde/video/upload/v1753713461/videoOlga/hero-mob2_wufbaw.mp4",
+          "https://res.cloudinary.com/dbrn2qntv/video/upload/v1753815917/hero-mob_eikfnh.mp4",
         );
       } else {
-        setVideoSrc("/videos/hero.mp4");
+        setVideoSrc(
+          "https://res.cloudinary.com/dbrn2qntv/video/upload/v1753815897/hero_ahart0.mp4",
+        );
       }
     };
 
