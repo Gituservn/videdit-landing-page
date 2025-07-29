@@ -16,7 +16,9 @@ const HeroVideo = () => {
     const updateSrc = () => {
       const width = window.innerWidth;
       if (width < 1024) {
-        setVideoSrc("/videos/hero-mob.mp4");
+        setVideoSrc(
+          "https://res.cloudinary.com/dxvtacrde/video/upload/v1753713461/videoOlga/hero-mob2_wufbaw.mp4",
+        );
       } else {
         setVideoSrc("/videos/hero.mp4");
       }
