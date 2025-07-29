@@ -5,21 +5,32 @@ import { PauseIcon } from "../shared/icons/PauseIcon";
 import { BatteryAnimation } from "../ctaSection/BatteryAnimation";
 
 const HeroVideo = () => {
-  const videoDesktopRef = useRef<HTMLVideoElement | null>(null);
-  const videoMobileRef = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [scrolledOnce, setScrolledOnce] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
-
-  const getCurrentVideo = () => {
-    if (typeof window === "undefined") return null;
-    return window.innerWidth >= 1280 ? videoDesktopRef.current : videoMobileRef.current;
-  };
+  const [videoSrc, setVideoSrc] = useState("");
 
   useEffect(() => {
-    const video = getCurrentVideo();
-    if (!video) return;
+    const updateSrc = () => {
+      const width = window.innerWidth;
+      if (width < 1024) {
+        setVideoSrc("/videos/hero-mob.mp4");
+      } else {
+        setVideoSrc("/videos/hero.mp4");
+      }
+    };
+
+    updateSrc();
+    window.addEventListener("resize", updateSrc);
+
+    return () => window.removeEventListener("resize", updateSrc);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoSrc) return;
 
     const onCanPlay = () => {
       setIsVideoReady(true);
@@ -33,7 +44,7 @@ const HeroVideo = () => {
     return () => {
       video.removeEventListener("canplaythrough", onCanPlay);
     };
-  }, []);
+  }, [videoSrc]);
 
   useEffect(() => {
     let lockedScrollY = 0;
@@ -58,9 +69,8 @@ const HeroVideo = () => {
         document.body.classList.add("hero-scrolled");
 
         const title = document.getElementById("hero-title");
-        const video = getCurrentVideo();
         const overlay = overlayRef.current;
-        if (!title || !video || !overlay) return;
+        if (!title || !videoRef.current || !overlay) return;
 
         const isMobile = window.innerWidth < 768;
         const isTab = window.innerWidth >= 768 && window.innerWidth < 1280;
@@ -96,7 +106,7 @@ const HeroVideo = () => {
             },
             "0.5",
           )
-          .set(video, { zIndex: -2 }, "<")
+          .set(videoRef.current, { zIndex: -2 }, "<")
           .set(overlay, { zIndex: -1 }, "<");
       }
     };
@@ -106,8 +116,8 @@ const HeroVideo = () => {
   }, [scrolledOnce]);
 
   const togglePlay = () => {
-    const video = getCurrentVideo();
-    if (!video) return;
+    const video = videoRef.current;
+    if (!video || !videoSrc) return;
     if (video.paused) {
       video.play();
       setIsPlaying(true);
@@ -128,27 +138,20 @@ const HeroVideo = () => {
           </div>
         </div>
       )}
-      <video
-        ref={videoMobileRef}
-        muted
-        autoPlay
-        playsInline
-        preload="auto"
-        loop
-        className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500 lg:hidden"
-      >
-        <source src="/videos/hero-mob-trim.mp4" type="video/mp4" />
-      </video>
-      <video
-        ref={videoDesktopRef}
-        muted
-        autoPlay
-        playsInline
-        loop
-        className="absolute inset-0 z-[11] hidden h-full w-full object-cover transition-all duration-500 lg:block"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
+      {videoSrc && (
+        <video
+          ref={videoRef}
+          muted
+          autoPlay
+          playsInline
+          preload="auto"
+          loop
+          className="absolute inset-0 z-[11] h-full w-full object-cover transition-all duration-500"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      )}
+
       <div ref={overlayRef} className="bg-blck/35 absolute inset-0 z-[10]" />
       <button
         onClick={togglePlay}

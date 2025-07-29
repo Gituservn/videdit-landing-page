@@ -65,7 +65,7 @@ export type FeedbackCardProps = {
   text: string;
 };
 
-export type PortfolioProp = { title: string; videoURL: string };
+export type PortfolioProp = { title: string; videoURL: string; imgURL: string };
 
 export type ServiceItemProp = { videoURL: string; title: string; list: string[] };
 

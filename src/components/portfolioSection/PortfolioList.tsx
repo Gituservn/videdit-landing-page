@@ -183,7 +183,7 @@ export const PortfolioList = ({
                 playsInline
                 loop
                 preload="auto"
-                poster="/images/faq5.jpg"
+                poster={item.imgURL}
                 aria-label={`${item.title} — ${aria}`}
                 onClick={() => handleVideoClick(index)}
                 className="absolute inset-0 h-full w-full object-cover md:[mask-image:linear-gradient(to_top,transparent,black_16px)]"
