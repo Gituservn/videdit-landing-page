@@ -37,8 +37,8 @@ export const PortfolioList = ({
       const isTablet = window.innerWidth >= 768;
       setIsTabletUp(isTablet);
       if (!isTablet) {
-        setActiveIndex(0);
-        setIsMobilePlaying(portfolioList.map((_, i) => i === 0));
+        setActiveIndex(3);
+        setIsMobilePlaying(portfolioList.map((_, i) => i === 3));
       } else {
         setIsMobilePlaying(portfolioList.map(() => false));
       }
@@ -137,7 +137,7 @@ export const PortfolioList = ({
       role="list"
       aria-label={aria}
       style={isTabletUp ? { height: `${heightListTab}px` } : undefined}
-      className="relative mx-auto flex max-w-[500px] flex-col gap-4 md:max-h-[740px] md:max-w-full lg:max-w-[1479px]"
+      className="relative mx-auto flex max-w-[500px] flex-col-reverse gap-4 md:max-h-[740px] md:max-w-full lg:max-w-[1479px]"
     >
       {portfolioList.map((item, index) => {
         const isHovered = hoveredIndex === index;
