@@ -42,7 +42,7 @@ export const ui = {
     aboutText1:
       "Я не просто ріжу відео — я створюю настрій, емоцію та логіку розповіді. \nПрацюю з бізнесом, брендами, контент-мейкерами, і людьми, які хочуть зберегти важливі моменти життя у форматі, до якого приємно повертатися.",
     aboutText2:
-      "Я віддаю перевагу мінімалістичному та легкому стилю, без зайвих деталей – головне, щоб відео передавало правильний настрій",
+      "Я віддаю перевагу мінімалістичному та легкому стилю, без зайвих деталей – головне, щоб відео передавало правильний настрій.",
     approach: "мій підхід",
     approachItem1: "Чіткість і повага до дедлайнів",
     approachItem2: "Завжди на зв’язку, відкрито обговорюю всі побажання",
@@ -70,7 +70,7 @@ export const ui = {
     portfolioTitle: "Звичайні моменти перетворюю на справжні шедеври",
     portfolioCard1: "Анімація логотипу",
     portfolioCard2: "Робота з кольором",
-    portfolioCard3: "Промо для фотографа",
+    portfolioCard3: "Типографіка в русі",
     portfolioCard4: "Промо для фотографа",
     portfolioVideo: "відео портфоліо",
     portfolioNoplay: "Ваш браузер не підтримує відео",
@@ -85,18 +85,18 @@ export const ui = {
     "feedback2.role": "клієнт",
     "feedback2.text":
       "Щиро дякую за чудовий монтаж! Відео з дня народження мого сина вийшло дуже зворушливим — вся сім’я переглядала зі сльозами на очах. Ви зберегли ці незабутні моменти назавжди.",
-    "feedback3.name": "Вероніка",
-    "feedback3.role": "власниця кавярні",
-    "feedback3.text":
+    "feedback5.name": "Вероніка",
+    "feedback5.role": "власниця кавярні",
+    "feedback5.text":
       "Дуже задоволена результатом! Монтаж вийшов динамічним і стильним — саме те, що треба для просування моєї кав’ярні в Instagram. Клієнти вже питають, хто робив відео :)",
     "feedback4.name": "Анет",
     "feedback4.role": "розробниця",
     "feedback4.text":
       "Співпрацюємо з Олею над відео-презентаціями. Вона створила стильну заставку, додає динаміку та структуру — ролики виходять професійними, зрозумілими й приємними до перегляду.",
-    "feedback5.name": "Людмила",
-    "feedback5.role": "клієнт",
-    "feedback5.text":
-      "Щиро дякую за чудовий монтаж! Відео з дня народження мого сина вийшло дуже зворушливим — вся сім’я переглядала зі сльозами на очах. Ви зберегли ці незабутні моменти назавжди.",
+    "feedback3.name": "Олександр",
+    "feedback3.role": "бізнесмен",
+    "feedback3.text":
+      "Логотип, створений Ольгою, став справжнім магнітом для уваги! Саме він — перше, що запам’ятовують наші клієнти і що допомогло їм зробити вибір на нашу користь.",
     faqSection: "FAQ",
     faqTitle: "Поширені питання",
     faqQuestion1: "Які терміни виконання монтажу відео?",
@@ -200,7 +200,7 @@ export const ui = {
     portfolioTitle: "Turning ordinary moments into true masterpieces",
     portfolioCard1: "Logo animation",
     portfolioCard2: "Working with color",
-    portfolioCard3: "Promo for photographer",
+    portfolioCard3: "Typography Loop",
     portfolioCard4: "Promo for photographer",
     portfolioVideo: "video portfolio",
     portfolioNoplay: "Your browser does not support video",
@@ -216,18 +216,18 @@ export const ui = {
     "feedback2.role": "client",
     "feedback2.text":
       "Thank you so much for the adorable editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve preserved these vivid moments forever.",
-    "feedback3.name": "Veronika",
-    "feedback3.role": "café owner",
-    "feedback3.text":
+    "feedback5.name": "Veronika",
+    "feedback5.role": "café owner",
+    "feedback5.text":
       "I’m really happy with the result! The edit turned out dynamic and stylish — exactly what I needed to promote my café on Instagram. Clients are already asking who made the video :)",
     "feedback4.name": "Anet",
     "feedback4.role": "developer",
     "feedback4.text":
       "We work with Olya on video presentations. She created a stylish intro and adds dynamic flow and structure — the videos turn out professional, clear, and enjoyable to watch.",
-    "feedback5.name": "Liudmyla",
-    "feedback5.role": "client",
-    "feedback5.text":
-      "Thank you so much for the adorable editing! The video from my son’s birthday turned out so touching — the whole family watched it with tears in their eyes. You’ve saved these vivid moments forever.",
+    "feedback3.name": "Oleksandr",
+    "feedback3.role": "entrepreneur",
+    "feedback3.text":
+      "The logo created by Olga became a true attention magnet! It’s the first thing our clients remember — and often the reason they chose us over others.",
     faqSection: "FAQ",
     faqTitle: "Frequently asked questions",
     faqQuestion1: "What’s the typical turnaround time for a video edit?",

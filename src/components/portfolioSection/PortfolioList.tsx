@@ -49,9 +49,9 @@ export const PortfolioList = ({
   }, []);
 
   useEffect(() => {
-    const isTab = window.innerWidth >= 768 && window.innerWidth < 1280;
-    const isPC = window.innerWidth >= 1280 && window.innerWidth < 1920;
-    const isBig = window.innerWidth >= 1920;
+    const isTab = window.innerWidth >= 768 && window.innerWidth < 1260;
+    const isPC = window.innerWidth >= 1260 && window.innerWidth < 1900;
+    const isBig = window.innerWidth >= 1900;
 
     const paddingX = isTab ? 48 : isPC ? 80 : isBig ? 160 : 32;
     const margin = isTab ? 7.2 : 11;

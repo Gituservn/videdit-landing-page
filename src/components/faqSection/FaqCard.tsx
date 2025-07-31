@@ -40,7 +40,7 @@ export const FaqCard: FC<FaqCardProps> = ({
     }
     const isMobile = window.innerWidth < 768;
 
-    const gap = window.innerWidth >= 1920 ? 30 : window.innerWidth >= 1280 ? 29 : 17;
+    const gap = window.innerWidth >= 1900 ? 30 : window.innerWidth >= 1260 ? 29 : 17;
 
     const scrollHeight = content.scrollHeight;
     const newWidth = rect.width * 2 + gap;

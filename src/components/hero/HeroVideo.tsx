@@ -77,8 +77,8 @@ const HeroVideo = () => {
         if (!title || !videoRef.current || !overlay) return;
 
         const isMobile = window.innerWidth < 768;
-        const isTab = window.innerWidth >= 768 && window.innerWidth < 1280;
-        const isPC = window.innerWidth >= 1280 && window.innerWidth < 1920;
+        const isTab = window.innerWidth >= 768 && window.innerWidth < 1260;
+        const isPC = window.innerWidth >= 1260 && window.innerWidth < 1900;
 
         const tl = gsap.timeline({
           onComplete: () => {
@@ -103,7 +103,7 @@ const HeroVideo = () => {
                   ? "32px"
                   : isTab
                     ? "48px"
-                    : window.innerWidth >= 1920
+                    : window.innerWidth >= 1900
                       ? "80px"
                       : "64px";
               },

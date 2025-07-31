@@ -1,0 +1,40 @@
+---
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(Astro.url);
+const title = `Willow Motion - ${t("heroTitle")}`;
+const description = t("heroText");
+const siteUrl = Astro.url.origin;
+const defaultOgImage = `${siteUrl}/open-graph.jpg`;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preload" href="/fonts/AlumniSans-Bold.ttf" as="font" crossorigin />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="canonical" href={Astro.url.href} />
+<link rel="alternate" hreflang="uk" href={siteUrl} />
+<link rel="alternate" hreflang="en" href={`${siteUrl}/en/`} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={siteUrl} />
+<meta property="og:image" content={defaultOgImage} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta property="twitter:url" content={siteUrl} />
+<meta name="twitter:image" content={defaultOgImage} />
