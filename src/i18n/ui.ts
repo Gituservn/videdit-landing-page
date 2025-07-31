@@ -71,7 +71,7 @@ export const ui = {
     portfolioCard1: "Анімація логотипу",
     portfolioCard2: "Робота з кольором",
     portfolioCard3: "Типографіка в русі",
-    portfolioCard4: "Промо для фотографа",
+    portfolioCard4: "Міні-шоуріл",
     portfolioVideo: "відео портфоліо",
     portfolioNoplay: "Ваш браузер не підтримує відео",
 
@@ -201,7 +201,7 @@ export const ui = {
     portfolioCard1: "Logo animation",
     portfolioCard2: "Working with color",
     portfolioCard3: "Typography Loop",
-    portfolioCard4: "Promo for photographer",
+    portfolioCard4: "Mini Motion Reel",
     portfolioVideo: "video portfolio",
     portfolioNoplay: "Your browser does not support video",
 
