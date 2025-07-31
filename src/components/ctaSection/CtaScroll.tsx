@@ -24,8 +24,8 @@ export const CtaScroll = ({ children }: { children?: React.ReactNode }) => {
 
           if (!title || !text || !circleRef.current || !sectionRef.current) return;
 
-          const titleTop = window.innerWidth >= 1280 ? "-270px" : "-220px";
-          const textBottom = window.innerWidth >= 1280 ? "-170px" : "-140px";
+          const titleTop = window.innerWidth >= 1260 ? "-270px" : "-220px";
+          const textBottom = window.innerWidth >= 1260 ? "-170px" : "-140px";
 
           ctxRef.current = gsap.context(() => {
             gsap.set(circleRef.current, {
@@ -74,7 +74,7 @@ export const CtaScroll = ({ children }: { children?: React.ReactNode }) => {
     >
       <div
         ref={circleRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black md:[--height:721px] md:[--width:721px] lg:[--height:917px] lg:[--width:917px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black md:[--height:721px] md:[--width:721px] lg:[--height:917px] lg:[--width:917px] xl:[--height:1003px] xl:[--width:1003px]"
         style={{
           width: "var(--width)",
           height: "var(--height)",
