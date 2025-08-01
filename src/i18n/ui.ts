@@ -86,7 +86,7 @@ export const ui = {
     "feedback2.text":
       "Щиро дякую за чудовий монтаж! Відео з дня народження мого сина вийшло дуже зворушливим — вся сім’я переглядала зі сльозами на очах. Ви зберегли ці незабутні моменти назавжди.",
     "feedback5.name": "Вероніка",
-    "feedback5.role": "власниця кавярні",
+    "feedback5.role": "власниця кав'ярні",
     "feedback5.text":
       "Дуже задоволена результатом! Монтаж вийшов динамічним і стильним — саме те, що треба для просування моєї кав’ярні в Instagram. Клієнти вже питають, хто робив відео :)",
     "feedback4.name": "Анет",
@@ -104,11 +104,11 @@ export const ui = {
       "Залежить від тривалості і складності проєкту. У середньому — від 2 до 5 робочих днів. Якщо терміни “горять” — обговоримо експрес-монтаж.",
     faqQuestion2: "Як визначити вартість монтажу?",
     "faqAnswer2.1":
-      "<b>Базовий монтаж (2-4 години):</b> обрізка, склейка кадрів, легка кольорокорекція, додавання простих титрів та музики. <br><b>Вартість: 200-400 грн/хв</b> готового відео",
+      "<b>Базовий монтаж (2-4 години):</b> обрізка, склейка кадрів, легка кольорокорекція, додавання простих титрів та музики. <br><b>Вартість: 200-400 грн/хв</b> готового відео.",
     "faqAnswer2.2":
-      "<b>Середній рівень (1-2 дні):</b> глибша кольорокорекція, динамічні переходи, ефекти, синхронізація звуку, робота з текстом та графікою. <br><b>Вартість: 400-800 грн/хв</b> готового відео",
+      "<b>Середній рівень (1-2 дні):</b> глибша кольорокорекція, динамічні переходи, ефекти, синхронізація звуку, робота з текстом та графікою. <br><b>Вартість: 400-800 грн/хв</b> готового відео.",
     "faqAnswer2.3":
-      "<b>Висока складність (від 3 днів):</b> комплексна графіка та анімація, балансування звуку, мультикамерний монтаж. <br><b>Вартість: 800-2 000 грн/хв</b> готового відео",
+      "<b>Висока складність (від 3 днів):</b> комплексна графіка та анімація, балансування звуку, мультикамерний монтаж. <br><b>Вартість: 800-2 000 грн/хв</b> готового відео.",
     faqQuestion3: "Які матеріали потрібно надати для початку?",
     "faqAnswer3.1": "Надсилайте оригінальні файли без змін, прямо з камери або телефону.",
     "faqAnswer3.2":
@@ -120,10 +120,10 @@ export const ui = {
     "faqAnswer4.2":
       "Платформи: <br>TikTok, Facebook, Instagram, YouTube, LinkedIn, Twitter (X), Pinterest.",
     "faqAnswer4.3":
-      "Послуги включають: <br>Динамічний темп монтажу <br>Використання актуальних ефектів, переходів та анімації <br>Оптимізацію контенту відповідно до трендів платформи <br>Налаштування звуку та додавання субтитрів",
+      "Послуги включають: <br>&bull; Динамічний темп монтажу; <br>&bull; Використання актуальних ефектів, переходів та анімації; <br>&bull; Оптимізацію контенту відповідно до трендів платформи; <br>&bull; Налаштування звуку та додавання субтитрів.",
     faqQuestion5: "Як передати матеріали для монтажу?",
     "faqAnswer5.1":
-      "Рекомендовані сервіси: Google Диск, Telegram, WhatsApp (лише для коротких відео, можливі обмеження якості)",
+      "Рекомендовані сервіси: Google Диск, Telegram, WhatsApp (лише для коротких відео, можливі обмеження якості).",
     "faqAnswer5.2":
       "Важливі моменти при передачі: <br>Передавайте файли без стиснення. <br>Описуйте матеріали – додавайте текстові файли або тайм-коди, якщо є специфічні побажання. <br>Передавайте додаткові файли – логотипи, музику, графіку, шрифти (за необхідності).",
     "faqAnswer5.3":
@@ -132,7 +132,7 @@ export const ui = {
     hideAnswer: "Сховати відповідь",
     ctaTitle: "Почнемо створювати ваше відео вже сьогодні?",
     ctaText:
-      "Напишіть мені, і я підкажу найкращий формат під ваш запит — без зобов’язань і складнощів.",
+      "Напишіть мені і я підкажу найкращий формат під ваш запит — без зобов’язань і складнощів.",
     ctaButton: "Зв’язатись зі мною",
     footerNav: "Навігація",
     footerAllRights: "Всі права захищені",
@@ -146,15 +146,15 @@ export const ui = {
     contacts: "Contacts",
     heroTitle: "Video That Speaks for You",
     heroText:
-      "Professional video editing for businesses, events, and social media - so every frame works toward your goals",
+      "Professional video editing for businesses, events, and social media — so every frame works toward your goals",
     orderButton: " Let’s Create",
     portfolioButton: "See My Work",
 
-    whyMeTitle: "Why Choose Professional Video Editing?",
-    whyMeItem1Title: "Videos That Sell",
+    whyMeTitle: "Why choose professional video editing?",
+    whyMeItem1Title: "Videos that sell",
     whyMeItem1Text:
       "Promotional clips, product demos, client testimonials — crafted to help your audience understand and choose your product.",
-    whyMeItem2Title: "Videos That Capture Emotion",
+    whyMeItem2Title: "Videos that capture emotion",
     whyMeItem2Text:
       "Preserve the magic of weddings, celebrations, and family moments — in a format you’ll want to revisit again and again.",
     whyMeItem3Title: "The kind of content people watch till the end",
@@ -200,8 +200,8 @@ export const ui = {
     portfolioTitle: "Turning ordinary moments into true masterpieces",
     portfolioCard1: "Logo animation",
     portfolioCard2: "Working with color",
-    portfolioCard3: "Typography Loop",
-    portfolioCard4: "Mini Motion Reel",
+    portfolioCard3: "Typography loop",
+    portfolioCard4: "Mini motion reel",
     portfolioVideo: "video portfolio",
     portfolioNoplay: "Your browser does not support video",
 
@@ -235,11 +235,11 @@ export const ui = {
       "It depends on the length and complexity of the project. On average — from 2 to 5 business days. In a rush? Let’s talk express editing.",
     faqQuestion2: "How is the editing price calculated?",
     "faqAnswer2.1":
-      "<b>Basic edit (2–4 hours):</b> trimming, stitching footage, light color correction, adding basic titles and music. <br><b>Rate: 200–400 UAH/min</b> of final video.",
+      "<b>Basic edit (2 - 4 hours):</b> trimming, stitching footage, light color correction, adding basic titles and music. <br><b>Rate: 200 - 400 UAH/min</b> of final video.",
     "faqAnswer2.2":
-      "<b>Standard level (1–2 days):</b> deeper color grading, dynamic transitions, effects, audio sync, text and graphics. <br><b>Rate: 400–800 UAH/min</b> of final video.",
+      "<b>Standard level (1 - 2 days):</b> deeper color grading, dynamic transitions, effects, audio sync, text and graphics. <br><b>Rate: 400 - 800 UAH/min</b> of final video.",
     "faqAnswer2.3":
-      "<b>Advanced edit (from 3 days):</b> complex graphics & animation, audio balancing, multicam editing. <br><b>Rate: 800–2,000 UAH/min</b> of final video.",
+      "<b>Advanced edit (from 3 days):</b> complex graphics and animation, audio balancing, multicam editing. <br><b>Rate: 800 - 2,000 UAH/min</b> of final video.",
     faqQuestion3: "What materials do I need to provide to start the project?",
     "faqAnswer3.1":
       "Send original unedited files directly from your camera or phonePlease send original, uncompressed files directly from your camera or phone.",
@@ -252,12 +252,12 @@ export const ui = {
     "faqAnswer4.2":
       "Platforms: <br>TikTok, Facebook, Instagram, YouTube, LinkedIn, Twitter (X), Pinterest.",
     "faqAnswer4.3":
-      "Includes: <br>Fast-paced, dynamic editing <br>Trendy effects, transitions & animations <br>Content optimization based on platform trends <br>Audio adjustment and subtitle integration",
+      "Includes: <br>&bull; Fast-paced, dynamic editing; <br>&bull; Trendy effects, transitions & animations; <br>&bull; Content optimization based on platform trends; <br>&bull; Audio adjustment and subtitle integration.",
     faqQuestion5: "How do I send files for editing?",
     "faqAnswer5.1":
       "Recommended platforms: Google Drive, Telegram, WhatsApp (only for short clips – may affect quality).",
     "faqAnswer5.2":
-      "Key tips for delivery: <br>Send files uncompressed to preserve quality. <br>Add context — include text notes or timestamps if you have specific requests. <br>Don’t forget extra files like logos, music, graphics, or fonts (if needed).",
+      "Key tips for delivery: <br>Send files uncompressed to preserve quality. <br>Add context — include text notes or timestamps if you have specific requests. <br>Don’t forget extra files like logos, music, graphics or fonts (if needed).",
     "faqAnswer5.3":
       "Cloud services are the most reliable way to ensure full quality and quick access to your files.",
     showAnswer: "Show answer",
