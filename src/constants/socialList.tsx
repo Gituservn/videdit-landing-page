@@ -34,7 +34,7 @@ export const socialListFooter = [
   {
     icon: <FBF />,
     name: "Facebook",
-    link: "https://www.facebook.com/share/14DgpbKk2Et/?mibextid=wwXIfr",
+    link: "https://www.facebook.com/share/15q3Y4CaKh/?mibextid=wwXIfr",
   },
   {
     icon: <TelegramF />,
@@ -44,7 +44,7 @@ export const socialListFooter = [
   {
     icon: <InstaF />,
     name: "Instagram",
-    link: "https://www.instagram.com/willow.moution/?igsh=MXkyZHlmcTQ2a21wbA%3D%3D#",
+    link: "https://www.instagram.com/willow.motion?igsh=bXl2NWhuY3RwYWIx&utm_source=qr",
   },
   {
     icon: <MailF />,
