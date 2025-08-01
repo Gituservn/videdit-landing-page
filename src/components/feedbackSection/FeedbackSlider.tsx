@@ -2,8 +2,9 @@ import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton } from "../shared/Slider/SliderDots";
 import { SliderDotsBox } from "../shared/Slider/SliderDotsBox";
-import { FeedbackCard, FeedbackCardProps } from "./FeedbackCard";
+import { FeedbackCard } from "./FeedbackCard";
 import { useEffect, useState } from "react";
+import { FeedbackCardProps } from "@/types";
 
 export const FeedbackSlider = ({ list }: { list: FeedbackCardProps[] }) => {
   const [options, setOptions] = useState<EmblaOptionsType>({
@@ -45,7 +46,7 @@ export const FeedbackSlider = ({ list }: { list: FeedbackCardProps[] }) => {
           scrollSnaps={scrollSnaps}
           selectedIndex={selectedIndex}
           selectedColor="bg-selected"
-          color="bg-txgrey"
+          color="bg-white"
           feedback
           onDotButtonClick={onDotButtonClick}
         />
