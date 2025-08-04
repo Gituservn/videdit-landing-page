@@ -96,7 +96,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
       >
         <button
           onClick={onClose}
-          className="text-grey -mr-4 ml-auto flex h-11 w-11 cursor-pointer items-center justify-center font-bold"
+          className="text-grey -mr-4 ml-auto flex h-11 w-11 cursor-pointer items-center justify-center font-bold lg:-mr-8"
         >
           <CloseIcon />
         </button>
@@ -121,7 +121,7 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   <div className="flex h-10 w-10 items-center justify-center md:h-12 md:w-12">
                     {item.icon}
                   </div>
-                  <p className="text-white">{item.name}</p>
+                  <p className="text-[18px] text-white md:text-2xl lg:text-[28px]">{item.name}</p>
                 </a>
               </li>
             ))}
