@@ -18,7 +18,6 @@ export const FaqCard: FC<FaqCardProps & { imageSize?: { width: number; height: n
   const contentRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLButtonElement>(null);
-  const originalSizeRef = useRef<{ width: number; height: number } | null>(null);
   const lastClickTimeRef = useRef<number>(0);
 
   const handleClick = () => {
@@ -31,7 +30,6 @@ export const FaqCard: FC<FaqCardProps & { imageSize?: { width: number; height: n
   useLayoutEffect(() => {
     if (!cardRef.current || !contentRef.current || !arrowRef.current) return;
     if (!imageSize) return;
-    console.log("🚀 ~ useLayoutEffect ~ imageSize:", imageSize);
 
     const card = cardRef.current;
     const content = contentRef.current;
@@ -43,7 +41,6 @@ export const FaqCard: FC<FaqCardProps & { imageSize?: { width: number; height: n
 
     const scrollHeight = content.scrollHeight;
     const newWidth = imageSize.width * 2 + gap;
-    console.log("🚀 ~ useLayoutEffect ~ newWidth:", newWidth);
 
     const newHeight = imageSize.height * 2 + gap;
     const newContentHeight = newHeight - 90;
@@ -53,8 +50,6 @@ export const FaqCard: FC<FaqCardProps & { imageSize?: { width: number; height: n
     if (isMobile) {
       animateMobile(content, scrollHeight, isOpen);
     } else if (imageSize) {
-      console.log("🚀 ~ useLayoutEffect ~ originalSizeRef.current:", originalSizeRef.current);
-
       animateDesktop({
         card,
         content,
