@@ -1,17 +1,18 @@
-import { useRef, type FC, useLayoutEffect } from "react";
+import { useRef, type FC, useLayoutEffect, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ArrowIcon } from "../shared/icons/ArrowIcon";
 import { FaqCardProps } from "@/types";
 import { animateMobile } from "@/utils/animateMobile";
 import { animateDesktop } from "@/utils/animateDesktop";
 
-export const FaqCard: FC<FaqCardProps> = ({
+export const FaqCard: FC<FaqCardProps & { imageSize?: { width: number; height: number } }> = ({
   question,
   answer,
   isOpen,
   onToggle,
   position,
   showAnswer,
+  imageSize,
   hideAnswer,
 }) => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -29,39 +30,40 @@ export const FaqCard: FC<FaqCardProps> = ({
 
   useLayoutEffect(() => {
     if (!cardRef.current || !contentRef.current || !arrowRef.current) return;
+    if (!imageSize) return;
+    console.log("🚀 ~ useLayoutEffect ~ imageSize:", imageSize);
 
     const card = cardRef.current;
     const content = contentRef.current;
     const arrow = arrowRef.current;
-    const rect = card.getBoundingClientRect();
 
-    if (!originalSizeRef.current) {
-      originalSizeRef.current = { width: rect.width, height: rect.height };
-    }
     const isMobile = window.innerWidth < 768;
 
     const gap = window.innerWidth >= 1900 ? 30 : window.innerWidth >= 1260 ? 29 : 17;
 
     const scrollHeight = content.scrollHeight;
-    const newWidth = rect.width * 2 + gap;
-    const newHeight = rect.height * 2 + gap;
+    const newWidth = imageSize.width * 2 + gap;
+    console.log("🚀 ~ useLayoutEffect ~ newWidth:", newWidth);
+
+    const newHeight = imageSize.height * 2 + gap;
     const newContentHeight = newHeight - 90;
 
     gsap.killTweensOf([card, content, arrow]);
 
     if (isMobile) {
       animateMobile(content, scrollHeight, isOpen);
-    } else {
+    } else if (imageSize) {
+      console.log("🚀 ~ useLayoutEffect ~ originalSizeRef.current:", originalSizeRef.current);
+
       animateDesktop({
         card,
         content,
         arrow,
-        rect,
         newWidth,
         newHeight,
         newContentHeight,
         isOpen,
-        originalSize: originalSizeRef.current,
+        originalSize: imageSize,
         position,
       });
     }

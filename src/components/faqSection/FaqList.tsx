@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { FaqCard } from "./FaqCard";
 import { ResponsivePosition } from "@/types";
 
@@ -12,6 +12,23 @@ export const FaqList = ({
   hideAnswer: string;
 }) => {
   const [activeId, setActiveId] = useState<number | null>(null);
+  const imageRef = useRef<HTMLLIElement>(null);
+  const [imageSize, setImageSize] = useState<{ width: number; height: number } | undefined>(
+    undefined,
+  );
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!imageRef.current) return;
+    const rect = imageRef.current.getBoundingClientRect();
+    setImageSize({ width: rect.width, height: rect.height });
+  }, [windowWidth]);
 
   const handleToggle = (id: number) => {
     setActiveId((prev) => (prev === id ? null : id));
@@ -30,11 +47,16 @@ export const FaqList = ({
               showAnswer={showAnswer}
               hideAnswer={hideAnswer}
               isOpen={activeId === index}
+              imageSize={imageSize}
               onToggle={() => handleToggle(index)}
             />
           </li>
 
-          <li key={index + "image"} className={`hidden ${index === 4 ? "lg:block" : "md:block"} `}>
+          <li
+            key={index + "image"}
+            ref={index !== 4 ? imageRef : undefined}
+            className={`hidden ${index === 4 ? "lg:block" : "md:block"} `}
+          >
             <img
               src={`/images/faq${index + 1}.jpg`}
               alt="FAQ image"
