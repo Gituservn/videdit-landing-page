@@ -17,7 +17,7 @@ const HeroVideo = () => {
       const width = window.innerWidth;
       if (width < 1024) {
         setVideoSrc(
-          "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1753815917/hero-mob_eikfnh",
+          "https://res.cloudinary.com/dbrn2qntv/video/upload/f_auto,q_auto/v1754940671/hero-mob_clfc2y",
         );
       } else {
         setVideoSrc(

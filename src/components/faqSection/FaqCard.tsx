@@ -18,7 +18,6 @@ export const FaqCard: FC<FaqCardProps & { imageSize?: { width: number; height: n
   const contentRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLButtonElement>(null);
-  const originalSizeRef = useRef<{ width: number; height: number } | null>(null);
   const lastClickTimeRef = useRef<number>(0);
 
   const handleClick = () => {
