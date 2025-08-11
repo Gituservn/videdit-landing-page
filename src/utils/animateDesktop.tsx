@@ -6,7 +6,6 @@ type AnimateDesktopParams = {
   card: HTMLDivElement;
   content: HTMLDivElement;
   arrow: HTMLButtonElement;
-  rect: DOMRect;
   newWidth: number;
   newHeight: number;
   newContentHeight: number;

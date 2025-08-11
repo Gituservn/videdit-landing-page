@@ -125,7 +125,7 @@ export const ui = {
     "faqAnswer5.1":
       "Рекомендовані сервіси: Google Диск, Telegram, WhatsApp (лише для коротких відео, можливі обмеження якості).",
     "faqAnswer5.2":
-      "Важливі моменти при передачі: <br>Передавайте файли без стиснення. <br>Описуйте матеріали – додавайте текстові файли або тайм-коди, якщо є специфічні побажання. <br>Передавайте додаткові файли – логотипи, музику, графіку, шрифти (за необхідності).",
+      "<b>Важливі моменти при передачі:</b> <br>Передавайте файли без стиснення. <br>Описуйте матеріали – додавайте текстові файли або тайм-коди, якщо є специфічні побажання. <br>Передавайте додаткові файли – логотипи, музику, графіку, шрифти (за необхідності).",
     "faqAnswer5.3":
       "Передача файлів через хмарні сервіси є найбільш ефективним способом, що забезпечує збереження якості та швидкий доступ до матеріалів.",
     showAnswer: "Показати відповідь",
@@ -257,12 +257,12 @@ export const ui = {
     "faqAnswer5.1":
       "Recommended platforms: Google Drive, Telegram, WhatsApp (only for short clips – may affect quality).",
     "faqAnswer5.2":
-      "Key tips for delivery: <br>Send files uncompressed to preserve quality. <br>Add context — include text notes or timestamps if you have specific requests. <br>Don’t forget extra files like logos, music, graphics or fonts (if needed).",
+      "<b>Key tips for delivery:</b> <br>Send files uncompressed to preserve quality. <br>Add context — include text notes or timestamps if you have specific requests. <br>Don’t forget extra files like logos, music, graphics or fonts (if needed).",
     "faqAnswer5.3":
       "Cloud services are the most reliable way to ensure full quality and quick access to your files.",
     showAnswer: "Show answer",
     hideAnswer: "Hide answer",
-    ctaTitle: "Let’s start your video today!",
+    ctaTitle: "Let's create your video today!",
     ctaText:
       "Message me and I’ll suggest the best format for your request — no pressure, no commitments.",
     ctaButton: "Get in Touch",
