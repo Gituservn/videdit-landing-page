@@ -104,11 +104,11 @@ export const ui = {
       "Залежить від тривалості і складності проєкту. У середньому — від 2 до 5 робочих днів. Якщо терміни “горять” — обговоримо експрес-монтаж.",
     faqQuestion2: "Як визначити вартість монтажу?",
     "faqAnswer2.1":
-      "<b>Базовий монтаж (2-4 години):</b> обрізка, склейка кадрів, легка кольорокорекція, додавання простих титрів та музики. <br><b>Вартість: 200-400 грн/хв</b> готового відео.",
+      "<b>Базовий монтаж (2-4 години):</b> обрізка, склейка кадрів, легка кольорокорекція, додавання простих титрів та музики. <br><b>Вартість: 420-840 грн/хв</b> готового відео.",
     "faqAnswer2.2":
-      "<b>Середній рівень (1-2 дні):</b> глибша кольорокорекція, динамічні переходи, ефекти, синхронізація звуку, робота з текстом та графікою. <br><b>Вартість: 400-800 грн/хв</b> готового відео.",
+      "<b>Середній рівень (1-2 дні):</b> глибша кольорокорекція, динамічні переходи, ефекти, синхронізація звуку, робота з текстом та графікою. <br><b>Вартість: 1260-1680 грн/хв</b> готового відео.",
     "faqAnswer2.3":
-      "<b>Висока складність (від 3 днів):</b> комплексна графіка та анімація, балансування звуку, мультикамерний монтаж. <br><b>Вартість: 800-2 000 грн/хв</b> готового відео.",
+      "<b>Висока складність (від 3 днів):</b> комплексна графіка та анімація, балансування звуку, мультикамерний монтаж. <br><b>Вартість: 1680-2100 грн/хв</b> готового відео.",
     faqQuestion3: "Які матеріали потрібно надати для початку?",
     "faqAnswer3.1": "Надсилайте оригінальні файли без змін, прямо з камери або телефону.",
     "faqAnswer3.2":
@@ -137,6 +137,8 @@ export const ui = {
     footerNav: "Навігація",
     footerAllRights: "Всі права захищені",
     footerDeveloped: "розробка сайту",
+    policyButton: "Політика конфіденційності",
+    oferta: "Публічна оферта",
   },
   en: {
     logo: "Olga video",
@@ -235,11 +237,11 @@ export const ui = {
       "It depends on the length and complexity of the project. On average — from 2 to 5 business days. In a rush? Let’s talk express editing.",
     faqQuestion2: "How is the editing price calculated?",
     "faqAnswer2.1":
-      "<b>Basic edit (2 - 4 hours):</b> trimming, stitching footage, light color correction, adding basic titles and music. <br><b>Rate: 200 - 400 UAH/min</b> of final video.",
+      "<b>Basic edit (2 - 4 hours):</b> trimming, stitching footage, light color correction, adding basic titles and music. <br><b>Rate: 10 - 20 $/min</b> of final video.",
     "faqAnswer2.2":
-      "<b>Standard level (1 - 2 days):</b> deeper color grading, dynamic transitions, effects, audio sync, text and graphics. <br><b>Rate: 400 - 800 UAH/min</b> of final video.",
+      "<b>Standard level (1 - 2 days):</b> deeper color grading, dynamic transitions, effects, audio sync, text and graphics. <br><b>Rate: 20 - 30 $/min</b> of final video.",
     "faqAnswer2.3":
-      "<b>Advanced edit (from 3 days):</b> complex graphics and animation, audio balancing, multicam editing. <br><b>Rate: 800 - 2,000 UAH/min</b> of final video.",
+      "<b>Advanced edit (from 3 days):</b> complex graphics and animation, audio balancing, multicam editing. <br><b>Rate: 30 - 40 $/min</b> of final video.",
     faqQuestion3: "What materials do I need to provide to start the project?",
     "faqAnswer3.1":
       "Send original unedited files directly from your camera or phonePlease send original, uncompressed files directly from your camera or phone.",
@@ -269,5 +271,7 @@ export const ui = {
     footerNav: "Navigation",
     footerAllRights: "All rights reserved",
     footerDeveloped: "website development by",
+    policyButton: "Privacy Policy",
+    oferta: "Public Offer",
   },
 } as const;
