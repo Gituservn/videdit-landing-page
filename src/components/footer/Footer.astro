@@ -5,6 +5,8 @@ import { nav } from "@/constants/navList";
 import { useTranslations } from "@/i18n/utils";
 
 import { AnimatedTextHover } from "../shared/AnimatedTextHover";
+import { PrivacyPolicy } from "./PrivacyPolicy";
+import { PublicOferta } from "./PublicOferta";
 import { SocialList } from "./SocialList";
 import { UpButton } from "./UpButton";
 
@@ -56,12 +58,22 @@ const IloveMyTeamLink = "https://www.ilovemyteam.online/";
     <div
       class="relative mx-auto flex max-w-[500px] flex-col gap-4 md:ml-0 md:max-w-[calc(50%+87px)] md:flex-row md:justify-between md:gap-24"
     >
-      <p class="text-txligth text-xs leading-none uppercase">&copy; 2025 {t("footerAllRights")}</p>
-      <div class="flex gap-[11px]">
-        <p class="text-txligth text-xs leading-none uppercase">{t("footerDeveloped")}</p>
-        <a href={IloveMyTeamLink} target="_blank" rel="noreferrer">
-          <IloveMyTeam />
-        </a>
+      <div>
+        <p class="text-txligth mb-4 text-xs leading-none uppercase md:mb-6">
+          &copy; 2025 {t("footerAllRights")}
+        </p>
+        <div class="flex gap-[11px]">
+          <p class="text-txligth text-xs leading-none uppercase">{t("footerDeveloped")}</p>
+          <a href={IloveMyTeamLink} target="_blank" rel="noreferrer">
+            <IloveMyTeam />
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="mb-3">
+          <PrivacyPolicy policyButton={t("policyButton")} client:idle />
+        </div>
+        <div><PublicOferta oferta={t("oferta")} client:idle /></div>
       </div>
       <div class="absolute right-0 bottom-0 md:hidden"><UpButton client:load /></div>
     </div>

@@ -17,7 +17,10 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
+      document.body.classList.add("no-scroll");
       setVisible(true);
+    } else {
+      document.body.classList.remove("no-scroll");
     }
   }, [isOpen]);
 

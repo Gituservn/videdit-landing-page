@@ -70,3 +70,45 @@ export type PortfolioProp = { title: string; videoURL: string; imgURL: string };
 export type ServiceItemProp = { videoURL: string; title: string; list: string[] };
 
 export type WhyListProp = { title: string; text: string };
+
+export interface DocumentType {
+  title: string;
+  subtitle: ContentType[];
+  date: string;
+  points: PointType[];
+}
+
+interface PointType {
+  title: string;
+  content: ContentType[];
+}
+
+export type ContentType = { paragraph: ParagraphType[] };
+
+type ParagraphType = TextContent | LinkContent | EmailContent;
+
+type TextContent = {
+  type: "text";
+  text: string;
+  sublist?: boolean;
+};
+
+export type LinkContent = {
+  type: "link";
+  to: string;
+  text: string;
+};
+
+export type EmailContent = {
+  type: "email";
+  to: string;
+  text: string;
+};
+/// <reference types="astro/client" />
+interface ImportMetaEnv {
+  readonly SITE?: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

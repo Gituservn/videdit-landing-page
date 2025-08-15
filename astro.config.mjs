@@ -7,7 +7,7 @@ import svgr from "vite-plugin-svgr";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://benevolent-duckanoo-561a48.netlify.app/",
+  site: "https://willow-motion.space/",
   i18n: {
     locales: ["en", "ua"],
     defaultLocale: "ua",

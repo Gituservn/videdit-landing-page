@@ -4,7 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "lib": ["DOM", "ES2020"],
-    "types": ["node"],
+    "types": ["astro/client"],
     "jsx": "react-jsx",
     "allowJs": true,
     "checkJs": false,
@@ -20,6 +20,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "astro.config.mjs", "eslint.config.js"],
+  "include": ["src", "types.d.ts", "astro.config.mjs", "eslint.config.js"],
   "exclude": ["node_modules"]
 }
