@@ -4,9 +4,15 @@ import { DocumentContent } from "./DocumentContent";
 import { privacyPolicyText } from "@/assets/data/privacyPolicyText";
 import { ModalBase } from "../shared/ModalBase";
 
-const { title, subtitle, date, points } = privacyPolicyText;
+export const PrivacyPolicy = ({
+  policyButton,
+  locale,
+}: {
+  policyButton: string;
+  locale: string;
+}) => {
+  const { title, subtitle, date, points } = privacyPolicyText[locale as "ua" | "en"];
 
-export const PrivacyPolicy = ({ policyButton }: { policyButton: string }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const onOpenModal = () => setIsOpenModal(true);
