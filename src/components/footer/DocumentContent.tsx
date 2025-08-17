@@ -12,16 +12,16 @@ export const DocumentContent = ({ content }: DocumentContentProps) => {
       {content.map((item, ind) => (
         <li key={ind}>
           <p className="body2">
-            {item.paragraph.map((data) => {
+            {item.paragraph.map((data, ind) => {
               if (data.type === "link") {
-                return <SiteLink key="link" linkData={data} />;
+                return <SiteLink key={`link + ${ind}`} linkData={data} />;
               }
               if (data.type === "email") {
-                return <SiteEmailLink key="email" emailData={data} />;
+                return <SiteEmailLink key={`email + ${ind}`} emailData={data} />;
               }
               if (data.sublist) {
                 return (
-                  <span key="list" className="before:mx-2 before:content-['•']">
+                  <span key={`list + ${ind}`} className="before:mx-2 before:content-['•']">
                     {data.text}
                   </span>
                 );

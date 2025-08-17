@@ -2,13 +2,14 @@
 import IloveMyTeam from "@/assets/icons/ilovemyteam.svg";
 import Logo from "@/assets/icons/logo.svg";
 import { nav } from "@/constants/navList";
-import { useTranslations } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 import { AnimatedTextHover } from "../shared/AnimatedTextHover";
 import { PrivacyPolicy } from "./PrivacyPolicy";
 import { PublicOferta } from "./PublicOferta";
 import { SocialList } from "./SocialList";
 import { UpButton } from "./UpButton";
+const lang = getLangFromUrl(Astro.url);
 
 const t = useTranslations(Astro.url);
 const IloveMyTeamLink = "https://www.ilovemyteam.online/";
@@ -71,9 +72,9 @@ const IloveMyTeamLink = "https://www.ilovemyteam.online/";
       </div>
       <div>
         <div class="mb-3">
-          <PrivacyPolicy policyButton={t("policyButton")} client:idle />
+          <PrivacyPolicy locale={lang} policyButton={t("policyButton")} client:idle />
         </div>
-        <div><PublicOferta oferta={t("oferta")} client:idle /></div>
+        <div><PublicOferta locale={lang} oferta={t("oferta")} client:idle /></div>
       </div>
       <div class="absolute right-0 bottom-0 md:hidden"><UpButton client:load /></div>
     </div>

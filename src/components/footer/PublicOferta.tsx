@@ -4,9 +4,9 @@ import { DocumentContent } from "./DocumentContent";
 import { ModalBase } from "../shared/ModalBase";
 import { publicOferta } from "@/assets/data/publicOferta";
 
-const { title, date, points, subtitle } = publicOferta;
+export const PublicOferta = ({ oferta, locale }: { oferta: string; locale: string }) => {
+  const { title, date, points, subtitle } = publicOferta[locale as "ua" | "en"];
 
-export const PublicOferta = ({ oferta }: { oferta: string }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const onOpenModal = () => setIsOpenModal(true);
@@ -33,7 +33,7 @@ export const PublicOferta = ({ oferta }: { oferta: string }) => {
             <DocumentContent content={subtitle} />
             <ul className="mt-3 flex flex-col gap-8 py-4 md:mt-6">
               {points.map((item, index) => (
-                <li>
+                <li key={index}>
                   <div className="bg-grey mb-4 h-[1px] w-full" />
                   <p
                     data-number={`${index + 1}.`}
